@@ -1,1 +1,189 @@
 <!doctype html> <html lang="zh-CN"> <head> <meta charset="utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1" /> <title>Otsu Yarn — 纱线销售与供应</title> <meta name="description" content="纱线销售与供应 | Yarn trading & supply | 糸の販売・供給" /> <style> :root{ --bg:#0b1220; --card:#101a33; --text:#eaf0ff; --muted:#b8c4e6; --line:rgba(255,255,255,.10); --brand:#6ea8ff; --brand2:#8cf0d2; --btn:#1a2a55; --shadow:0 18px 60px rgba(0,0,0,.35); --radius:18px; } *{box-sizing:border-box} body{ margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans", "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji"; background: radial-gradient(1200px 800px at 20% 10%, rgba(110,168,255,.22), transparent 55%), radial-gradient(1000px 700px at 90% 20%, rgba(140,240,210,.18), transparent 60%), radial-gradient(900px 700px at 50% 90%, rgba(110,168,255,.12), transparent 65%), var(--bg); color:var(--text); line-height:1.6; } a{color:inherit} .wrap{max-width:1100px; margin:0 auto; padding:28px 18px 60px;} header{ display:flex; align-items:center; justify-content:space-between; gap:12px; position:sticky; top:0; z-index:10; backdrop-filter: blur(10px); background: linear-gradient(to bottom, rgba(11,18,32,.86), rgba(11,18,32,.55)); padding:14px 0; } .brand{ display:flex; align-items:center; gap:10px; text-decoration:none; } .logo{ width:38px; height:38px; border-radius:12px; background: linear-gradient(135deg, var(--brand), var(--brand2)); box-shadow: 0 10px 30px rgba(110,168,255,.25); flex:0 0 auto; } .brand h1{font-size:16px; margin:0; letter-spacing:.2px} .brand p{margin:0; font-size:12px; color:var(--muted)} .lang{ display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end; } .lang button{ border:1px solid var(--line); background:rgba(16,26,51,.55); color:var(--text); padding:8px 10px; border-radius:999px; cursor:pointer; font-size:13px; transition:.18s ease; } .lang button:hover{transform:translateY(-1px); border-color:rgba(255,255,255,.22)} .lang button.active{ background: linear-gradient(135deg, rgba(110,168,255,.25), rgba(140,240,210,.20)); border-color:rgba(255,255,255,.25); }
+.hero{
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding:22px;
+}
+.hero .card:first-child{padding:28px}
+.kicker{
+  display:inline-flex; align-items:center; gap:8px;
+  color:var(--muted);
+  font-size:13px;
+  margin-bottom:10px;
+}
+.dot{
+  width:8px;height:8px;border-radius:50%;
+  background: linear-gradient(135deg, var(--brand), var(--brand2));
+  box-shadow: 0 0 18px rgba(140,240,210,.35);
+}
+h2{margin:0 0 10px; font-size:36px; line-height:1.18; letter-spacing:.2px}
+.lead{margin:0 0 16px; color:var(--muted); font-size:16px}
+.cta{
+  display:flex; gap:10px; flex-wrap:wrap;
+  margin-top:14px;
+}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  padding:10px 14px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(26,42,85,.55);
+  text-decoration:none;
+  font-weight:600;
+  font-size:14px;
+  transition:.18s ease;
+  min-width:160px;
+}
+.btn.primary{
+  background: linear-gradient(135deg, rgba(110,168,255,.35), rgba(140,240,210,.22));
+  border-color: rgba(255,255,255,.22);
+}
+.btn:hover{transform:translateY(-1px); border-color:rgba(255,255,255,.22)}
+.meta{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:10px;
+}
+.pill{
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:12px 12px;
+  background: rgba(11,18,32,.22);
+}
+.pill b{display:block; font-size:13px; margin-bottom:2px}
+.pill span{color:var(--muted); font-size:13px}
+
+
+.grid{
+  margin-top:16px;
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap:16px;
+}
+.span-6{grid-column: span 6;}
+.span-4{grid-column: span 4;}
+.span-8{grid-column: span 8;}
+.span-12{grid-column: span 12;}
+
+
+h3{margin:0 0 10px; font-size:18px}
+ul{margin:10px 0 0; padding-left:18px; color:var(--muted)}
+li{margin:6px 0}
+.badges{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+.badge{
+  font-size:12px; color:var(--text);
+  border:1px solid var(--line);
+  background: rgba(11,18,32,.22);
+  padding:6px 10px; border-radius:999px;
+}
+.contact{
+  display:flex; flex-direction:column; gap:10px;
+}
+.contact a{
+  text-decoration:none;
+  border:1px solid var(--line);
+  background: rgba(11,18,32,.22);
+  padding:12px 12px;
+  border-radius:14px;
+  display:flex; justify-content:space-between; gap:10px; align-items:center;
+}
+.contact a small{color:var(--muted)}
+footer{
+  margin-top:18px;
+  color:rgba(234,240,255,.65);
+  font-size:12px;
+  text-align:center;
+}
+@media (max-width: 900px){
+  .hero{grid-template-columns:1fr}
+  h2{font-size:30px}
+  .span-6,.span-4,.span-8,.span-12{grid-column: span 12;}
+  header{position:relative}
+}
+</style> </head> <body> <div class="wrap"> <header> <a class="brand" href="#top" aria-label="Home"> <div class="logo" aria-hidden="true"></div> <div> <h1 id="t_brand">Otsu Yarn</h1> <p id="t_tagline">纱线销售与供应 · Yarn Trading & Supply · 糸の販売・供給</p> </div> </a>
+  <div class="lang" aria-label="Language switch">
+        <a class="btn" href="#products" id="t_cta2">查看产品与服务</a>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <div class="meta">
+        <div class="pill">
+          <b id="t_meta1_title">主营方向</b>
+          <span id="t_meta1">纱线销售、渠道供货、订单生产对接</span>
+        </div>
+        <div class="pill">
+          <b id="t_meta2_title">服务对象</b>
+          <span id="t_meta2">贸易商 / 工厂 / 服装与家纺品牌</span>
+        </div>
+        <div class="pill">
+          <b id="t_meta3_title">合作方式</b>
+          <span id="t_meta3">长期供货、项目制、指定规格定制</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="grid">
+    <div class="card span-6" id="products">
+      <h3 id="t_p_title">产品与服务</h3>
+      <ul id="t_p_list">
+        <li>纱线现货供应：根据库存快速发货</li>
+        <li>订单供应：按规格/数量下单生产与交付</li>
+        <li>规格支持：支数、成分、捻度、染色等（可按需求对接）</li>
+        <li>质量与交付：批次管理、出货前检查、包装与运输方案建议</li>
+      </ul>
+    </div>
+
+
+    <div class="card span-6">
+      <h3 id="t_a_title">关于我们</h3>
+      <p class="lead" id="t_a_text" style="margin:0">
+        Otsu Yarn 专注于纱线销售与供应服务，致力于为客户提供稳定、透明、可追溯的供货体验。我们重视沟通效率与交付质量，支持中/英/日多语对接。
+      </p>
+    </div>
+
+
+    <div class="card span-4">
+      <h3 id="t_s1_title">优势 01</h3>
+      <p class="lead" id="t_s1_text" style="margin:0">供应链协同：现货与订单结合，匹配不同交期要求。</p>
+    </div>
+    <div class="card span-4">
+      <h3 id="t_s2_title">优势 02</h3>
+      <p class="lead" id="t_s2_text" style="margin:0">规格对接清晰：按需求整理规格参数，减少沟通成本。</p>
+    </div>
+    <div class="card span-4">
+      <h3 id="t_s3_title">优势 03</h3>
+      <p class="lead" id="t_s3_text" style="margin:0">交付可靠：重视批次与包装细节，降低到货风险。</p>
+    </div>
+
+
+    <div class="card span-12" id="contact">
+      <h3 id="t_c_title">联系方式</h3>
+      <div class="contact" style="margin-top:12px">
+        <a href="tel:+86XXXXXXXXXXX" id="c_phone">
+          <div>
+            <b id="t_c_phone_label">电话</b>
+            <small id="t_c_phone_hint">点击即可拨号</small>
+          </div>
+          <div id="t_c_phone_value">+86 XXXXXXXXXXX</div>
+        </a>
+        <a href="mailto:info@otsu.dpdns.org" id="c_email">
+          <div>
+            <b id="t_c_email_label">邮箱</b>
+            <small id="t_c_email_hint">点击即可发送邮件</small>
+          </div>
+          <div id="t_c_email_value">info@otsu.dpdns.org</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+    <div id="t_footer">© <span id="year"></span> Otsu Yarn. All rights reserved.</div>
+  </footer>
+</main>
+</div> <script> const dict = { zh: { title: "Otsu Yarn — 纱线销售与供应", brand: "Otsu Yarn", tagline: "纱线销售与供应 · Yarn Trading & Supply · 糸の販売・供給", kicker: "稳定供货 · 品质可控 · 交付可靠", headline: "面向全球客户的纱线销售与供应", lead: "我们提供多品类纱线的现货与订单供应，支持定制规格、打样与批量交付，覆盖贸易、工厂与品牌客户的长期合作需求。", b1:"现货 + 订单", b2:"可提供样品", b3:"稳定交期", b4:"多语沟通", cta1:"立即咨询 / 获取报价", cta2:"查看产品与服务", meta1t:"主营方向", meta1:"纱线销售、渠道供货、订单生产对接", meta2t:"服务对象", meta2:"贸易商 / 工厂 / 服装与家纺品牌", meta3t:"合作方式", meta3:"长期供货、项目制、指定规格定制", pTitle:"产品与服务", pList:[ "纱线现货供应：根据库存快速发货", "订单供应：按规格/数量下单生产与交付", "规格支持：支数、成分、捻度、染色等（可按需求对接）", "质量与交付：批次管理、出货前检查、包装与运输方案建议" ], aTitle:"关于我们", aText:"Otsu Yarn 专注于纱线销售与供应服务，致力于为客户提供稳定、透明、可追溯的供货体验。我们重视沟通效率与交付质量，支持中/英/日多语对接。", s1t:"优势 01", s1:"供应链协同：现货与订单结合，匹配不同交期要求。", s2t:"优势 02", s2:"规格对接清晰：按需求整理规格参数，减少沟通成本。", s3t:"优势 03", s3:"交付可靠：重视批次与包装细节，降低到货风险。", cTitle:"联系方式", phoneLabel:"电话", phoneHint:"点击即可拨号", emailLabel:"邮箱", emailHint:"点击即可发送邮件", footer:"© {year} Otsu Yarn. 保留所有权利。" }, en: { title: "Otsu Yarn — Yarn Trading & Supply", brand: "Otsu Yarn", tagline: "Yarn Trading & Supply · 纱线销售与供应 · 糸の販売・供給", kicker: "Stable Supply · Quality Control · Reliable Delivery", headline: "Yarn Trading & Supply for Global Customers", lead: "We provide stock and made-to-order yarn supply, supporting custom specifications, sampling, and bulk delivery for traders, factories, and brands.", b1:"Stock + Made-to-order", b2:"Samples Available", b3:"Reliable Lead Time", b4:"Multilingual Support", cta1:"Contact Us / Get a Quote", cta2:"Products & Services", meta1t:"Focus", meta1:"Yarn trading, channel supply, made-to-order coordination", meta2t:"Customers", meta2:"Traders / Factories / Apparel & Home Textile Brands", meta3t:"Cooperation", meta3:"Long-term supply, project-based, custom specs", pTitle:"Products & Services", pList:[ "In-stock supply: fast shipment based on inventory", "Made-to-order: production and delivery by specs/quantity", "Specification support: count, composition, twist, dyeing (on request)", "Quality & delivery: batch control, pre-shipment checks, packing & logistics suggestions" ], aTitle:"About Us", aText:"Otsu Yarn focuses on yarn trading and supply services. We aim to deliver a stable, transparent, and traceable supply experience, with efficient communication and reliable delivery quality.", s1t:"Strength 01", s1:"Supply-chain coordination: combine stock and made-to-order for different timelines.", s2t:"Strength 02", s2:"Clear specification alignment: structured parameters to reduce communication costs.", s3t:"Strength 03", s3:"Reliable delivery: attention to batch and packing details to lower arrival risks.", cTitle:"Contact", phoneLabel:"Phone", phoneHint:"Tap to call", emailLabel:"Email", emailHint:"Tap to email", footer:"© {year} Otsu Yarn. All rights reserved." }, ja: { title: "Otsu Yarn — 糸の販売・供給", brand: "Otsu Yarn", tagline: "糸の販売・供給 · Yarn Trading & Supply · 纱线销售与供应", kicker: "安定供給 · 品質管理 · 確実な納品", headline: "グローバル向けの糸販売・供給サービス", lead: "多品種の糸について、在庫品および受注生産での供給に対応します。仕様カスタム、サンプル手配、ロット納品まで幅広くサポートします。", b1:"在庫 + 受注", b2:"サンプル対応", b3:"安定リードタイム", b4:"多言語対応", cta1:"お問い合わせ / お見積り", cta2:"取扱い・サービス", meta1t:"主な対応", meta1:"糸の販売、チャネル供給、受注生産の調整", meta2t:"お取引先", meta2:"商社 / 工場 / アパレル・ホームテキスタイルブランド", meta3t:"取引形態", meta3:"継続供給、プロジェクト単位、指定仕様のカスタム", pTitle:"取扱い・サービス", pList:[ "在庫品供給：在庫状況に応じて迅速に出荷", "受注供給：仕様・数量に基づく生産と納品", "仕様対応：番手、組成、撚り、染色など（ご要望に応じて）", "品質・納品：ロット管理、出荷前チェック、梱包・物流提案" ], aTitle:"会社概要", aText:"Otsu Yarn は糸の販売・供給サービスに注力し、安定的で透明性が高く、トレーサブルな供給体制を目指しています。中・英・日の多言語で対応可能です。", s1t:"強み 01", s1:"サプライチェーン連携：在庫と受注を組み合わせ、納期ニーズに対応。", s2t:"強み 02", s2:"仕様調整が明確：要件を整理し、コミュニケーション負担を軽減。", s3t:"強み 03", s3:"確実な納品：ロット・梱包の細部まで配慮し、到着リスクを低減。", cTitle:"連絡先", phoneLabel:"電話", phoneHint:"クリックで発信", emailLabel:"メール", emailHint:"クリックで送信", footer:"© {year} Otsu Yarn. All rights reserved." } }; const $ = (id) => document.getElementById(id); const setText = (id, v) => { const el = $(id); if(el) el.textContent = v; }; const setList = (id, items) => { const ul = $(id); if(!ul) return; ul.innerHTML = items.map(t => `<li>${t}</li>`).join(""); }; function applyLang(lang){ const d = dict[lang] || dict.zh; document.title = d.title; setText("t_brand", d.brand); setText("t_tagline", d.tagline); setText("t_kicker", d.kicker); setText("t_headline", d.headline); setText("t_lead", d.lead); setText("b1", d.b1); setText("b2", d.b2); setText("b3", d.b3); setText("b4", d.b4); setText("t_cta1", d.cta1); setText("t_cta2", d.cta2); setText("t_meta1_title", d.meta1t); setText("t_meta1", d.meta1); setText("t_meta2_title", d.meta2t); setText("t_meta2", d.meta2); setText("t_meta3_title", d.meta3t); setText("t_meta3", d.meta3); setText("t_p_title", d.pTitle); setList("t_p_list", d.pList); setText("t_a_title", d.aTitle); setText("t_a_text", d.aText); setText("t_s1_title", d.s1t); setText("t_s1_text", d.s1); setText("t_s2_title", d.s2t); setText("t_s2_text", d.s2); setText("t_s3_title", d.s3t); setText("t_s3_text", d.s3); setText("t_c_title", d.cTitle); setText("t_c_phone_label", d.phoneLabel); setText("t_c_phone_hint", d.phoneHint); setText("t_c_email_label", d.emailLabel); setText("t_c_email_hint", d.emailHint); const year = new Date().getFullYear(); setText("year", year); setText("t_footer", d.footer.replace("{year}", year)); document.documentElement.lang = lang === "ja" ? "ja" : (lang === "en" ? "en" : "zh-CN"); localStorage.setItem("site_lang", lang); document.querySelectorAll(".lang button").forEach(btn=>{ btn.classList.toggle("active", btn.dataset.lang === lang); }); } document.querySelectorAll(".lang button").forEach(btn=>{ btn.addEventListener("click", ()=> applyLang(btn.dataset.lang)); }); const saved = localStorage.getItem("site_lang") || "zh"; applyLang(saved); </script> </body> </html>
