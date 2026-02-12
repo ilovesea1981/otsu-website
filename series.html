@@ -12,16 +12,16 @@
       --bg:#eef2f6;
       --text:#0b1220;
       --muted:#667085;
-      --nav1:#0f2f4f;
-      --nav2:#163e6b;
-      --nav3:#1d4f86;
+      --nav1:#0f2433;
+      --nav2:#132e43;
+      --nav3:#1a3c57;
       --card:#fff;
       --shadow:0 18px 60px rgba(0,0,0,.10);
     }
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family:"Inter","Noto Sans SC","Noto Sans JP",sans-serif;
+      font-family:"Inter","Noto Sans SC","Noto Sans JP",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       background:var(--bg);
       color:var(--text);
       letter-spacing:.02em;
@@ -41,7 +41,7 @@
       flex-wrap:wrap;
       gap:14px;
     }
-    .top a{ color:#fff; text-decoration:none; opacity:.9; }
+    .top a{ color:#fff; text-decoration:none; opacity:.9; letter-spacing:.06em; }
     .top a:hover{ opacity:1; }
     .lang-switch{ display:flex; gap:10px; }
     .lang-switch button{
@@ -58,57 +58,17 @@
     }
     .lang-switch button:hover{ background:rgba(255,255,255,.18); transform:translateY(-1px); }
 
-    .hero{
-      padding:46px 0 14px 0;
-    }
-    .kicker{
-      font-size:11px;
-      letter-spacing:.35em;
-      font-weight:500;
-      opacity:.65;
-      margin:0 0 12px 0;
-    }
-    h1{
-      font-size:34px;
-      font-weight:500;
-      letter-spacing:.06em;
-      margin:0 0 12px 0;
-      line-height:1.25;
-    }
-    .desc{
-      color:#4b5565;
-      font-size:15px;
-      line-height:1.95;
-      margin:0;
-    }
+    .hero{ padding:46px 0 14px 0; }
+    .kicker{ font-size:11px; letter-spacing:.35em; font-weight:500; opacity:.65; margin:0 0 12px 0; }
+    h1{ font-size:34px; font-weight:500; letter-spacing:.06em; margin:0 0 12px 0; line-height:1.25; }
+    .desc{ color:#4b5565; font-size:15px; line-height:1.95; margin:0; }
 
-    .card{
-      background:var(--card);
-      border-radius:20px;
-      box-shadow:var(--shadow);
-      overflow:hidden;
-      margin:22px 0 46px 0;
-    }
+    .card{ background:var(--card); border-radius:20px; box-shadow:var(--shadow); overflow:hidden; margin:22px 0 46px 0; }
     .card img{ display:block; width:100%; height:auto; }
     .content{ padding:26px; }
-    .meta{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin:10px 0 0 0;
-      padding:0;
-      list-style:none;
-    }
-    .meta li{
-      font-size:12px;
-      letter-spacing:.06em;
-      padding:6px 10px;
-      border-radius:999px;
-      background:#f2f4f7;
-      color:#475467;
-      border:1px solid #eef0f3;
-      font-weight:500;
-    }
+    .meta{ display:flex; gap:10px; flex-wrap:wrap; margin:10px 0 0 0; padding:0; list-style:none; }
+    .meta li{ font-size:12px; letter-spacing:.06em; padding:6px 10px; border-radius:999px; background:#f2f4f7; color:#475467; border:1px solid #eef0f3; font-weight:500; }
+
     .back{
       display:inline-block;
       margin:18px 0 0 0;
@@ -120,12 +80,15 @@
       font-size:13px;
       letter-spacing:.06em;
       font-weight:500;
+      transform:translateY(0);
+      transition:.2s ease;
     }
     .back:hover{ opacity:.92; transform:translateY(-1px); }
 
     [data-lang]{ display:none; }
   </style>
 </head>
+
 <body>
   <header>
     <div class="wrap top">
@@ -141,89 +104,14 @@
   <main class="wrap">
     <section class="hero">
       <p class="kicker">LOOKBOOK / SERIES</p>
-      <h1 id="topicTitle"></h1>
-      <p class="desc" id="topicDesc"></p>
+      <h1 id="topicTitle">花式纱线创新研发｜系列专题</h1>
+      <p class="desc" id="topicDesc">围绕结构、风合与视觉纹理进行差异化开发；支持从概念打样到量产落地的材料方案输出。</p>
     </section>
 
     <section class="card">
-      <section class="card" style="margin-top:28px;">
-  <div class="content">
-
-    <p class="kicker" style="margin-bottom:6px;">JOURNAL</p>
-
-    <h2 style="font-size:22px; letter-spacing:.08em; font-weight:600; margin:0 0 20px 0;">
-      Latest Articles
-    </h2>
-
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
-      
-      <!-- 文章 1 -->
-      <div style="background:#f7f8fa; border-radius:16px; overflow:hidden; box-shadow:0 12px 32px rgba(0,0,0,.08);">
-        <img src="assets/brand/tile-fancy-yarn.png" alt="Article Cover">
-
-        <div style="padding:18px;">
-          <h3 style="margin:0 0 8px 0; font-size:15px; font-weight:600; letter-spacing:.05em;">
-            26SS 花式带子纱线图鉴
-          </h3>
-
-          <p style="margin:0 0 14px 0; font-size:13px; color:#4b5565; line-height:1.8;">
-            围绕结构型花式纱线展开，通过带子结构的空间感与层次变化，
-            实现轻盈与立体视觉效果的平衡。
-          </p>
-
-          <a href="https://mp.weixin.qq.com/s/AGSnjUDycr25PSAm_pNs_w"
-             target="_blank"
-             style="
-               font-size:13px;
-               letter-spacing:.06em;
-               text-decoration:none;
-               color:#111;
-               border-bottom:1px solid #111;
-               padding-bottom:2px;
-             ">
-            阅读公众号原文 →
-          </a>
-        </div>
-      </div>
-
-
-      <!-- 文章 2 -->
-      <div style="background:#f7f8fa; border-radius:16px; overflow:hidden; box-shadow:0 12px 32px rgba(0,0,0,.08);">
-        <img src="assets/brand/tile-innovation.png" alt="Article Cover">
-
-        <div style="padding:18px;">
-          <h3 style="margin:0 0 8px 0; font-size:15px; font-weight:600; letter-spacing:.05em;">
-            OTSU 创新研发专题
-          </h3>
-
-          <p style="margin:0 0 14px 0; font-size:13px; color:#4b5565; line-height:1.8;">
-            结合院校与设计资源，持续推动代表性花式纱线产品开发，
-            构建稳定与创新并行的材料体系。
-          </p>
-
-          <a href="https://mp.weixin.qq.com/s/ZjZ0J_OdUqlnePvj8vt35A"
-             target="_blank"
-             style="
-               font-size:13px;
-               letter-spacing:.06em;
-               text-decoration:none;
-               color:#111;
-               border-bottom:1px solid #111;
-               padding-bottom:2px;
-             ">
-            阅读公众号原文 →
-          </a>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</section>
       <img id="topicImage" alt="topic image" loading="lazy">
       <div class="content">
         <ul class="meta" id="topicTags"></ul>
-
         <a class="back" href="index.html#series">
           <span data-lang="zh">返回「产品图鉴」</span>
           <span data-lang="en">Back to Lookbook</span>
@@ -236,22 +124,22 @@
   <script>
     const TOPICS = {
       fancy: {
-        image: "assets/brand/tile-fancy-yarn.png",
-        tags: ["Fancy Yarn","Texture","R&D"],
+        image: "assets/brand/series_tile_01.png",
+        tags: ["R&D","Texture","Sampling"],
         title: {
           zh: "花式纱线创新研发｜系列专题",
           en: "Fancy Yarn Development｜Series Topic",
           jp: "ファンシーヤーン開発｜特集"
         },
         desc: {
-          zh: "围绕结构、手感与视觉效果进行差异化开发；支持从概念打样到量产落地的材料方案输出。",
+          zh: "围绕结构、风合与视觉纹理进行差异化开发；支持从概念打样到量产落地的材料方案输出。",
           en: "Differentiated development across structure, hand-feel, and visual texture—supporting sampling to scalable production.",
           jp: "構造・風合い・視覚的テクスチャーを軸に、コンセプト〜量産まで落とし込める素材提案。"
         }
       },
       supply: {
-        image: "assets/brand/tile-high-end-supply.png",
-        tags: ["Supply","Stability","Project"],
+        image: "assets/brand/series_tile_02.png",
+        tags: ["Supply","Traceable","PM"],
         title: {
           zh: "高端品牌供货与协同｜系列专题",
           en: "Premium Brand Supply｜Series Topic",
@@ -264,7 +152,7 @@
         }
       },
       bespoke: {
-        image: "assets/brand/tile-bespoke.png",
+        image: "assets/brand/series_tile_03.png",
         tags: ["Bespoke","Spec","Color"],
         title: {
           zh: "特殊规格定制｜系列专题",
@@ -278,8 +166,8 @@
         }
       },
       innovation: {
-        image: "assets/brand/tile-innovation.png",
-        tags: ["Co-creation","Design","Partner"],
+        image: "assets/brand/series_tile_04.png",
+        tags: ["Co-create","Design","Network"],
         title: {
           zh: "创新研发与伙伴合作｜系列专题",
           en: "Innovation & Partnership｜Series Topic",
@@ -308,6 +196,7 @@
       document.querySelectorAll("[data-lang]").forEach(function(el){
         el.style.display = (el.getAttribute("data-lang") === lang) ? "inline" : "none";
       });
+      document.documentElement.setAttribute("lang", lang === "jp" ? "ja" : (lang === "en" ? "en" : "zh-CN"));
     }
 
     function render(lang){
@@ -320,7 +209,7 @@
 
       const tags = document.getElementById("topicTags");
       tags.innerHTML = "";
-      t.tags.forEach(s=>{
+      t.tags.forEach(function(s){
         const li = document.createElement("li");
         li.textContent = s;
         tags.appendChild(li);
@@ -334,5 +223,4 @@
     });
   </script>
 </body>
-
 </html>
