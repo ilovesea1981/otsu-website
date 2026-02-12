@@ -1,201 +1,84 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>上海欧津纺织服装有限公司｜Otsu Yarn</title>
-
-<style>
-:root{
-  --bg:#f6f7f9;
-  --card:#ffffff;
-  --text:#111;
-  --muted:#666;
-  --brand:#0b57d0;
-  --shadow:0 4px 20px rgba(0,0,0,.06);
-  --radius:16px;
-}
-
-*{box-sizing:border-box}
-
-body{
-  margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.7;
-}
-
-.wrap{
-  max-width:1100px;
-  margin:0 auto;
-  padding:0 20px;
-}
-
-header{
-  background:#111;
-  color:#fff;
-  padding:40px 0;
-}
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap:16px;
-}
-
-.brand img{
-  height:60px;
-  background:#fff;
-  padding:6px 12px;
-  border-radius:12px;
-}
-
-h1{margin:0;font-size:24px}
-
-.sub{
-  opacity:.85;
-  margin-top:6px;
-  font-size:14px;
-}
-
-nav{
-  margin-top:18px;
-}
-
-nav a{
-  color:#fff;
-  margin-right:20px;
-  text-decoration:none;
-  font-size:14px;
-  opacity:.9;
-}
-
-nav a:hover{opacity:1}
-
-section{
-  margin:40px 0;
-}
-
-.card{
-  background:var(--card);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-  padding:30px;
-}
-
-h2{
-  margin-top:0;
-  font-size:20px;
-}
-
-.kpi{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:15px;
-}
-
-.kpi span{
-  background:#eef3ff;
-  color:var(--brand);
-  padding:8px 14px;
-  border-radius:999px;
-  font-size:13px;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:30px;
-}
-
-@media(max-width:900px){
-  .grid{grid-template-columns:1fr}
-}
-
-iframe{
-  width:100%;
-  height:360px;
-  border:0;
-  border-radius:var(--radius);
-}
-
-footer{
-  text-align:center;
-  padding:40px 0;
-  color:var(--muted);
-  font-size:14px;
-}
-</style>
-</head>
-
-<body>
-
-<header>
-  <div class="wrap">
-    <div class="brand">
-      <img src="LOGO.png" alt="OTSU">
-      <div>
-        <h1>上海欧津纺织服装有限公司</h1>
-        <div class="sub">Otsu Yarn｜高品质纱线开发与供应｜支持特殊规格定制</div>
-      </div>
+<!DOCTYPE html> <html lang="zh-CN"> <head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <title>上海欧津纺织服装有限公司｜Otsu Yarn</title> <meta name="description" content="上海欧津纺织服装有限公司（Otsu Yarn）专注高品质纱线开发与供应，支持特殊规格定制，中/英/日多语对接。" /> <style> :root{ --bg:#eef2f6; --card:#ffffff; --text:#111; --muted:#667085; --brand:#0b57d0; --shadow:0 10px 30px rgba(0,0,0,.06); --radius:16px; } *{box-sizing:border-box} body{ margin:0; font-family:Arial,Helvetica,sans-serif; background:var(--bg); color:var(--text); line-height:1.7; } a{color:inherit} .wrap{ max-width:1100px; margin:0 auto; padding:0 20px; } header{ background:linear-gradient(135deg,#0f2f4f 0%,#163e6b 60%,#1d4f86 100%); color:#fff; padding:46px 0 34px 0; box-shadow:0 10px 30px rgba(0,0,0,.18); } .top{ display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap; } .brand{ display:flex; align-items:center; gap:16px; } .brand img{ height:58px; background:#fff; padding:8px 14px; border-radius:10px; box-shadow:0 6px 16px rgba(0,0,0,.12); } .title{ margin:0; font-size:26px; font-weight:600; letter-spacing:1px; } .sub{ margin-top:8px; font-size:14px; opacity:.9; letter-spacing:.5px; } nav{ display:flex; gap:26px; flex-wrap:wrap; } nav a{ color:#fff; text-decoration:none; font-size:14px; opacity:.88; position:relative; letter-spacing:.2px; } nav a::after{ content:""; position:absolute; left:0; bottom:-7px; width:0%; height:2px; background:#fff; transition:.25s; } nav a:hover{opacity:1} nav a:hover::after{width:100%} main{padding:36px 0} .card{ background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:30px; margin:18px 0; } h2{ margin:0 0 12px 0; font-size:20px; letter-spacing:.4px; } .muted{color:var(--muted)} .kpi{ display:flex; gap:12px; flex-wrap:wrap; margin-top:12px; } .kpi span{ background:#eef3ff; color:var(--brand); padding:8px 14px; border-radius:999px; font-size:13px; } .list{ margin:0; padding-left:18px; } .list li{margin:6px 0} iframe{ width:100%; height:360px; border:0; border-radius:var(--radius); } .social-qr{ width:100%; max-width:860px; display:block; margin:14px auto 0; border-radius:14px; box-shadow:0 10px 28px rgba(0,0,0,.08); } footer{ text-align:center; padding:34px 0 46px 0; color:var(--muted); font-size:14px; } </style> </head> <body> <header> <div class="wrap top"> <div class="brand"> <img src="LOGO.png" alt="OTSU"> <div> <h1 class="title">上海欧津纺织服装有限公司</h1> <div class="sub">Otsu Yarn｜高品质纱线开发与供应｜支持特殊规格定制</div> </div> </div>
+  <nav>
+    <a href="#about">公司简介</a>
+    <a href="#strength">公司实力</a>
+    <a href="#services">产品与服务</a>
+    <a href="#address">公司地址</a>
+    <a href="#follow">关注我们</a>
+    <a href="#contact">联系方式</a>
+  </nav>
+</div>
+</header> <main> <div class="wrap">
+  <section class="card">
+    <h2>主营方向</h2>
+    <div class="kpi">
+      <span>纱线现货供应</span>
+      <span>订单生产对接</span>
+      <span>特殊规格定制</span>
+      <span>中/英/日多语对接</span>
     </div>
+    <p class="muted" style="margin-top:12px">
+      面向贸易商、工厂及服装/家纺品牌客户，提供稳定、透明、可追溯的供货体验。
+    </p>
+  </section>
 
-    <nav>
-      <a href="#about">公司简介</a>
-      <a href="#services">产品与服务</a>
-      <a href="#address">公司地址</a>
-      <a href="#contact">联系方式</a>
-    </nav>
-  </div>
-</header>
 
-<div class="wrap">
+  <section id="about" class="card">
+    <h2>公司简介</h2>
+    <p>
+      上海欧津纺织服装有限公司成立于2005年，主要经营纺织原料销售、开发与研究。
+      公司专注高品质纱线（半精纺、精纺、花式纱、粗纺、特种染色加工）的开发与供应，并支持各类特殊规格定制。
+    </p>
+  </section>
 
-<section class="card">
-  <h2>主营方向</h2>
-  <div class="kpi">
-    <span>纱线现货供应</span>
-    <span>订单生产对接</span>
-    <span>特殊规格定制</span>
-    <span>中/英/日多语对接</span>
-  </div>
-</section>
 
-<section id="about" class="card">
-  <h2>公司简介</h2>
-  <p>
-  上海欧津纺织服装有限公司成立于2005年，
-  专注高品质纱线（半精纺、精纺、花式纱、粗纺、特种染色加工）
-  的开发与供应，并支持各类特殊规格定制。
-  </p>
-</section>
+  <section id="strength" class="card">
+    <h2>公司实力与发展里程碑</h2>
+    <p>
+      深耕纱线行业二十余年，长期服务日本、欧洲及中国一线时尚品牌客户，
+      以稳定供货、快速响应与品质控制为核心，持续推进产品创新与合作开发。
+    </p>
+  </section>
 
-<section id="address" class="card">
-  <h2>上海市闵行区中春路8633弄万科七宝国际41号26幢618室</h2>
-  <p>上海欧津纺织服装有限公司（百度地图定位）</p>
-   <iframe
-    src="https://api.map.baidu.com/marker?location=31.243571,121.457175&title=%E4%B8%8A%E6%B5%B7%E6%AC%A7%E6%B4%A5%E7%BA%BA%E7%BB%87%E6%9C%8D%E8%A3%85%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&content=%E4%B8%8A%E6%B5%B7%E5%B8%82%E9%97%B5%E8%A1%8C%E5%8C%BA%E4%B8%AD%E6%98%A5%E8%B7%AF8633%E5%BC%84%E4%B8%87%E7%A7%91%E4%B8%83%E5%AE%9D%E5%9B%BD%E9%99%8541%E5%8F%B726%E5%B9%A2618%E5%AE%A4&output=html"
-    loading="lazy">
-  </iframe>
-</section>
 
-<section id="contact" class="card">
-  <h2>联系方式</h2>
-  <p>
-  业务咨询<br>
-  邮箱：zyq@otsu1128.com<br>
-  微信号：15021256895<br>
-  请说明来意，并留下联系方式，谢谢！
-  </p>
-</section>
+  <section id="services" class="card">
+    <h2>产品与服务</h2>
+    <ul class="list">
+      <li>纱线现货供应：根据库存快速发货</li>
+      <li>订单生产对接：按规格与数量下单生产与交付</li>
+      <li>特殊规格定制：支数、成分、捻度、染色等按需对接</li>
+      <li>多语沟通支持：中/英/日对接，提升协作效率</li>
+    </ul>
+  </section>
+
+
+  <section id="address" class="card">
+    <h2>公司地址</h2>
+    <p>上海市闵行区中春路8633弄万科七宝国际41号26幢618室</p>
+    <iframe
+      src="https://api.map.baidu.com/marker?location=31.243571,121.457175&title=%E4%B8%8A%E6%B5%B7%E6%AC%A7%E6%B4%A5%E7%BA%BA%E7%BB%87%E6%9C%8D%E8%A3%85%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&content=%E4%B8%8A%E6%B5%B7%E5%B8%82%E9%97%B5%E8%A1%8C%E5%8C%BA%E4%B8%AD%E6%98%A5%E8%B7%AF8633%E5%BC%84%E4%B8%87%E7%A7%91%E4%B8%83%E5%AE%9D%E5%9B%BD%E9%99%8541%E5%8F%B726%E5%B9%A2618%E5%AE%A4&output=html"
+      loading="lazy">
+    </iframe>
+  </section>
+
+
+  <section id="follow" class="card">
+    <h2>关注我们</h2>
+    <p class="muted">欢迎关注微信公众号 / 视频号 / 小红书，及时获取新品与动态。</p>
+    <img src="assets/social-qr.jpg" alt="OTSU 官方账号二维码：微信公众号、视频号、小红书" class="social-qr">
+  </section>
+
+
+  <section id="contact" class="card">
+    <h2>联系方式</h2>
+    <p>
+      业务咨询<br>
+      邮箱：zyq@otsu1128.com<br>
+      微信号：15021256895<br>
+      请说明来意，并留下联系方式，谢谢！
+    </p>
+  </section>
+
 
 </div>
-
-<footer>
-© 2026 上海欧津纺织服装有限公司
-</footer>
-
-</body>
-</html>
+</main> <footer> © 2026 上海欧津纺织服装有限公司 </footer> </body> </html>
