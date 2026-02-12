@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OTSU Yan｜产品图鉴专题</title>
+  <meta name="description" content="OTSU Yan 产品图鉴专题页：展示系列主题与材料开发方向，支持中/英/日切换。" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#eef2f6;
+      --text:#0b1220;
+      --muted:#667085;
+      --nav1:#0f2433;
+      --nav2:#132e43;
+      --nav3:#1a3c57;
+      --card:#fff;
+      --shadow:0 18px 60px rgba(0,0,0,.10);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Inter","Noto Sans SC","Noto Sans JP",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      letter-spacing:.02em;
+      line-height:1.85;
+    }
+    .wrap{ max-width:980px; margin:0 auto; padding:0 20px; }
+    header{
+      background:linear-gradient(135deg,var(--nav1) 0%,var(--nav2) 60%,var(--nav3) 100%);
+      color:#fff;
+      box-shadow:0 12px 34px rgba(0,0,0,.18);
+    }
+    .top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:14px 0;
+      flex-wrap:wrap;
+      gap:14px;
+    }
+    .top a{ color:#fff; text-decoration:none; opacity:.9; letter-spacing:.06em; }
+    .top a:hover{ opacity:1; }
+    .lang-switch{ display:flex; gap:10px; }
+    .lang-switch button{
+      background:transparent;
+      border:1px solid rgba(255,255,255,.42);
+      color:#fff;
+      padding:6px 12px;
+      border-radius:999px;
+      font-size:12px;
+      letter-spacing:.06em;
+      cursor:pointer;
+      transition:.2s ease;
+      font-weight:500;
+    }
+    .lang-switch button:hover{ background:rgba(255,255,255,.18); transform:translateY(-1px); }
+
+    .hero{ padding:46px 0 14px 0; }
+    .kicker{ font-size:11px; letter-spacing:.35em; font-weight:500; opacity:.65; margin:0 0 12px 0; }
+    h1{ font-size:34px; font-weight:500; letter-spacing:.06em; margin:0 0 12px 0; line-height:1.25; }
+    .desc{ color:#4b5565; font-size:15px; line-height:1.95; margin:0; }
+
+    .card{ background:var(--card); border-radius:20px; box-shadow:var(--shadow); overflow:hidden; margin:22px 0 46px 0; }
+    .card img{ display:block; width:100%; height:auto; }
+    .content{ padding:26px; }
+    .meta{ display:flex; gap:10px; flex-wrap:wrap; margin:10px 0 0 0; padding:0; list-style:none; }
+    .meta li{ font-size:12px; letter-spacing:.06em; padding:6px 10px; border-radius:999px; background:#f2f4f7; color:#475467; border:1px solid #eef0f3; font-weight:500; }
+
+    .back{
+      display:inline-block;
+      margin:18px 0 0 0;
+      padding:10px 16px;
+      border-radius:999px;
+      border:1px solid #111;
+      background:#111;
+      color:#fff;
+      font-size:13px;
+      letter-spacing:.06em;
+      font-weight:500;
+      transform:translateY(0);
+      transition:.2s ease;
+    }
+    .back:hover{ opacity:.92; transform:translateY(-1px); }
+
+    [data-lang]{ display:none; }
+  
+    @media (prefers-reduced-motion: reduce){
+      *{ scroll-behavior:auto !important; }
+      .card{ transition:none !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap top">
+      <a href="index.html">← <span data-lang="zh">返回首页</span><span data-lang="en">Back</span><span data-lang="jp">戻る</span></a>
+      <div class="lang-switch">
+        <button type="button" onclick="setLang('zh')">中文</button>
+        <button type="button" onclick="setLang('en')">EN</button>
+        <button type="button" onclick="setLang('jp')">日本語</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <p class="kicker">LOOKBOOK / SERIES</p>
+      <h1 id="topicTitle">花式纱线创新研发｜系列专题</h1>
+      <p class="desc" id="topicDesc">围绕结构、风合与视觉纹理进行差异化开发；支持从概念打样到量产落地的材料方案输出。</p>
+    </section>
+
+    <section class="card">
+      <img id="topicImage" alt="topic image" loading="lazy">
+      <div class="content">
+        <ul class="meta" id="topicTags"></ul>
+        <a class="back" href="index.html#series">
+          <span data-lang="zh">返回「产品图鉴」</span>
+          <span data-lang="en">Back to Lookbook</span>
+          <span data-lang="jp">ルックブックへ戻る</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const TOPICS = {
+      fancy: {
+        image: "assets/brand/series_tile_01.png",
+        tags: ["R&D","Texture","Sampling"],
+        title: {
+          zh: "花式纱线创新研发｜系列专题",
+          en: "Fancy Yarn Development｜Series Topic",
+          jp: "ファンシーヤーン開発｜特集"
+        },
+        desc: {
+          zh: "围绕结构、风合与视觉纹理进行差异化开发；支持从概念打样到量产落地的材料方案输出。",
+          en: "Differentiated development across structure, hand-feel, and visual texture—supporting sampling to scalable production.",
+          jp: "構造・風合い・視覚的テクスチャーを軸に、コンセプト〜量産まで落とし込める素材提案。"
+        }
+      },
+      supply: {
+        image: "assets/brand/series_tile_02.png",
+        tags: ["Supply","Traceable","PM"],
+        title: {
+          zh: "高端品牌供货与协同｜系列专题",
+          en: "Premium Brand Supply｜Series Topic",
+          jp: "高級ブランド供給｜特集"
+        },
+        desc: {
+          zh: "以稳定交付、透明沟通与可追溯管理为基础，提升跨团队协作效率与项目执行确定性。",
+          en: "Stable delivery, transparent communication, and traceable management for reliable project execution.",
+          jp: "安定納品・透明なコミュニケーション・トレーサブル管理で、協業効率と実行確度を高めます。"
+        }
+      },
+      bespoke: {
+        image: "assets/brand/series_tile_03.png",
+        tags: ["Bespoke","Spec","Color"],
+        title: {
+          zh: "特殊规格定制｜系列专题",
+          en: "Bespoke Specifications｜Series Topic",
+          jp: "特殊仕様カスタム｜特集"
+        },
+        desc: {
+          zh: "支数、成分、捻度、染色与结构等要素精细化对接，支持从打样到量产的一体化协同。",
+          en: "Tailored coordination on counts, blends, twist, dyeing, and structure—from sampling to bulk production.",
+          jp: "番手・混率・撚り・染色・構造などを精緻に調整し、サンプル〜量産まで一貫対応。"
+        }
+      },
+      innovation: {
+        image: "assets/brand/series_tile_04.png",
+        tags: ["Co-create","Design","Network"],
+        title: {
+          zh: "创新研发与伙伴合作｜系列专题",
+          en: "Innovation & Partnership｜Series Topic",
+          jp: "共創とパートナーシップ｜特集"
+        },
+        desc: {
+          zh: "联合设计师、院校与合作伙伴推进创意开发与落地，以稳定供给支持持续创新。",
+          en: "Co-create with designers and institutes to turn ideas into scalable products—backed by stable supply.",
+          jp: "デザイナーや教育機関と共創し、アイデアを量産可能な形へ。安定供給で継続的な革新を支えます。"
+        }
+      }
+    };
+
+    function getQuery(name){
+      const url = new URL(window.location.href);
+      return url.searchParams.get(name);
+    }
+
+    function setLang(lang){
+      localStorage.setItem("siteLang", lang);
+      applyLang(lang);
+      render(lang);
+    }
+
+    function applyLang(lang){
+      document.querySelectorAll("[data-lang]").forEach(function(el){
+        el.style.display = (el.getAttribute("data-lang") === lang) ? "inline" : "none";
+      });
+      document.documentElement.setAttribute("lang", lang === "jp" ? "ja" : (lang === "en" ? "en" : "zh-CN"));
+    }
+
+    function render(lang){
+      const key = getQuery("topic") || "fancy";
+      const t = TOPICS[key] || TOPICS.fancy;
+
+      const img = document.getElementById("topicImage");
+      img.onerror = function(){
+        // 图片缺失时的兜底占位
+        img.onerror = null;
+        img.src = "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='900'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%230b1220' offset='0'/%3E%3Cstop stop-color='%231a3c57' offset='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23ffffff' font-size='38' font-family='Arial'%3EImage Not Found%3C/text%3E%3C/svg%3E";
+      };
+      img.src = t.image;
+      document.getElementById("topicTitle").textContent = t.title[lang] || t.title.zh;
+      document.getElementById("topicDesc").textContent = t.desc[lang] || t.desc.zh;
+
+      const tags = document.getElementById("topicTags");
+      tags.innerHTML = "";
+      t.tags.forEach(function(s){
+        const li = document.createElement("li");
+        li.textContent = s;
+        tags.appendChild(li);
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", function(){
+      const lang = localStorage.getItem("siteLang") || "zh";
+      applyLang(lang);
+      render(lang);
+    });
+  </script>
+</body>
+</html>
