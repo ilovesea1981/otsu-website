@@ -584,6 +584,139 @@
     }
     .editorial-btn-ghost{ background:transparent; }
 
+  
+    /* ===== 产品详情展开视图 ===== */
+    .series-detail{
+      display:none;
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+      background:var(--bg);
+      z-index:100;
+      overflow-y:auto;
+      animation:slideUp 0.4s ease;
+    }
+    .series-detail.active{ display:block; }
+
+    @keyframes slideUp{
+      from{ opacity:0; transform:translateY(30px); }
+      to{ opacity:1; transform:translateY(0); }
+    }
+
+    .detail-header{
+      background:linear-gradient(135deg,var(--nav1) 0%,var(--nav2) 60%,var(--nav3) 100%);
+      color:#fff;
+      padding:16px 0;
+      position:sticky;
+      top:0;
+      z-index:10;
+      box-shadow:0 12px 34px rgba(0,0,0,.18);
+    }
+    .detail-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:14px;
+    }
+    .back-btn{
+      color:#fff;
+      text-decoration:none;
+      opacity:.9;
+      letter-spacing:.06em;
+      cursor:pointer;
+      background:transparent;
+      border:none;
+      font-size:14px;
+      padding:0;
+    }
+    .back-btn:hover{ opacity:1; }
+
+    .detail-hero{ padding:46px 0 24px 0; }
+    .detail-kicker{ 
+      font-size:11px; 
+      letter-spacing:.35em; 
+      font-weight:500; 
+      opacity:.65; 
+      margin:0 0 12px 0;
+      color:var(--muted);
+    }
+    .detail-title{ 
+      font-size:34px; 
+      font-weight:500; 
+      letter-spacing:.06em; 
+      margin:0 0 12px 0; 
+      line-height:1.25;
+      color:var(--text);
+    }
+    .detail-desc{ 
+      color:#4b5565; 
+      font-size:15px; 
+      line-height:1.95; 
+      margin:0;
+      max-width:720px;
+    }
+
+    .detail-card{ 
+      background:var(--card); 
+      border-radius:20px; 
+      box-shadow:var(--shadow); 
+      overflow:hidden; 
+      margin:0 0 46px 0;
+    }
+    .detail-image{ 
+      width:100%;
+      aspect-ratio:16/9;
+      overflow:hidden;
+    }
+    .detail-image img{ 
+      width:100%; 
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .detail-content{ padding:26px; }
+    .detail-tags{ 
+      display:flex; 
+      gap:10px; 
+      flex-wrap:wrap; 
+      margin:0 0 20px 0; 
+      padding:0; 
+      list-style:none; 
+    }
+    .detail-tags li{ 
+      font-size:12px; 
+      letter-spacing:.06em; 
+      padding:6px 10px; 
+      border-radius:999px; 
+      background:#f2f4f7; 
+      color:#475467; 
+      border:1px solid #eef0f3; 
+      font-weight:500;
+    }
+
+    /* 卡片点击提示 */
+    .series-card{ cursor:pointer; }
+    .series-card:hover .series-media::after{
+      content:"查看详情";
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      background:rgba(0,0,0,.7);
+      color:#fff;
+      padding:12px 24px;
+      border-radius:999px;
+      font-size:14px;
+      letter-spacing:.06em;
+      opacity:0;
+      transition:opacity 0.3s ease;
+      pointer-events:none;
+    }
+    .series-card:hover .series-media::after{ opacity:1; }
+
   </style>
 <base target="_blank">
 </head>
@@ -1058,5 +1191,145 @@
       // 地图不自动加载：请点击「加载 / 刷新嵌入地图」按钮
     });
   </script>
+
+  <!-- 产品详情展开视图（方案2：直接展示） -->
+  <section class="series-detail" id="seriesDetail">
+    <div class="detail-header">
+      <div class="wrap detail-top">
+        <button class="back-btn" onclick="closeDetail()">
+          ← <span data-lang="zh">返回产品图鉴</span><span data-lang="en">Back to Lookbook</span><span data-lang="jp">ルックブックへ戻る</span>
+        </button>
+        <div class="lang-switch">
+          <button type="button" onclick="setLang('zh')">中文</button>
+          <button type="button" onclick="setLang('en')">EN</button>
+          <button type="button" onclick="setLang('jp')">日本語</button>
+        </div>
+      </div>
+    </div>
+
+    <main class="wrap">
+      <div class="detail-hero">
+        <p class="detail-kicker">LOOKBOOK / SERIES</p>
+        <h1 class="detail-title" id="detailTitle">花式纱线创新研发｜系列专题</h1>
+        <p class="detail-desc" id="detailDesc">围绕结构、风合与视觉纹理进行差异化开发；支持从概念打样到量产落地的材料方案输出。</p>
+      </div>
+
+      <div class="detail-card">
+        <div class="detail-image">
+          <img id="detailImage" alt="topic image" loading="lazy">
+        </div>
+        <div class="detail-content">
+          <ul class="detail-tags" id="detailTags"></ul>
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <script>
+    // 产品详情数据（从 series.html 迁移过来）
+    const SERIES_DATA = {
+      fancy: {
+        image: "assets/brand/series_tile_01.png",
+        tags: ["R&D","Texture","Sampling"],
+        title: {
+          zh: "花式纱线创新研发｜系列专题",
+          en: "Fancy Yarn Development｜Series Topic",
+          jp: "ファンシーヤーン開発｜特集"
+        },
+        desc: {
+          zh: "围绕结构、风合与视觉纹理进行差异化开发；支持从概念打样到量产落地的材料方案输出。",
+          en: "Differentiated development across structure, hand-feel, and visual texture—supporting sampling to scalable production.",
+          jp: "構造・風合い・視覚的テクスチャーを軸に、コンセプト〜量産まで落とし込める素材提案。"
+        }
+      },
+      supply: {
+        image: "assets/brand/series_tile_02.png",
+        tags: ["Supply","Traceable","PM"],
+        title: {
+          zh: "高端品牌供货与协同｜系列专题",
+          en: "Premium Brand Supply｜Series Topic",
+          jp: "高級ブランド供給｜特集"
+        },
+        desc: {
+          zh: "以稳定交付、透明沟通与可追溯管理为基础，提升跨团队协作效率与项目执行确定性。",
+          en: "Stable delivery, transparent communication, and traceable management for reliable project execution.",
+          jp: "安定納品・透明なコミュニケーション・トレーサブル管理で、協業効率と実行確度を高めます。"
+        }
+      },
+      bespoke: {
+        image: "assets/brand/series_tile_03.png",
+        tags: ["Bespoke","Spec","Color"],
+        title: {
+          zh: "特殊规格定制｜系列专题",
+          en: "Bespoke Specifications｜Series Topic",
+          jp: "特殊仕様カスタム｜特集"
+        },
+        desc: {
+          zh: "支数、成分、捻度、染色与结构等要素精细化对接，支持从打样到量产的一体化协同。",
+          en: "Tailored coordination on counts, blends, twist, dyeing, and structure—from sampling to bulk production.",
+          jp: "番手・混率・撚り・染色・構造などを精緻に調整し、サンプル〜量産まで一貫対応。"
+        }
+      },
+      innovation: {
+        image: "assets/brand/series_tile_04.png",
+        tags: ["Co-create","Design","Network"],
+        title: {
+          zh: "创新研发与伙伴合作｜系列专题",
+          en: "Innovation & Partnership｜Series Topic",
+          jp: "共創とパートナーシップ｜特集"
+        },
+        desc: {
+          zh: "联合设计师、院校与合作伙伴推进创意开发与落地，以稳定供给支持持续创新。",
+          en: "Co-create with designers and institutes to turn ideas into scalable products—backed by stable supply.",
+          jp: "デザイナーや教育機関と共創し、アイデアを量産可能な形へ。安定供給で継続的な革新を支えます。"
+        }
+      }
+    };
+
+    // 打开详情
+    function openDetail(topicKey){
+      const data = SERIES_DATA[topicKey];
+      if(!data) return;
+
+      const lang = localStorage.getItem("siteLang") || "zh";
+
+      // 填充内容
+      document.getElementById("detailTitle").textContent = data.title[lang] || data.title.zh;
+      document.getElementById("detailDesc").textContent = data.desc[lang] || data.desc.zh;
+      document.getElementById("detailImage").src = data.image;
+
+      // 填充标签
+      const tagsContainer = document.getElementById("detailTags");
+      tagsContainer.innerHTML = "";
+      data.tags.forEach(function(tag){
+        const li = document.createElement("li");
+        li.textContent = tag;
+        tagsContainer.appendChild(li);
+      });
+
+      // 显示详情视图
+      document.getElementById("seriesDetail").classList.add("active");
+      document.body.style.overflow = "hidden"; // 禁止背景滚动
+      window.scrollTo(0,0);
+    }
+
+    // 关闭详情
+    function closeDetail(){
+      document.getElementById("seriesDetail").classList.remove("active");
+      document.body.style.overflow = ""; // 恢复滚动
+    }
+
+    // 为卡片添加点击事件
+    document.addEventListener("DOMContentLoaded", function(){
+      // 卡片点击绑定
+      document.querySelectorAll(".series-card").forEach(function(card, index){
+        const topics = ["fancy", "supply", "bespoke", "innovation"];
+        card.addEventListener("click", function(){
+          openDetail(topics[index]);
+        });
+      });
+    });
+  </script>
+
 </body>
 </html>
