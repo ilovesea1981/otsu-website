@@ -6,41 +6,126 @@
 <title>上海欧津纺织服装有限公司｜Otsu Yarn</title>
 
 <style>
+:root{
+  --bg:#f6f7f9;
+  --card:#ffffff;
+  --text:#111;
+  --muted:#666;
+  --brand:#0b57d0;
+  --shadow:0 4px 20px rgba(0,0,0,.06);
+  --radius:16px;
+}
+
+*{box-sizing:border-box}
+
 body{
   margin:0;
   font-family:Arial,Helvetica,sans-serif;
-  background:#f6f7f9;
-  color:#111;
+  background:var(--bg);
+  color:var(--text);
   line-height:1.7;
 }
+
+.wrap{
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 20px;
+}
+
 header{
   background:#111;
   color:#fff;
-  padding:30px 20px;
+  padding:40px 0;
 }
-h1{margin:0}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+.brand img{
+  height:60px;
+  background:#fff;
+  padding:6px 12px;
+  border-radius:12px;
+}
+
+h1{margin:0;font-size:24px}
+
+.sub{
+  opacity:.85;
+  margin-top:6px;
+  font-size:14px;
+}
+
+nav{
+  margin-top:18px;
+}
+
 nav a{
   color:#fff;
-  margin-right:15px;
+  margin-right:20px;
   text-decoration:none;
-}
-section{
-  background:#fff;
-  margin:20px;
-  padding:20px;
-  border-radius:12px;
-}
-footer{
-  text-align:center;
-  padding:20px;
   font-size:14px;
-  color:#666;
+  opacity:.9;
 }
+
+nav a:hover{opacity:1}
+
+section{
+  margin:40px 0;
+}
+
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:30px;
+}
+
+h2{
+  margin-top:0;
+  font-size:20px;
+}
+
+.kpi{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:15px;
+}
+
+.kpi span{
+  background:#eef3ff;
+  color:var(--brand);
+  padding:8px 14px;
+  border-radius:999px;
+  font-size:13px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+}
+
+@media(max-width:900px){
+  .grid{grid-template-columns:1fr}
+}
+
 iframe{
   width:100%;
-  height:320px;
+  height:360px;
   border:0;
-  border-radius:12px;
+  border-radius:var(--radius);
+}
+
+footer{
+  text-align:center;
+  padding:40px 0;
+  color:var(--muted);
+  font-size:14px;
 }
 </style>
 </head>
@@ -48,43 +133,55 @@ iframe{
 <body>
 
 <header>
-  <h1>上海欧津纺织服装有限公司</h1>
-  <div>Otsu Yarn｜高品质纱线开发与供应｜支持特殊规格定制</div>
-  <nav>
-    <a href="#about">公司简介</a>
-    <a href="#services">产品与服务</a>
-    <a href="#address">公司地址</a>
-    <a href="#contact">联系方式</a>
-  </nav>
+  <div class="wrap">
+    <div class="brand">
+      <img src="LOGO.png" alt="OTSU">
+      <div>
+        <h1>上海欧津纺织服装有限公司</h1>
+        <div class="sub">Otsu Yarn｜高品质纱线开发与供应｜支持特殊规格定制</div>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#about">公司简介</a>
+      <a href="#services">产品与服务</a>
+      <a href="#address">公司地址</a>
+      <a href="#contact">联系方式</a>
+    </nav>
+  </div>
 </header>
 
-<section id="about">
+<div class="wrap">
+
+<section class="card">
+  <h2>主营方向</h2>
+  <div class="kpi">
+    <span>纱线现货供应</span>
+    <span>订单生产对接</span>
+    <span>特殊规格定制</span>
+    <span>中/英/日多语对接</span>
+  </div>
+</section>
+
+<section id="about" class="card">
   <h2>公司简介</h2>
   <p>
-  上海欧津纺织服装有限公司成立于2005年。主要经营纺织原料销售、开发、研究，在业内受到一致好评。
-  主要开发各类高品质纱线（半精纺、精纺、花式纱、粗纺、特种染色加工）等，
-  也接受客户定制各种特殊规格纱线。
+  上海欧津纺织服装有限公司成立于2005年，
+  专注高品质纱线（半精纺、精纺、花式纱、粗纺、特种染色加工）
+  的开发与供应，并支持各类特殊规格定制。
   </p>
 </section>
 
-<section id="services">
-  <h2>产品与服务</h2>
-  <ul>
-    <li>纱线现货供应</li>
-    <li>订单生产对接</li>
-    <li>特殊规格定制</li>
-    <li>中/英/日多语对接</li>
-  </ul>
-</section>
-
-<section id="address">
+<section id="address" class="card">
   <h2>上海市闵行区中春路8633弄万科七宝国际41号26幢618室</h2>
-  <iframe
-  src="https://map.baidu.com/poi/%E4%B8%8A%E6%B5%B7%E6%AC%A7%E6%B4%A5%E7%BA%BA%E7%BB%87%E6%9C%8D%E8%A3%85%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/@13508157.795,3630799.26,19z?uid=911c35b161b15dd87adbd238&ugc_type=3&ugc_ver=1&device_ratio=2&compat=1&sn_xy=13520698,3642056&en_uid=911c35b161b15dd87adbd238&pcevaname=pc4.1&querytype=detailConInfo&da_src=shareurl>
+  <p>上海欧津纺织服装有限公司（百度地图定位）</p>
+   <iframe
+    src="https://api.map.baidu.com/marker?location=31.243571,121.457175&title=%E4%B8%8A%E6%B5%B7%E6%AC%A7%E6%B4%A5%E7%BA%BA%E7%BB%87%E6%9C%8D%E8%A3%85%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&content=%E4%B8%8A%E6%B5%B7%E5%B8%82%E9%97%B5%E8%A1%8C%E5%8C%BA%E4%B8%AD%E6%98%A5%E8%B7%AF8633%E5%BC%84%E4%B8%87%E7%A7%91%E4%B8%83%E5%AE%9D%E5%9B%BD%E9%99%8541%E5%8F%B726%E5%B9%A2618%E5%AE%A4&output=html"
+    loading="lazy">
   </iframe>
 </section>
 
-<section id="contact">
+<section id="contact" class="card">
   <h2>联系方式</h2>
   <p>
   业务咨询<br>
@@ -93,6 +190,8 @@ iframe{
   请说明来意，并留下联系方式，谢谢！
   </p>
 </section>
+
+</div>
 
 <footer>
 © 2026 上海欧津纺织服装有限公司
