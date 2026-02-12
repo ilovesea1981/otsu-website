@@ -1,130 +1,134 @@
-<!DOCTYPE html> <html lang="zh-CN"> <head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <title>上海欧津纺织服装有限公司｜OTSU Yan</title> <meta name="description" content="上海欧津纺织服装有限公司（OTSU Yan）专注高品质纱线开发与供应，支持特殊规格定制，中/英/日多语对接。" /> <style> :root{ --bg:#eef2f6; --card:#ffffff; --text:#111; --muted:#667085; --line:#e7e7e7; --nav1:#0f2f4f; --nav2:#163e6b; --nav3:#1d4f86; --shadow:0 10px 30px rgba(0,0,0,.06); --radius:16px; } *{box-sizing:border-box} html{scroll-behavior:smooth} body{ margin:0; font-family:"Noto Sans SC","Noto Sans JP",Arial,Helvetica,sans-serif; background:var(--bg); color:var(--text); line-height:1.8; } a{color:inherit;text-decoration:none} .wrap{ max-width:1100px; margin:0 auto; padding:0 20px; } header{ background:linear-gradient(135deg,var(--nav1) 0%,var(--nav2) 60%,var(--nav3) 100%); color:#fff; position:sticky; top:0; z-index:10; box-shadow:0 10px 30px rgba(0,0,0,.18); } .topbar{ display:flex; align-items:center; justify-content:space-between; gap:18px; padding:12px 0; flex-wrap:wrap; } .brand{ display:flex; align-items:center; gap:14px; min-width:280px; } .brand img{ height:72px; background:#fff; padding:10px 16px; border-radius:12px; box-shadow:0 8px 22px rgba(0,0,0,.15); } .brand-title{ font-size:16px; font-weight:700; letter-spacing:.06em; margin:0; } .brand-sub{ font-size:12px; opacity:.88; letter-spacing:.06em; margin-top:2px; } nav{ display:flex; gap:18px; flex-wrap:wrap; align-items:center; } nav a{ font-size:13px; opacity:.86; position:relative; padding:6px 0; letter-spacing:.04em; } nav a:hover{opacity:1} nav a::after{ content:""; position:absolute; left:0; bottom:0; width:0%; height:2px; background:#fff; transition:.25s; } nav a:hover::after{width:100%} /* ===== Hero：更清晰背景 + 轻微视差 + 淡入动效 ===== */ .hero{ position:relative; overflow:hidden; padding:76px 0 58px 0; background: linear-gradient(to bottom, rgba(255,255,255,.68) 0%, rgba(255,255,255,.80) 60%, rgba(255,255,255,.93) 100%), url('assets/flower.jpeg'); background-size:cover; background-position:center; background-attachment:fixed; } @media (max-width: 900px){ .hero{ background-attachment:scroll; } } .hero-inner{ max-width:820px; padding:0 2px; } .fade-up{ opacity:0; transform:translateY(14px); animation:fadeUp .95s ease forwards; } .d1{animation-delay:.05s} .d2{animation-delay:.18s} .d3{animation-delay:.30s} .d4{animation-delay:.42s} @keyframes fadeUp{ to{ opacity:1; transform:translateY(0); } } .hero-kicker{ font-size:12px; letter-spacing:.28em; color:#6b7280; margin-bottom:14px; } .hero-title{ font-size:46px; font-weight:650; letter-spacing:.08em; margin:0 0 14px 0; color:#111; line-height:1.15; } .hero-desc{ font-size:14px; color:#5b6472; margin:0 0 18px 0; line-height:1.95; max-width:760px; } /* KPI 玻璃质感 */ .kpi{ display:flex; gap:12px; flex-wrap:wrap; margin-top:10px; } .kpi span{ background:rgba(255,255,255,.46); border:1px solid rgba(255,255,255,.55); box-shadow:0 10px 26px rgba(0,0,0,.08); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); padding:9px 14px; border-radius:999px; font-size:13px; color:#1d2a3a; transition:transform .18s ease, box-shadow .18s ease, background .18s ease; will-change:transform; } .kpi span:hover{ transform:translateY(-1px); box-shadow:0 14px 30px rgba(0,0,0,.10); background:rgba(255,255,255,.58); } main{padding:22px 0 10px 0} .card{ background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:30px; margin:18px 0; } h2{ margin:0 0 12px 0; font-size:18px; letter-spacing:.10em; } .muted{color:var(--muted)} .list{ margin:0; padding-left:18px; } .list li{margin:8px 0} .hr{ height:1px; background:var(--line); margin:20px 0; } .brandblock{ background:#f6f6f4; border-radius:var(--radius); padding:30px; box-shadow:var(--shadow); margin:18px 0; overflow:hidden; } .brandblock-top{ display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; align-items:flex-start; } .brandblock-left{ flex:1; min-width:280px; } .brandblock-kicker{ font-size:12px; letter-spacing:.28em; color:#6b7280; margin-bottom:10px; } .brandblock-title{ font-size:30px; font-weight:650; letter-spacing:.10em; margin:0 0 12px 0; } .brandblock-desc{ font-size:14px; color:#5f6672; line-height:1.9; margin:0; } .brandblock-points{ display:flex; gap:22px; flex-wrap:wrap; margin-top:22px; } .point{ min-width:220px; flex:1; } .point h3{ font-size:12px; letter-spacing:.22em; font-weight:700; margin:0 0 8px 0; color:#111; } .point p{ margin:0; font-size:13px; color:#5f6672; line-height:1.9; } /* ===== 品牌视觉：四宫格（大品牌风格） ===== */ .visual-desc{ margin:0 0 16px 0; color:#5b6472; line-height:1.9; } .tiles{ display:grid; grid-template-columns:repeat(2, 1fr); gap:14px; margin-top:12px; } @media (max-width: 860px){ .tiles{ grid-template-columns:1fr; } } .tile{ position:relative; overflow:hidden; border-radius:16px; background:#0f172a; box-shadow:0 14px 34px rgba(0,0,0,.12); transform:translateY(0); transition:transform .22s ease, box-shadow .22s ease; } .tile:hover{ transform:translateY(-3px); box-shadow:0 18px 42px rgba(0,0,0,.16); } .tile img{ display:block; width:100%; height:auto; } .tile-note{ position:absolute; left:14px; bottom:12px; font-size:12px; color:rgba(255,255,255,.86); letter-spacing:.08em; text-shadow:0 10px 18px rgba(0,0,0,.35); pointer-events:none; } .social-qr{ width:100%; max-width:860px; display:block; margin:14px auto 0; border-radius:14px; box-shadow:0 10px 28px rgba(0,0,0,.08); } .map-shell{ background:#fff; border:1px solid #eef0f3; border-radius:14px; padding:18px; box-shadow:0 10px 26px rgba(0,0,0,.05); text-align:center; } .map-hint{ font-size:13px; color:#6b7280; line-height:1.9; margin:0 0 12px 0; } .map-btn{ display:inline-block; border:1px solid #111; padding:10px 18px; border-radius:999px; font-size:13px; letter-spacing:.06em; cursor:pointer; background:#111; color:#fff; } .map-btn:hover{opacity:.92} #mapFrame{ width:100%; height:360px; border:0; border-radius:14px; display:none; margin-top:14px; } footer{ background:#f6f6f4; padding:52px 0 44px 0; margin-top:30px; text-align:center; color:#6b7280; font-size:13px; } .footer-title{ font-size:12px; letter-spacing:.28em; color:#7b8392; margin-bottom:12px; } .footer-address{ font-size:13px; color:#6b7280; line-height:1.9; margin-bottom:18px; } .footer-copy{ font-size:12px; color:#9aa1ac; letter-spacing:.06em; } </style> </head> <body> <header> <div class="wrap topbar"> <div class="brand"> <img src="LOGO.png" alt="OTSU Yan"> <div> <div class="brand-title">上海欧津纺织服装有限公司</div> <div class="brand-sub">OTSU Yan｜Material · Supply · Development</div> </div> </div>
+<!DOCTYPE html> <html lang="zh-CN"> <head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <title>上海欧津纺织服装有限公司｜OTSU Yan</title> <meta name="description" content="上海欧津纺织服装有限公司（OTSU Yan）专注高品质纱线开发与供应，支持特殊规格定制，中/英/日多语对接。" /> <style> :root{ --bg:#eef2f6; --text:#0b1220; --muted:#667085; --line:#e7e7e7; --nav1:#0f2f4f; --nav2:#163e6b; --nav3:#1d4f86; --dark:#0f172a; --dark2:#0b1220; --card:#ffffff; --shadow:0 14px 40px rgba(0,0,0,.10); --shadow2:0 10px 30px rgba(0,0,0,.07); --radius:18px; } *{box-sizing:border-box} html{scroll-behavior:smooth} body{ margin:0; font-family:"Noto Sans SC","Noto Sans JP",Arial,Helvetica,sans-serif; background:var(--bg); color:var(--text); line-height:1.85; } a{color:inherit;text-decoration:none} img{max-width:100%;height:auto} .wrap{ max-width:1120px; margin:0 auto; padding:0 20px; } .narrow{ max-width:820px; } header{ background:linear-gradient(135deg,var(--nav1) 0%,var(--nav2) 60%,var(--nav3) 100%); color:#fff; position:sticky; top:0; z-index:10; box-shadow:0 12px 34px rgba(0,0,0,.18); } .topbar{ display:flex; align-items:center; justify-content:space-between; gap:18px; padding:12px 0; flex-wrap:wrap; } .brand{ display:flex; align-items:center; gap:14px; min-width:280px; } .brand img{ height:72px; background:#fff; padding:10px 16px; border-radius:14px; box-shadow:0 10px 26px rgba(0,0,0,.18); } .brand-title{ font-size:16px; font-weight:800; letter-spacing:.06em; margin:0; } .brand-sub{ font-size:12px; opacity:.9; letter-spacing:.06em; margin-top:2px; } nav{ display:flex; gap:18px; flex-wrap:wrap; align-items:center; } nav a{ font-size:13px; opacity:.86; position:relative; padding:6px 0; letter-spacing:.04em; white-space:nowrap; } nav a:hover{opacity:1} nav a::after{ content:""; position:absolute; left:0; bottom:0; width:0%; height:2px; background:#fff; transition:.25s; } nav a:hover::after{width:100%} /* ===== 通用 Section ===== */ .section{ padding:92px 0; } .section-light{ background:#f6f8fb; } .section-white{ background:#fff; } .section-dark{ background:linear-gradient(180deg,var(--dark) 0%, var(--dark2) 100%); color:#fff; } .kicker{ font-size:12px; letter-spacing:.28em; opacity:.75; margin:0 0 12px 0; } .title{ font-size:34px; letter-spacing:.08em; margin:0 0 18px 0; line-height:1.25; } .title-light{ font-size:34px; letter-spacing:.08em; margin:0 0 18px 0; line-height:1.25; color:#fff; } .lead{ font-size:15px; color:#4b5565; margin:0 0 14px 0; line-height:1.95; } .lead-light{ font-size:15px; color:rgba(255,255,255,.90); margin:0 0 14px 0; line-height:1.95; } /* ===== Hero：更清晰背景 + 轻微视差 + 淡入动效 ===== */ .hero{ position:relative; overflow:hidden; padding:86px 0 70px 0; background: linear-gradient(to bottom, rgba(255,255,255,.66) 0%, rgba(255,255,255,.78) 58%, rgba(255,255,255,.93) 100%), url('assets/flower.jpeg'); background-size:cover; background-position:center; background-attachment:fixed; } @media (max-width: 900px){ .hero{ background-attachment:scroll; } } .hero-inner{ max-width:900px; } .fade-up{ opacity:0; transform:translateY(14px); animation:fadeUp .95s ease forwards; } .d1{animation-delay:.05s} .d2{animation-delay:.18s} .d3{animation-delay:.30s} .d4{animation-delay:.42s} @keyframes fadeUp{ to{opacity:1; transform:translateY(0);} } .hero-kicker{ font-size:12px; letter-spacing:.28em; color:#6b7280; margin:0 0 14px 0; } .hero-title{ font-size:48px; font-weight:750; letter-spacing:.08em; margin:0 0 14px 0; color:#0b1220; line-height:1.12; } .hero-desc{ font-size:14px; color:#4b5565; margin:0 0 18px 0; line-height:1.95; max-width:820px; } /* KPI 玻璃质感 */ .kpi{ display:flex; gap:12px; flex-wrap:wrap; margin-top:10px; } .kpi span{ background:rgba(255,255,255,.46); border:1px solid rgba(255,255,255,.58); box-shadow:0 14px 34px rgba(0,0,0,.10); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); padding:9px 14px; border-radius:999px; font-size:13px; color:#1d2a3a; transition:transform .18s ease, box-shadow .18s ease, background .18s ease; will-change:transform; } .kpi span:hover{ transform:translateY(-1px); box-shadow:0 18px 44px rgba(0,0,0,.13); background:rgba(255,255,255,.58); } /* ===== 数字横条（大牌常用） ===== */ .metrics{ display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; margin-top:26px; } .metric{ flex:1; min-width:190px; padding:18px 18px; border-radius:16px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.10); } .metric-num{ font-size:34px; font-weight:800; letter-spacing:.06em; margin:0; color:#fff; } .metric-label{ margin-top:6px; font-size:13px; color:rgba(255,255,255,.78); letter-spacing:.06em; } /* ===== 列表（轻量） ===== */ .list{ margin:12px 0 0 0; padding-left:18px; } .list li{ margin:8px 0; color:#4b5565; } .list-light li{ color:rgba(255,255,255,.88); } /* ===== 产品图鉴 / 系列专题（微信推文风格） ===== */ .series-grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:16px; margin-top:18px; } @media (max-width: 860px){ .series-grid{ grid-template-columns:1fr; } } .series-card{ display:flex; flex-direction:column; overflow:hidden; border-radius:18px; background:#0b1220; box-shadow:var(--shadow); transform:translateY(0); transition:transform .22s ease, box-shadow .22s ease; } .series-card:hover{ transform:translateY(-3px); box-shadow:0 22px 56px rgba(0,0,0,.18); } .series-media{ position:relative; overflow:hidden; } .series-media img{ display:block; width:100%; height:auto; } .series-badge{ position:absolute; left:14px; top:14px; background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.24); color:#fff; padding:7px 12px; border-radius:999px; font-size:12px; letter-spacing:.10em; backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); } .series-body{ padding:18px 18px 16px 18px; color:#fff; } .series-title{ margin:0 0 8px 0; font-size:16px; letter-spacing:.06em; font-weight:800; } .series-desc{ margin:0 0 12px 0; font-size:13px; line-height:1.85; color:rgba(255,255,255,.84); } .series-tags{ display:flex; gap:8px; flex-wrap:wrap; margin:0 0 14px 0; padding:0; list-style:none; } .series-tags li{ font-size:12px; letter-spacing:.06em; padding:6px 10px; border-radius:999px; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.16); color:rgba(255,255,255,.86); } .series-actions{ display:flex; gap:10px; flex-wrap:wrap; } .btn{ display:inline-block; padding:10px 14px; border-radius:999px; font-size:13px; letter-spacing:.06em; cursor:pointer; border:1px solid rgba(255,255,255,.22); background:rgba(255,255,255,.14); color:#fff; transition:opacity .18s ease, transform .18s ease, background .18s ease; } .btn:hover{ opacity:.95; transform:translateY(-1px); background:rgba(255,255,255,.18); } .btn-ghost{ background:transparent; } .note{ margin-top:14px; font-size:13px; color:#6b7280; line-height:1.9; } /* ===== 能力块（深色三列） ===== */ .cap-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:14px; margin-top:18px; } @media (max-width: 980px){ .cap-grid{ grid-template-columns:1fr; } } .cap{ padding:18px; border-radius:18px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.10); } .cap h3{ margin:0 0 8px 0; font-size:12px; letter-spacing:.22em; font-weight:800; color:#fff; } .cap p{ margin:0; font-size:13px; line-height:1.9; color:rgba(255,255,255,.86); } /* ===== 联系与二维码（白底精致卡） ===== */ .contact-box{ background:#fff; border-radius:20px; box-shadow:var(--shadow2); padding:26px; border:1px solid #eef0f3; } .social-qr{ width:100%; max-width:860px; display:block; margin:14px auto 0; border-radius:16px; box-shadow:0 14px 36px rgba(0,0,0,.10); } /* 地图 */ .map-shell{ background:#fff; border:1px solid #eef0f3; border-radius:16px; padding:18px; box-shadow:0 10px 26px rgba(0,0,0,.05); text-align:center; margin-top:16px; } .map-hint{ font-size:13px; color:#6b7280; line-height:1.9; margin:0 0 12px 0; } .map-btn{ display:inline-block; border:1px solid #111; padding:10px 18px; border-radius:999px; font-size:13px; letter-spacing:.06em; cursor:pointer; background:#111; color:#fff; } .map-btn:hover{opacity:.92} #mapFrame{ width:100%; height:360px; border:0; border-radius:14px; display:none; margin-top:14px; } footer{ background:#0b1220; padding:44px 0 42px 0; color:rgba(255,255,255,.78); text-align:center; margin-top:0; } .footer-title{ font-size:12px; letter-spacing:.28em; opacity:.85; margin-bottom:10px; } .footer-address{ font-size:13px; line-height:1.9; margin-bottom:16px; opacity:.9; } .footer-copy{ font-size:12px; letter-spacing:.06em; opacity:.65; margin-top:18px; } </style> </head> <body> <header> <div class="wrap topbar"> <div class="brand"> <img src="LOGO.png" alt="OTSU Yan"> <div> <div class="brand-title">上海欧津纺织服装有限公司</div> <div class="brand-sub">OTSU Yan｜Material · Supply · Development</div> </div> </div>
   <nav>
     <a href="#about">公司简介</a>
-    <a href="#strength">公司实力</a>
+    <a href="#strength">发展历程</a>
+    <a href="#series">产品图鉴</a>
     <a href="#services">产品与服务</a>
-    <a href="#visual">品牌视觉</a>
     <a href="#expertise">核心能力</a>
     <a href="#network">合作网络</a>
-    <a href="#achievements">代表成果</a>
-    <a href="#brand">OTSU Yan</a>
     <a href="#contact">联系方式</a>
     <a href="#follow">关注我们</a>
     <a href="#address">公司地址</a>
   </nav>
 </div>
-</header> <section class="hero"> <div class="wrap"> <div class="hero-inner"> <div class="hero-kicker fade-up d1">OTSU YAN</div> <h1 class="hero-title fade-up d2">Material · Supply ·<br>Development</h1> <p class="hero-desc fade-up d3"> 面向贸易商、工厂及服装/家纺品牌客户，提供稳定、透明、可追溯的纱线供货体验； 支持现货供应、订单生产与特殊规格定制，并提供中/英/日多语对接，提升协作效率。 </p> <div class="kpi fade-up d4"> <span>纱线现货供应</span> <span>订单生产对接</span> <span>特殊规格定制</span> <span>中/英/日多语对接</span> </div> </div> </div> </section> <main> <div class="wrap">
-  <section id="about" class="card">
-    <h2>公司简介</h2>
-    <p>
-      上海欧津纺织服装有限公司成立于2005年，专注高品质纱线的开发与供应，涵盖半精纺、精纺、花式纱、粗纺及特种染色加工等方向，
-      并支持各类特殊规格定制，为品牌与工厂提供更稳定、更高效的材料与供应链协同。
-    </p>
-  </section>
-
-
-  <section id="strength" class="card">
-    <h2>公司实力与发展历程</h2>
-    <p>
-      自2004年进入纱线行业以来，公司持续深耕花式纱线研发、高端品牌合作与供应链管理领域。
-      2005年创立【上海欧津纺织服装有限公司】，稳定运营至今超过二十年。
-    </p>
-    <p>
-      公司在中高端花式纱线供应链中保持特色定位，具备持续推出行业代表性产品的创新能力；
-      在行业周期波动及疫情等逆周期环境中，仍保持稳健增长，体现出显著的运营韧性与长期稳定性。
-      同时，公司拥有强大的院校技术合作与跨国品牌资源池，以“材料创新 + 稳定供给 + 国际协同”为核心，持续推动产品研发与量产落地。
-    </p>
-  </section>
-
-
-  <section id="services" class="card">
-    <h2>产品与服务</h2>
-    <ul class="list">
-      <li>纱线现货供应：根据库存快速发货</li>
-      <li>订单生产对接：按规格与数量下单生产与交付</li>
-      <li>特殊规格定制：支数、成分、捻度、染色等按需对接</li>
-      <li>多语沟通支持：中/英/日对接，提升协作效率</li>
-    </ul>
-  </section>
-
-
-  <section id="visual" class="card">
-    <h2>品牌视觉</h2>
-    <p class="visual-desc">
-      以更直观的方式呈现 OTSU Yan 的材料开发与供应链能力。以下为代表性能力方向示意，可用于展示开发氛围与高端质感。
-    </p>
-
-
-    <div class="tiles">
-      <div class="tile">
-        <img src="assets/brand/tile-fancy-yarn.png" alt="花式纱线创新研发" loading="lazy">
-        <div class="tile-note">FANCY YARN DEVELOPMENT</div>
+</header> <section class="hero"> <div class="wrap"> <div class="hero-inner"> <div class="hero-kicker fade-up d1">OTSU YAN</div> <h1 class="hero-title fade-up d2">Material · Supply ·<br>Development</h1> <p class="hero-desc fade-up d3"> 面向贸易商、工厂及服装/家纺品牌客户，提供稳定、透明、可追溯的纱线供货体验； 支持现货供应、订单生产与特殊规格定制，并提供中/英/日多语对接，提升协作效率。 </p> <div class="kpi fade-up d4"> <span>纱线现货供应</span> <span>订单生产对接</span> <span>特殊规格定制</span> <span>中/英/日多语对接</span> </div> </div> </div> </section> <section id="about" class="section section-dark"> <div class="wrap narrow"> <p class="kicker">ABOUT OTSU YAN</p> <h2 class="title-light">公司简介</h2> <p class="lead-light"> 上海欧津纺织服装有限公司成立于2005年，专注高品质纱线的开发与供应，覆盖半精纺、精纺、花式纱、粗纺及特种染色加工等方向， 并支持各类特殊规格定制，为品牌与工厂提供稳定、透明且具协同效率的供应链体系。 </p>
+  <div class="metrics">
+    <div class="metric">
+      <div class="metric-num">20+</div>
+      <div class="metric-label">年行业深耕</div>
+    </div>
+    <div class="metric">
+      <div class="metric-num">稳定</div>
+      <div class="metric-label">供应与交付体系</div>
+    </div>
+    <div class="metric">
+      <div class="metric-num">多语</div>
+      <div class="metric-label">中/英/日协同对接</div>
+    </div>
+  </div>
+</div>
+</section> <section id="strength" class="section section-light"> <div class="wrap narrow"> <p class="kicker">EXPERIENCE & STABILITY</p> <h2 class="title">公司实力与发展历程</h2> <p class="lead"> 自2004年进入纱线行业以来，公司持续深耕花式纱线研发、高端品牌合作与供应链管理领域。 2005年创立【上海欧津纺织服装有限公司】，稳定运营至今超过二十年。 </p> <p class="lead"> 公司在中高端花式纱线供应链中保持特色定位，具备持续输出代表性产品的创新能力； 在行业周期波动及疫情等逆周期环境中，仍保持稳健增长，体现出显著的经营韧性与长期稳定性。 </p> <p class="lead" style="margin-bottom:0;"> 依托院校技术合作与跨国资源网络，公司以“材料创新 + 稳定供给 + 国际协同”为核心方向， 持续推动产品研发与量产落地。 </p> </div> </section> <section id="series" class="section section-white"> <div class="wrap"> <div class="narrow"> <p class="kicker">LOOKBOOK / SERIES</p> <h2 class="title">产品图鉴与系列专题</h2> <p class="lead"> 该板块以“季度/系列”形式更新，呈现代表性纱线开发主题与灵感方向（类似微信公众号推文的专题呈现方式）。 你只需替换图片与文案即可完成每季更新。 </p> </div>
+  <div class="series-grid">
+    <div class="series-card">
+      <div class="series-media">
+        <img src="assets/brand/tile-fancy-yarn.png" alt="花式纱线创新研发专题" loading="lazy">
+        <div class="series-badge">SEASON / TOPIC</div>
       </div>
-
-
-      <div class="tile">
-        <img src="assets/brand/tile-high-end-supply.png" alt="高端品牌面料供应" loading="lazy">
-        <div class="tile-note">HIGH-END BRAND SUPPLY</div>
-      </div>
-
-
-      <div class="tile">
-        <img src="assets/brand/tile-bespoke.png" alt="特殊规格定制" loading="lazy">
-        <div class="tile-note">BESPOKE CUSTOMIZATION</div>
-      </div>
-
-
-      <div class="tile">
-        <img src="assets/brand/tile-innovation.png" alt="创新研发与伙伴合作" loading="lazy">
-        <div class="tile-note">INNOVATION & PARTNERSHIP</div>
+      <div class="series-body">
+        <div class="series-title">花式纱线创新研发</div>
+        <div class="series-desc">围绕结构、手感与视觉效果的差异化开发方向，为品牌开发与量产提供可落地的材料方案。</div>
+        <ul class="series-tags">
+          <li>Fancy Yarn</li><li>Texture</li><li>R&amp;D</li>
+        </ul>
+        <div class="series-actions">
+          <a class="btn" href="#contact">获取系列资料</a>
+          <a class="btn btn-ghost" href="#follow">关注更新</a>
+        </div>
       </div>
     </div>
 
 
-    <p class="muted" style="margin-top:14px;">
-      如需将该板块替换为“产品图鉴/系列专题（类似微信公众号推文风格）”，可按季度/系列更新图片与文案。
+    <div class="series-card">
+      <div class="series-media">
+        <img src="assets/brand/tile-high-end-supply.png" alt="高端品牌供货与协同专题" loading="lazy">
+        <div class="series-badge">SEASON / TOPIC</div>
+      </div>
+      <div class="series-body">
+        <div class="series-title">高端品牌供货与协同</div>
+        <div class="series-desc">面向贸易商与品牌客户，提供稳定交付、透明沟通与可追溯管理，提升跨团队协作效率。</div>
+        <ul class="series-tags">
+          <li>Supply</li><li>Stability</li><li>Project</li>
+        </ul>
+        <div class="series-actions">
+          <a class="btn" href="#contact">咨询合作方式</a>
+          <a class="btn btn-ghost" href="#services">查看服务</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="series-card">
+      <div class="series-media">
+        <img src="assets/brand/tile-bespoke.png" alt="特殊规格定制专题" loading="lazy">
+        <div class="series-badge">SEASON / TOPIC</div>
+      </div>
+      <div class="series-body">
+        <div class="series-title">特殊规格定制</div>
+        <div class="series-desc">支数、成分、捻度、染色与结构等需求精细化对接，支持从打样到量产的全链路协作。</div>
+        <ul class="series-tags">
+          <li>Bespoke</li><li>Spec</li><li>Color</li>
+        </ul>
+        <div class="series-actions">
+          <a class="btn" href="#contact">提交需求</a>
+          <a class="btn btn-ghost" href="#expertise">了解能力</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="series-card">
+      <div class="series-media">
+        <img src="assets/brand/tile-innovation.png" alt="创新研发与伙伴合作专题" loading="lazy">
+        <div class="series-badge">SEASON / TOPIC</div>
+      </div>
+      <div class="series-body">
+        <div class="series-title">创新研发与伙伴合作</div>
+        <div class="series-desc">联合设计师、院校与合作方推进创意开发与产品落地，以稳定供给支持持续创新。</div>
+        <ul class="series-tags">
+          <li>Co-creation</li><li>Design</li><li>Partner</li>
+        </ul>
+        <div class="series-actions">
+          <a class="btn" href="#contact">发起合作</a>
+          <a class="btn btn-ghost" href="#network">合作网络</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="wrap narrow">
+    <p class="note">
+      更新建议：每季度新增 1–2 个专题，保持“系列化”内容沉淀；未来可将按钮链接到你的公众号文章链接（如需我帮你做“专题详情页”也可以继续扩展）。
     </p>
-  </section>
-
-
-  <section id="expertise" class="card">
-    <h2>核心能力</h2>
-    <ul class="list">
-      <li>花式纱线研发与技术导向，持续推动差异化材料创新</li>
-      <li>国际品牌商务合作与项目管理能力</li>
-      <li>中日 / 中欧美品牌客户沟通与协调</li>
-      <li>与国内外优秀设计师合作进行纱线、花型布片及成衣创意开发</li>
-      <li>校企合作体系搭建与资源整合（上海东华大学 / 北京服装学院）</li>
-    </ul>
-  </section>
-
-
-  <section id="network" class="card">
-    <h2>合作网络</h2>
-    <p>
-      公司长期服务日本、欧洲及中国一线时尚品牌客户，在中高端花式纱线供应链体系中保持稳定合作关系。
-    </p>
-    <ul class="list">
-      <li>日本大型成衣集团及综合商社</li>
-      <li>欧洲高端设计师品牌与时装品牌</li>
-      <li>中国一线时尚品牌与上市服装集团</li>
-      <li>国内外独立设计师与创意工作室</li>
-    </ul>
-    <p class="muted">
-      多数客户保持长期合作关系，覆盖产品开发、材料创新及稳定供货体系。
-    </p>
-  </section>
-
-
-  <section id="achievements" class="card">
-    <h2>代表成果与行业影响力</h2>
-    <p>
-      <strong>产品创新：</strong><br>
-      • Milaclce 牛仔纱线（2007）——成为品牌差异化产品供应的重要支撑<br>
-      • 水溶羊毛纱 & 羽毛纱（2015）——长期保持稳定销量，形成代表性花式纱线产品
-    </p>
-    <p>
-</main> <footer id="address"> <div class="wrap"> <div class="footer-title">ADDRESS</div> <div class="footer-address">上海市闵行区中春路8633弄万科七宝国际41号26幢618室</div>
+  </div>
+</div>
+</section> <section id="services" class="section section-dark"> <div class="wrap"> <div class="narrow"> <p class="kicker">SERVICE</p> <h2 class="title-light">产品与服务</h2> <p class="lead-light" style="margin-bottom:10px;"> 以“开发协同 + 稳定交付”为核心，兼顾灵活性与可控性，支持从现货到定制、从打样到量产的多场景需求。 </p> </div>
+  <div class="cap-grid">
+    <div class="cap">
+      <h3>IN-STOCK SUPPLY</h3>
+      <p>纱线现货供应：根据库存快速发货，缩短开发周期。</p>
+    </div>
+    <div class="cap">
+      <h3>ORDER PRODUCTION</h3>
+      <p>订单生产对接：按规格与数量下单生产与交付，流程清晰可控。</p>
+    </div>
+    <div class="cap">
+      <h3>BESPOKE SPECS</h3>
+      <p>特殊规格定制：支数、成分、捻度、染色等需求精细化对接。</p>
+    </div>
+  </div>
+</div>
+</section> <section id="expertise" class="section section-light"> <div class="wrap narrow"> <p class="kicker">EXPERTISE</p> <h2 class="title">核心能力</h2> <ul class="list"> <li>花式纱线研发与技术导向，持续推动差异化材料创新</li> <li>国际品牌商务合作与项目管理能力</li> <li>中日 / 中欧美品牌客户沟通与协调</li> <li>与国内外优秀设计师合作进行纱线、花型布片及成衣创意开发</li> <li>校企合作体系搭建与资源整合（上海东华大学 / 北京服装学院）</li> </ul> </div> </section> <section id="network" class="section section-white"> <div class="wrap narrow"> <p class="kicker">NETWORK</p> <h2 class="title">合作网络</h2> <p class="lead"> 公司长期服务日本、欧洲及中国一线时尚品牌客户，在中高端花式纱线供应链体系中保持稳定合作关系。 </p> <ul class="list"> <li>日本大型成衣集团及综合商社</li> <li>欧洲高端设计师品牌与时装品牌</li> <li>中国一线时尚品牌与上市服装集团</li> <li>国内外独立设计师与创意工作室</li> </ul> <p class="note" style="margin-top:12px;"> 为避免不必要的版权与商标使用争议，本网站不展示第三方品牌名称与标识。如需参考合作案例，可通过邮件/微信获取资料。 </p> </div> </section> <section id="contact" class="section section-light"> <div class="wrap"> <div class="contact-box narrow"> <p class="kicker" style="opacity:1; color:#6b7280;">CONTACT</p> <h2 class="title" style="margin-top:0;">联系方式</h2> <p class="lead" style="margin-bottom:0;"> 业务咨询<br> 邮箱：zyq@otsu1128.com<br> 微信号：15021256895<br> 请说明来意，并留下联系方式，谢谢！ </p> </div> </div> </section> <section id="follow" class="section section-white"> <div class="wrap narrow"> <p class="kicker">FOLLOW</p> <h2 class="title">关注我们</h2> <p class="lead">欢迎关注微信公众号 / 视频号 / 小红书，及时获取新品与动态。</p> <img src="assets/social-qr.jpg" alt="OTSU Yan 官方账号二维码：微信公众号、视频号、小红书" class="social-qr"> </div> </section> <footer id="address"> <div class="wrap"> <div class="footer-title">ADDRESS</div> <div class="footer-address">上海市闵行区中春路8633弄万科七宝国际41号26幢618室</div>
   <div class="map-shell">
     <p class="map-hint">为避免刷新时地图组件抢先加载导致页面跳动，地图默认不自动加载。点击按钮后再显示地图。</p>
     <button class="map-btn" type="button" onclick="loadMap()">点击加载地图</button>
@@ -132,7 +136,6 @@
   </div>
 
 
-  <div class="hr"></div>
   <div class="footer-copy">© 2026 上海欧津纺织服装有限公司</div>
 </div>
 
