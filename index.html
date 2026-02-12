@@ -1,235 +1,1062 @@
-
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OTSU Official</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>上海欧津纺织服装有限公司｜OTSU Yan</title>
+  <link rel="preload" as="image" href="assets/flower.jpeg">
+  <link rel="preload" as="image" href="LOGO.png">
+  <meta name="description" content="上海欧津纺织服装有限公司（OTSU Yan）专注高品质纱线开发与供应，支持特殊规格定制，中/英/日多语对接。" />
 
-<style>
-:root{
-  --dark:#0f0f0f;
-  --card:#151515;
-  --text:#ffffff;
-  --muted:rgba(255,255,255,.65);
-  --border:rgba(255,255,255,.08);
-}
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-body{
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","PingFang SC","Microsoft YaHei",sans-serif;
-  background:#ffffff;
-  color:#111;
-}
+  <style>
+    :root{
+      --bg:#eef2f6;
+      --text:#0b1220;
+      --muted:#667085;
+      --line:#e7e7e7;
 
-/* SECTION COMMON */
-.section{
-  padding:120px 8vw;
-}
+      /* 更克制的深蓝灰品牌色 */
+      --nav1:#0f2433;
+      --nav2:#132e43;
+      --nav3:#1a3c57;
 
-.section-dark{
-  background:var(--dark);
-  color:var(--text);
-}
+      --dark:#0f172a;
+      --dark2:#0b1220;
 
-.eyebrow{
-  font-size:12px;
-  letter-spacing:.28em;
-  text-transform:uppercase;
-  opacity:.55;
-  margin-bottom:18px;
-}
+      --card:#ffffff;
+      --shadow:0 14px 40px rgba(0,0,0,.10);
+      --shadow2:0 10px 30px rgba(0,0,0,.07);
+      --radius:18px;
+    }
 
-.section-title{
-  font-size:32px;
-  font-weight:400;
-  letter-spacing:.06em;
-  margin-bottom:24px;
-}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Inter","Noto Sans SC","Noto Sans JP",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      font-weight:400;
+      letter-spacing:.02em;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.85;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;height:auto}
 
-.section-desc{
-  max-width:620px;
-  font-size:15px;
-  line-height:1.8;
-  color:var(--muted);
-  margin-bottom:80px;
-}
+    .wrap{ max-width:1120px; margin:0 auto; padding:0 20px; }
+    .narrow{ max-width:860px; }
 
-/* GRID */
-.grid-2{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:60px;
-}
+    [data-lang]{ display:none; }
 
-/* CARD */
-.card{
-  display:block;
-  text-decoration:none;
-  color:inherit;
-  background:linear-gradient(180deg,#151515 0%,#101010 100%);
-  border-radius:28px;
-  overflow:hidden;
-  transition:.6s cubic-bezier(.19,1,.22,1);
-  border:1px solid var(--border);
-}
+    header{
+      background:linear-gradient(135deg,var(--nav1) 0%,var(--nav2) 60%,var(--nav3) 100%);
+      color:#fff;
+      position:sticky;
+      top:0;
+      z-index:10;
+      box-shadow:0 12px 34px rgba(0,0,0,.18);
+    }
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      padding:12px 0;
+      flex-wrap:wrap;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width:280px;
+    }
+    .brand img{
+      height:74px;
+      background:#fff;
+      padding:10px 18px;
+      border-radius:14px;
+      box-shadow:0 10px 26px rgba(0,0,0,.18);
+    }
+    .brand-title{
+      font-size:16px;
+      font-weight:600;
+      letter-spacing:.08em;
+      margin:0;
+    }
+    .brand-sub{
+      font-size:12px;
+      opacity:.9;
+      letter-spacing:.10em;
+      margin-top:2px;
+      font-weight:400;
+    }
+    nav{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    nav a{
+      font-size:13px;
+      opacity:.86;
+      position:relative;
+      padding:6px 0;
+      letter-spacing:.08em;
+      white-space:nowrap;
+    }
+    nav a:hover{opacity:1}
+    nav a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:0;
+      width:0%;
+      height:2px;
+      background:#fff;
+      transition:.25s;
+    }
+    nav a:hover::after{width:100%}
 
-.card:hover{
-  transform:translateY(-6px);
-}
+    .lang-switch{ display:flex; gap:10px; align-items:center; }
+    .lang-switch button{
+      background:transparent;
+      border:1px solid rgba(255,255,255,.42);
+      color:#fff;
+      padding:6px 12px;
+      border-radius:999px;
+      font-size:12px;
+      letter-spacing:.06em;
+      cursor:pointer;
+      transition:.2s ease;
+      font-weight:500;
+    }
+    .lang-switch button:hover{ background:rgba(255,255,255,.18); transform:translateY(-1px); }
 
-.card-image{
-  width:100%;
-  aspect-ratio:4/3;
-  overflow:hidden;
-}
+    /* ===== 通用 Section ===== */
+    .section{ padding:92px 0; }
+    .section-light{ background:#f6f8fb; }
+    .section-white{ background:#fff; }
+    .section-dark{
+      background:linear-gradient(180deg,var(--dark) 0%, var(--dark2) 100%);
+      color:#fff;
+    }
 
-.card-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:transform 1.2s ease;
-}
+    .kicker{
+      font-size:11px;
+      letter-spacing:.35em;
+      font-weight:500;
+      opacity:.65;
+      margin:0 0 14px 0;
+    }
+    .title{
+      font-size:36px;
+      font-weight:500;
+      letter-spacing:.06em;
+      margin:0 0 18px 0;
+      line-height:1.25;
+    }
+    .title-light{
+      font-size:36px;
+      font-weight:500;
+      letter-spacing:.06em;
+      margin:0 0 18px 0;
+      line-height:1.25;
+      color:#fff;
+    }
+    .lead{
+      font-size:15px;
+      font-weight:400;
+      letter-spacing:.02em;
+      color:#4b5565;
+      margin:0 0 14px 0;
+      line-height:1.95;
+    }
+    .lead-light{
+      font-size:15px;
+      font-weight:400;
+      letter-spacing:.02em;
+      color:rgba(255,255,255,.90);
+      margin:0 0 14px 0;
+      line-height:1.95;
+    }
 
-.card:hover .card-image img{
-  transform:scale(1.05);
-}
+    
+    /* 减少动效：尊重系统“减少动态效果”设置 */
+    @media (prefers-reduced-motion: reduce){
+      *{ scroll-behavior:auto !important; }
+      .fade-up{ animation:none !important; opacity:1 !important; transform:none !important; }
+      .series-card,.btn,.kpi span,.wx-card{ transition:none !important; transform:none !important; }
+    }
 
-.card-content{
-  padding:40px 42px 48px 42px;
-}
+/* ===== Hero：更高级淡入 + 轻微视差（桌面端） ===== */
+    .hero{
+      position:relative;
+      overflow:hidden;
+      padding:86px 0 70px 0;
+      background:
+        linear-gradient(to bottom, rgba(255,255,255,.66) 0%, rgba(255,255,255,.78) 58%, rgba(255,255,255,.93) 100%),
+        url('assets/flower.jpeg');
+      background-size:cover;
+      background-position:center;
+      background-attachment:fixed;
+    }
+    @media (max-width: 900px){ .hero{ background-attachment:scroll; } }
 
-.card-title{
-  font-size:20px;
-  font-weight:400;
-  line-height:1.6;
-  margin-bottom:20px;
-}
+    .fade-up{
+      opacity:0;
+      transform:translateY(14px);
+      animation:fadeUp .95s ease forwards;
+    }
+    .d1{animation-delay:.05s}
+    .d2{animation-delay:.18s}
+    .d3{animation-delay:.30s}
+    .d4{animation-delay:.42s}
+    @keyframes fadeUp{ to{opacity:1; transform:translateY(0);} }
 
-.card-text{
-  font-size:15px;
-  line-height:1.9;
-  color:var(--muted);
-}
+    .hero-kicker{
+      font-size:11px;
+      letter-spacing:.42em;
+      color:#6b7280;
+      margin:0 0 14px 0;
+      font-weight:500;
+    }
+    .hero-title{
+      font-size:54px;
+      font-weight:500;
+      letter-spacing:.04em;
+      margin:0 0 14px 0;
+      color:#0b1220;
+      line-height:1.1;
+    }
+    .hero-desc{
+      font-size:14px;
+      color:#4b5565;
+      margin:0 0 18px 0;
+      line-height:1.95;
+      max-width:860px;
+    }
 
-/* Responsive */
-@media(max-width:900px){
-  .grid-2{
-    grid-template-columns:1fr;
-    gap:40px;
-  }
-}
-</style>
+    /* KPI 玻璃质感 */
+    .kpi{ display:flex; gap:12px; flex-wrap:wrap; margin-top:10px; }
+    .kpi span{
+      background:rgba(255,255,255,.46);
+      border:1px solid rgba(255,255,255,.58);
+      box-shadow:0 14px 34px rgba(0,0,0,.10);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+      padding:9px 14px;
+      border-radius:999px;
+      font-size:13px;
+      color:#1d2a3a;
+      transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+      will-change:transform;
+      font-weight:500;
+      letter-spacing:.04em;
+    }
+    .kpi span:hover{
+      transform:translateY(-1px);
+      box-shadow:0 18px 44px rgba(0,0,0,.13);
+      background:rgba(255,255,255,.58);
+    }
+
+    /* 暗区三枚指标 */
+    .metrics{ display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; margin-top:26px; }
+    .metric{ flex:1; min-width:190px; padding:18px; border-radius:16px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.10); }
+    .metric-num{ font-size:34px; font-weight:600; letter-spacing:.06em; margin:0; color:#fff; }
+    .metric-label{ margin-top:6px; font-size:13px; color:rgba(255,255,255,.78); letter-spacing:.06em; }
+
+    .list{ margin:12px 0 0 0; padding-left:18px; }
+    .list li{ margin:8px 0; color:#4b5565; }
+    .note{ margin-top:14px; font-size:13px; color:#6b7280; line-height:1.9; }
+
+    /* ===== 产品图鉴 / 系列专题（像公众号推文的“封面卡”） ===== */
+    .series-grid{ 
+      display:grid; 
+      grid-template-columns:repeat(2, 1fr); 
+      gap:16px; 
+      margin-top:18px; 
+      align-items:stretch;
+    }
+    @media (max-width: 860px){ .series-grid{ grid-template-columns:1fr; } }
+
+    .series-card{
+      display:flex;
+      flex-direction:column;
+      overflow:hidden;
+      border-radius:18px;
+      background:#0b1220;
+      box-shadow:var(--shadow);
+      transform:translateY(0);
+      transition:transform .22s ease, box-shadow .22s ease;
+      height:100%;
+    }
+    .series-card:hover{ transform:translateY(-3px); box-shadow:0 22px 56px rgba(0,0,0,.18); }
+
+    .series-media{ 
+      position:relative; 
+      overflow:hidden; 
+      aspect-ratio:16/10;
+      flex-shrink:0;
+    }
+    .series-media img{ 
+      display:block; 
+      width:100%; 
+      height:100%;
+      object-fit:cover;
+    }
+    .series-badge{
+      position:absolute;
+      left:14px;
+      top:14px;
+      background:rgba(255,255,255,.18);
+      border:1px solid rgba(255,255,255,.24);
+      color:#fff;
+      padding:7px 12px;
+      border-radius:999px;
+      font-size:12px;
+      letter-spacing:.10em;
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+      font-weight:500;
+    }
+    .series-body{ 
+      padding:18px 18px 16px 18px; 
+      color:#fff; 
+      flex:1;
+      display:flex;
+      flex-direction:column;
+    }
+    .series-title{ margin:0 0 8px 0; font-size:16px; letter-spacing:.06em; font-weight:600; }
+    .series-desc{ 
+      margin:0 0 12px 0; 
+      font-size:13px; 
+      line-height:1.85; 
+      color:rgba(255,255,255,.84); 
+      flex:1;
+      display:-webkit-box;
+      -webkit-line-clamp:3;
+      -webkit-box-orient:vertical;
+      overflow:hidden;
+      min-height:72px;
+    }
+    .series-tags{ display:flex; gap:8px; flex-wrap:wrap; margin:0 0 14px 0; padding:0; list-style:none; }
+    .series-tags li{
+      font-size:12px;
+      letter-spacing:.06em;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.16);
+      color:rgba(255,255,255,.86);
+      font-weight:500;
+    }
+    .series-actions{ display:flex; gap:10px; flex-wrap:wrap; }
+    .btn{
+      display:inline-block;
+      padding:10px 14px;
+      border-radius:999px;
+      font-size:13px;
+      letter-spacing:.06em;
+      cursor:pointer;
+      border:1px solid rgba(255,255,255,.22);
+      background:rgba(255,255,255,.14);
+      color:#fff;
+      transition:opacity .18s ease, transform .18s ease, background .18s ease;
+      font-weight:500;
+    }
+    .btn:hover{ opacity:.95; transform:translateY(-1px); background:rgba(255,255,255,.18); }
+    .btn-ghost{ background:transparent; }
+
+    /* ===== 核心能力（暗区三列） ===== */
+    .cap-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:14px; margin-top:18px; }
+    @media (max-width: 980px){ .cap-grid{ grid-template-columns:1fr; } }
+    .cap{ padding:18px; border-radius:18px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.10); }
+    .cap h3{ margin:0 0 8px 0; font-size:11px; letter-spacing:.30em; font-weight:600; color:#fff; }
+    .cap p{ margin:0; font-size:13px; line-height:1.9; color:rgba(255,255,255,.86); }
+
+    /* ===== 联系方式（白卡） ===== */
+    .contact-box{ background:#fff; border-radius:20px; box-shadow:var(--shadow2); padding:26px; border:1px solid #eef0f3; }
+    .kv{ display:grid; grid-template-columns:120px 1fr; gap:10px 14px; margin-top:10px; }
+    .kv div{ font-size:14px; color:#344054; }
+    .kv .k{ color:#667085; letter-spacing:.06em; font-size:12px; }
+    @media (max-width: 640px){ .kv{ grid-template-columns:1fr; } }
+
+    /* ===== 公众号文章链接（预览卡） ===== */
+    .wx-grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:16px; margin-top:18px; }
+    @media (max-width: 980px){ .wx-grid{ grid-template-columns:1fr; } }
+    .wx-card{ background:#fff; border-radius:18px; overflow:hidden; border:1px solid #eef0f3; box-shadow:var(--shadow2); }
+    .wx-card img{ display:block; width:100%; height:auto; }
+    .wx-body{ padding:18px; }
+    .wx-title{ margin:0 0 10px 0; font-size:15px; letter-spacing:.04em; font-weight:600; }
+    .wx-excerpt{ margin:0 0 14px 0; font-size:13px; color:#667085; line-height:1.9; }
+    .wx-actions{ display:flex; gap:10px; flex-wrap:wrap; }
+    .wx-btn{
+      display:inline-block;
+      padding:10px 14px;
+      border-radius:999px;
+      font-size:13px;
+      letter-spacing:.06em;
+      border:1px solid #111;
+      background:#111;
+      color:#fff;
+      cursor:pointer;
+    }
+    .wx-btn:hover{ opacity:.92; }
+    .wx-btn-ghost{ background:transparent; color:#111; }
+
+    /* ===== 日系地图卡片（嵌入式 + 备用打开链接） ===== */
+    .office-card{
+      display:flex;
+      gap:40px;
+      align-items:stretch;
+      background:#ffffff;
+      border-radius:20px;
+      padding:40px;
+      box-shadow:0 18px 60px rgba(0,0,0,.10);
+      border:1px solid #eef0f3;
+    }
+    @media (max-width: 980px){ .office-card{ flex-direction:column; padding:26px; gap:18px; } }
+
+    .office-left{ flex:1; min-width:280px; }
+    .office-right{ flex:1; min-width:280px; }
+    .office-label{ font-size:11px; letter-spacing:.35em; color:#667085; margin:0 0 12px 0; }
+    .office-name{ margin:0 0 10px 0; font-size:22px; letter-spacing:.06em; font-weight:600; }
+    .office-addr{ margin:0 0 16px 0; font-size:14px; color:#475467; line-height:1.95; }
+    .office-hint{ margin:0 0 18px 0; font-size:13px; color:#667085; line-height:1.9; }
+    .office-actions{ display:flex; gap:10px; flex-wrap:wrap; }
+    .map-btn{
+      display:inline-block;
+      border:1px solid #111;
+      padding:10px 18px;
+      border-radius:999px;
+      font-size:13px;
+      letter-spacing:.06em;
+      cursor:pointer;
+      background:#111;
+      color:#fff;
+    }
+    .map-btn:hover{opacity:.92}
+    .map-btn-ghost{ background:transparent; color:#111; }
+
+    .map-shell{
+      background:#fff;
+      border:1px solid #eef0f3;
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow:0 14px 36px rgba(0,0,0,.08);
+    }
+    .map-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:14px 16px;
+      border-bottom:1px solid #eef0f3;
+      background:#fbfcfd;
+    }
+    .map-top strong{ font-size:12px; letter-spacing:.18em; color:#111; font-weight:600; }
+    .map-top span{ font-size:12px; color:#667085; }
+    #mapFrame{ width:100%; height:340px; border:0; display:none; }
+    .map-fallback{
+      padding:16px;
+      font-size:13px;
+      color:#667085;
+      line-height:1.85;
+    }
+
+    /* ===== Footer ===== */
+    footer{ background:#f6f6f4; padding:46px 0 44px 0; text-align:center; color:#6b7280; font-size:13px; }
+    .footer-copy{ font-size:12px; color:#9aa1ac; letter-spacing:.06em; }
+      /* ===== Editorial Journal 深色编辑风格（来自index-2.html并适配） ===== */
+    .editorial-section{
+      padding:92px 0;
+      background:linear-gradient(180deg,var(--dark) 0%, var(--dark2) 100%);
+      color:#fff;
+    }
+    .editorial-header{ max-width:620px; margin-bottom:60px; }
+    .editorial-eyebrow{
+      font-size:11px;
+      letter-spacing:.35em;
+      font-weight:500;
+      opacity:.65;
+      margin:0 0 14px 0;
+      color:#fff;
+    }
+    .editorial-title{
+      font-size:36px;
+      font-weight:500;
+      letter-spacing:.06em;
+      margin:0 0 18px 0;
+      line-height:1.25;
+      color:#fff;
+    }
+    .editorial-desc{
+      font-size:15px;
+      line-height:1.95;
+      color:rgba(255,255,255,.78);
+      margin:0;
+    }
+
+    .editorial-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:24px;
+    }
+    @media(max-width:980px){ .editorial-grid{ grid-template-columns:1fr; gap:20px; } }
+
+    .editorial-card{
+      text-decoration:none;
+      color:inherit;
+      display:block;
+      background:linear-gradient(180deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,.03) 100%);
+      border-radius:20px;
+      overflow:hidden;
+      transition:transform .5s cubic-bezier(.19,1,.22,1), box-shadow .5s ease;
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:0 14px 40px rgba(0,0,0,.20);
+    }
+    .editorial-card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 24px 60px rgba(0,0,0,.30);
+      border-color:rgba(255,255,255,.16);
+    }
+
+    .editorial-image{
+      width:100%;
+      aspect-ratio:4/3;
+      overflow:hidden;
+      position:relative;
+    }
+    .editorial-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform 1.2s ease;
+    }
+    .editorial-card:hover .editorial-image img{
+      transform:scale(1.05);
+    }
+
+    .editorial-content{
+      padding:28px 32px 32px 32px;
+    }
+    @media(max-width:640px){ .editorial-content{ padding:22px 24px 26px 24px; } }
+
+    .editorial-card-title{
+      font-size:18px;
+      font-weight:500;
+      line-height:1.6;
+      margin:0 0 16px 0;
+      color:#fff;
+      letter-spacing:.04em;
+    }
+    .editorial-text{
+      font-size:14px;
+      line-height:1.9;
+      color:rgba(255,255,255,.70);
+      margin:0 0 20px 0;
+    }
+
+    .editorial-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .editorial-btn{
+      display:inline-block;
+      padding:10px 18px;
+      border-radius:999px;
+      font-size:13px;
+      letter-spacing:.06em;
+      border:1px solid rgba(255,255,255,.22);
+      background:rgba(255,255,255,.12);
+      color:#fff;
+      cursor:pointer;
+      transition:opacity .18s ease, transform .18s ease, background .18s ease;
+      font-weight:500;
+      text-decoration:none;
+    }
+    .editorial-btn:hover{ 
+      opacity:.95; 
+      transform:translateY(-1px); 
+      background:rgba(255,255,255,.18); 
+    }
+    .editorial-btn-ghost{ background:transparent; }
+
+  </style>
+<base target="_blank">
 </head>
 
 <body>
-
-<!-- LOOKBOOK SECTION -->
-<section class="section">
-  <div class="eyebrow">LOOKBOOK</div>
-  <div class="section-title">产品图鉴 / 系列专题</div>
-  <div class="section-desc" style="color:#555;">
-    将产品开发逻辑与系列表达整合为长期更新模块，统一视觉比例，强化品牌呈现。
-  </div>
-
-  <div class="grid-2">
-
-    <a class="card" href="series01.html">
-      <div class="card-image">
-        <img src="assets/brand/series_tile_01.png" alt="Series 01">
-      </div>
-      <div class="card-content">
-        <div class="card-title">花式纱线创新研发</div>
-        <div class="card-text">
-          围绕结构、风格与视觉表达进行差异化开发，输出可量产的材料方案。
+  <header>
+    <div class="wrap topbar">
+      <div class="brand">
+        <img src="LOGO.png" alt="OTSU Yan">
+        <div>
+          <div class="brand-title">
+            <span data-lang="zh">上海欧津纺织服装有限公司</span>
+            <span data-lang="en">Shanghai Otsu Textile & Apparel Co., Ltd.</span>
+            <span data-lang="jp">上海欧津紡織服装有限公司</span>
+          </div>
+          <div class="brand-sub">OTSU Yan｜Material · Supply · Development</div>
         </div>
       </div>
-    </a>
 
-    <a class="card" href="series02.html">
-      <div class="card-image">
-        <img src="assets/brand/series_tile_02.png" alt="Series 02">
+      <nav>
+        <a href="#about"><span data-lang="zh">关于我们</span><span data-lang="en">About</span><span data-lang="jp">会社概要</span></a>
+        <a href="#series"><span data-lang="zh">产品图鉴</span><span data-lang="en">Lookbook</span><span data-lang="jp">ルックブック</span></a>
+        <a href="#expertise"><span data-lang="zh">核心能力</span><span data-lang="en">Expertise</span><span data-lang="jp">強み</span></a>
+        <a href="#wx"><span data-lang="zh">公众号专题</span><span data-lang="en">WeChat</span><span data-lang="jp">公式記事</span></a>
+        <a href="#contact"><span data-lang="zh">联系方式</span><span data-lang="en">Contact</span><span data-lang="jp">お問い合わせ</span></a>
+        <a href="#office"><span data-lang="zh">公司位置</span><span data-lang="en">Location</span><span data-lang="jp">所在地</span></a>
+      </nav>
+
+      <div class="lang-switch">
+        <button type="button" onclick="setLang('zh')">中文</button>
+        <button type="button" onclick="setLang('en')">EN</button>
+        <button type="button" onclick="setLang('jp')">日本語</button>
       </div>
-      <div class="card-content">
-        <div class="card-title">高端品牌供货与协同</div>
-        <div class="card-text">
-          稳定交付、透明沟通与可追溯管理，提升跨团队协作效率。
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="wrap narrow">
+      <p class="hero-kicker fade-up d1">OTSU YAN</p>
+
+      <h1 class="hero-title fade-up d2">
+        <span data-lang="zh">Material · Supply · Development</span>
+        <span data-lang="en">Material · Supply · Development</span>
+        <span data-lang="jp">Material · Supply · Development</span>
+      </h1>
+
+      <p class="hero-desc fade-up d3">
+        <span data-lang="zh">面向贸易商、工厂及服装/家纺品牌客户，提供稳定、透明、可追溯的纱线供货体验；支持现货供应、订单生产与特殊规格定制，并提供中/英/日多语对接，提升协作效率。</span>
+        <span data-lang="en">For traders, factories and fashion/home brands: stable, transparent and traceable yarn supply. In-stock delivery, made-to-order production, and bespoke specs—supported in CN/EN/JP.</span>
+        <span data-lang="jp">商社・工場・ブランド向けに、安定・透明・トレーサブルな糸供給を提供。即納在庫・受注生産・特殊仕様にも対応し、中/英/日で円滑に連携します。</span>
+      </p>
+
+      <div class="kpi fade-up d4">
+        <span><span data-lang="zh">纱线现货供应</span><span data-lang="en">In-stock supply</span><span data-lang="jp">即納在庫</span></span>
+        <span><span data-lang="zh">订单生产对接</span><span data-lang="en">Made-to-order</span><span data-lang="jp">受注生産</span></span>
+        <span><span data-lang="zh">特殊规格定制</span><span data-lang="en">Bespoke specs</span><span data-lang="jp">特殊仕様</span></span>
+        <span><span data-lang="zh">中/英/日多语对接</span><span data-lang="en">CN/EN/JP</span><span data-lang="jp">中/英/日対応</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section section-white" id="about">
+    <div class="wrap narrow">
+      <p class="kicker"><span data-lang="zh">ABOUT</span><span data-lang="en">ABOUT</span><span data-lang="jp">ABOUT</span></p>
+      <h2 class="title">
+        <span data-lang="zh">公司简介</span>
+        <span data-lang="en">Company Profile</span>
+        <span data-lang="jp">会社概要</span>
+      </h2>
+
+      <p class="lead">
+        <span data-lang="zh">自 2004 年进入纱线行业以来，我们持续深耕花式纱线研发、高端品牌协同与供应链管理；以材料开发能力与稳定供给能力为核心，长期服务日本、欧洲及中国一线时尚品牌与制造合作伙伴。</span>
+        <span data-lang="en">Since entering the yarn industry in 2004, we have focused on fancy yarn R&D, premium-brand collaboration, and supply chain management—combining material development with reliable delivery for global partners.</span>
+        <span data-lang="jp">2004年の参入以来、ファンシーヤーンの開発、高級ブランドとの協業、サプライチェーン管理を継続的に強化。素材開発力と安定供給を軸に、日欧中の主要パートナーを長期的に支えています。</span>
+      </p>
+
+      <ul class="list">
+        <li>
+          <span data-lang="zh">中高端花式纱线供应链中具备鲜明定位，强调稳定交付与透明沟通。</span>
+          <span data-lang="en">Distinct positioning in mid-to-high-end fancy yarn supply chains—reliable delivery with transparent communication.</span>
+          <span data-lang="jp">中〜高付加価値領域での明確な立ち位置。安定納品と透明なコミュニケーションを重視。</span>
+        </li>
+        <li>
+          <span data-lang="zh">持续推出具有行业代表性的产品与配方，支持从概念到量产落地。</span>
+          <span data-lang="en">Continued innovation with representative products and formulas—from concept to scalable production.</span>
+          <span data-lang="jp">業界を代表する素材・配合を継続的に創出。コンセプトから量産まで一気通貫で支援。</span>
+        </li>
+        <li>
+          <span data-lang="zh">具备逆周期韧性与增长能力，面对波动仍保持稳健运营。</span>
+          <span data-lang="en">Resilient operations and growth capability even in challenging cycles.</span>
+          <span data-lang="jp">景気変動下でも安定した運営と成長を維持するレジリエンス。</span>
+        </li>
+        <li>
+          <span data-lang="zh">拥有院校技术合作与跨国品牌资源网络，提升研发与落地效率。</span>
+          <span data-lang="en">Strong institute collaboration and global brand network to accelerate development and delivery.</span>
+          <span data-lang="jp">教育機関との連携とグローバルなリソースで、開発と実装のスピードを高めます。</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SERIES / LOOKBOOK -->
+  <section class="section section-light" id="series">
+    <div class="wrap">
+      <div class="narrow">
+        <p class="kicker"><span data-lang="zh">LOOKBOOK</span><span data-lang="en">LOOKBOOK</span><span data-lang="jp">LOOKBOOK</span></p>
+        <h2 class="title">
+          <span data-lang="zh">产品图鉴 / 系列专题</span>
+          <span data-lang="en">Lookbook / Series Topics</span>
+          <span data-lang="jp">ルックブック / 特集</span>
+        </h2>
+        <p class="lead">
+          <span data-lang="zh">将“公司介绍”改为可按季度更新的图文专题：更像公众号推文的封面结构，便于持续迭代与传播。</span>
+          
+          
+        </p>
+      </div>
+
+      <div class="series-grid">
+        <article class="series-card">
+          <div class="series-media">
+            <img src="assets/brand/series_tile_01.png" alt="Series 01" loading="lazy">
+            <span class="series-badge">SERIES 01</span>
+          </div>
+          <div class="series-body">
+            <h3 class="series-title">
+              <span data-lang="zh">花式纱线创新研发</span>
+              <span data-lang="en">Fancy Yarn Development</span>
+              <span data-lang="jp">ファンシーヤーン開発</span>
+            </h3>
+            <p class="series-desc">
+              <span data-lang="zh">围绕结构、风合与视觉纹理进行差异化开发，输出可量产的材料方案。</span>
+              <span data-lang="en">Differentiated development across structure, hand-feel and texture—built for scale.</span>
+              <span data-lang="jp">構造・風合い・テクスチャーを軸に差別化し、量産に落とし込める素材提案。</span>
+            </p>
+            <ul class="series-tags"><li>R&D</li><li>Texture</li><li>Sampling</li></ul>
+            
+          </div>
+        </article>
+
+        <article class="series-card">
+          <div class="series-media">
+            <img src="assets/brand/series_tile_02.png" alt="Series 02" loading="lazy">
+            <span class="series-badge">SERIES 02</span>
+          </div>
+          <div class="series-body">
+            <h3 class="series-title">
+              <span data-lang="zh">高端品牌供货与协同</span>
+              <span data-lang="en">Premium Brand Supply</span>
+              <span data-lang="jp">高級ブランド供給</span>
+            </h3>
+            <p class="series-desc">
+              <span data-lang="zh">稳定交付、透明沟通与可追溯管理，提升跨团队协作效率与执行确定性。</span>
+              <span data-lang="en">Stable delivery, transparent communication and traceability—reliable execution.</span>
+              <span data-lang="jp">安定納品・透明なコミュニケーション・トレーサブル管理で実行確度を高めます。</span>
+            </p>
+            <ul class="series-tags"><li>Supply</li><li>Traceable</li><li>PM</li></ul>
+            
+          </div>
+        </article>
+
+        <article class="series-card">
+          <div class="series-media">
+            <img src="assets/brand/series_tile_03.png" alt="Series 03" loading="lazy">
+            <span class="series-badge">SERIES 03</span>
+          </div>
+          <div class="series-body">
+            <h3 class="series-title">
+              <span data-lang="zh">特殊规格定制</span>
+              <span data-lang="en">Bespoke Specifications</span>
+              <span data-lang="jp">特殊仕様カスタム</span>
+            </h3>
+            <p class="series-desc">
+              <span data-lang="zh">支数、成分、捻度、染色与结构精细化对接，支持打样到量产一体化协同。</span>
+              <span data-lang="en">Counts, blends, twist and dyeing—aligned from sampling to bulk production.</span>
+              <span data-lang="jp">番手・混率・撚り・染色・構造などを精緻に調整し、サンプル〜量産まで一貫対応。</span>
+            </p>
+            <ul class="series-tags"><li>Spec</li><li>Color</li><li>Scale</li></ul>
+            
+          </div>
+        </article>
+
+        <article class="series-card">
+          <div class="series-media">
+            <img src="assets/brand/series_tile_04.png" alt="Series 04" loading="lazy">
+            <span class="series-badge">SERIES 04</span>
+          </div>
+          <div class="series-body">
+            <h3 class="series-title">
+              <span data-lang="zh">创新研发与伙伴合作</span>
+              <span data-lang="en">Innovation & Partnership</span>
+              <span data-lang="jp">共創とパートナーシップ</span>
+            </h3>
+            <p class="series-desc">
+              <span data-lang="zh">联合设计师、院校与合作伙伴推进创意开发与落地，以稳定供给支撑持续创新。</span>
+              <span data-lang="en">Co-create with designers and institutes to turn ideas into scalable products.</span>
+              <span data-lang="jp">デザイナーや教育機関と共創し、アイデアを量産可能な形へ。安定供給で継続的な革新を支えます。</span>
+            </p>
+            <ul class="series-tags"><li>Co-create</li><li>Design</li><li>Network</li></ul>
+            
+          </div>
+        </article>
+      </div>
+
+      
+    </div>
+  </section>
+
+  <!-- EXPERTISE (DARK) -->
+  <section class="section section-dark" id="expertise">
+    <div class="wrap narrow">
+      <p class="kicker"><span data-lang="zh">EXPERTISE</span><span data-lang="en">EXPERTISE</span><span data-lang="jp">EXPERTISE</span></p>
+      <h2 class="title-light">
+        <span data-lang="zh">核心能力</span>
+        <span data-lang="en">Core Expertise</span>
+        <span data-lang="jp">主な強み</span>
+      </h2>
+      <p class="lead-light">
+        <span data-lang="zh">以“研发导向 + 稳定供应 + 跨语协同”为主轴，将材料方案、项目执行与交付确定性统一到同一套工作逻辑中。</span>
+        <span data-lang="en">R&D-driven + reliable supply + multilingual collaboration—one workflow from material planning to delivery certainty.</span>
+        <span data-lang="jp">「開発主導 × 安定供給 × 多言語連携」を軸に、素材提案から納品確度まで一貫した運用で支えます。</span>
+      </p>
+
+      <div class="cap-grid">
+        <div class="cap">
+          <h3>R&D ORIENTED</h3>
+          <p><span data-lang="zh">花式纱线研发与技术导向；支持从概念到打样的材料路线设计。</span><span data-lang="en">Fancy yarn R&D and technical direction—from concept to sampling route.</span><span data-lang="jp">ファンシーヤーン開発と技術設計。コンセプト〜サンプルまでの素材設計を支援。</span></p>
+        </div>
+        <div class="cap">
+          <h3>PROJECT COORDINATION</h3>
+          <p><span data-lang="zh">国际品牌商务合作与项目管理；强调沟通透明与进度可控。</span><span data-lang="en">International brand collaboration and project management with clear milestones.</span><span data-lang="jp">国際ブランドとの協業・PM。透明性と進捗管理を重視。</span></p>
+        </div>
+        <div class="cap">
+          <h3>MULTI-LANG SUPPORT</h3>
+          <p><span data-lang="zh">中/英/日对接；减少信息损耗，提高协作效率。</span><span data-lang="en">CN/EN/JP support to reduce information loss and improve coordination.</span><span data-lang="jp">中/英/日での連携により、情報ロスを抑え協業効率を向上。</span></p>
         </div>
       </div>
-    </a>
 
-    <a class="card" href="series03.html">
-      <div class="card-image">
-        <img src="assets/brand/series_tile_03.png" alt="Series 03">
-      </div>
-      <div class="card-content">
-        <div class="card-title">特殊规格定制</div>
-        <div class="card-text">
-          支数、成分、捻度与染色结构精细化支持，实现打样到量产协同。
+      <div class="metrics">
+        <div class="metric">
+          <p class="metric-num">20+ yrs</p>
+          <div class="metric-label"><span data-lang="zh">行业深耕</span><span data-lang="en">Industry Experience</span><span data-lang="jp">業界経験</span></div>
+        </div>
+        <div class="metric">
+          <p class="metric-num">CN/EN/JP</p>
+          <div class="metric-label"><span data-lang="zh">多语协同</span><span data-lang="en">Multilingual</span><span data-lang="jp">多言語対応</span></div>
+        </div>
+        <div class="metric">
+          <p class="metric-num">R&D × Supply</p>
+          <div class="metric-label"><span data-lang="zh">研发与供应并重</span><span data-lang="en">R&D + Supply</span><span data-lang="jp">開発×供給</span></div>
         </div>
       </div>
-    </a>
+    </div>
+  </section>
 
-    <a class="card" href="series04.html">
-      <div class="card-image">
-        <img src="assets/brand/series_tile_04.png" alt="Series 04">
+  <!-- WECHAT / EDITORIAL -->
+  <section class="editorial-section" id="wx">
+    <div class="wrap">
+      <div class="editorial-header">
+        <p class="editorial-eyebrow">
+          <span data-lang="zh">WECHAT</span>
+          <span data-lang="en">WECHAT</span>
+          <span data-lang="jp">WECHAT</span>
+        </p>
+        <h2 class="editorial-title">
+          <span data-lang="zh">Editorial Journal</span>
+          <span data-lang="en">Editorial Journal</span>
+          <span data-lang="jp">Editorial Journal</span>
+        </h2>
+        <p class="editorial-desc">
+          <span data-lang="zh">本栏目以专题形式呈现产品研发与材料应用动态，展示纱线工艺、结构创新与色彩探索的多维表达。</span>
+          <span data-lang="en">A thematic journal presenting R&D and material application updates—exploring yarn craftsmanship, structural innovation, and color narratives.</span>
+          <span data-lang="jp">製品開発と素材応用の動向を特集形式でお届け。糸の工芸、構造革新、色彩表現の多角的アプローチを紹介します。</span>
+        </p>
       </div>
-      <div class="card-content">
-        <div class="card-title">创新研发与伙伴合作</div>
-        <div class="card-text">
-          联合设计师与院校推进创意落地，以稳定供应支持持续创新。
+
+      <div class="editorial-grid">
+        <a class="editorial-card" href="https://mp.weixin.qq.com/s/AGSnjUDycr25PSAm_pNs_w" target="_blank" rel="noopener">
+          <div class="editorial-image">
+            <img src="assets/brand/wechat_cover_01.jpg" alt="OTSU Trend Yarn" loading="lazy">
+          </div>
+          <div class="editorial-content">
+            <h3 class="editorial-card-title">
+              <span data-lang="zh">解码 26/27 春夏趋势｜欧津 OTSU 花式带子纱</span>
+              <span data-lang="en">Decoding SS 26/27 Trends | OTSU Fancy Tape Yarn</span>
+              <span data-lang="jp">26/27春夏トレンド解説｜OTSU ファンシーテープヤーン</span>
+            </h3>
+            <p class="editorial-text">
+              <span data-lang="zh">从趋势洞察到工艺落地，一纱多用提升开发与库存效率。当趋势转化为组织与肌理，纱线成为定义风格的起点。</span>
+              <span data-lang="en">From trend insights to process implementation—versatile yarn solutions that boost development efficiency and inventory turnover.</span>
+              <span data-lang="jp">トレンド洞察から工芸実装へ。多機能糸で開発効率と在庫回転を向上。組織と肌理にトレンドを落とし込み、糸をスタイルの起点に。</span>
+            </p>
+            <div class="editorial-actions">
+              <span class="editorial-btn">
+                <span data-lang="zh">阅读全文</span>
+                <span data-lang="en">Read Article</span>
+                <span data-lang="jp">記事を読む</span>
+              </span>
+              <span class="editorial-btn editorial-btn-ghost">
+                <span data-lang="zh">公众号原文</span>
+                <span data-lang="en">WeChat Original</span>
+                <span data-lang="jp">公式記事</span>
+              </span>
+            </div>
+          </div>
+        </a>
+
+        <a class="editorial-card" href="https://mp.weixin.qq.com/s/ZjZ0J_OdUqlnePvj8vt35A" target="_blank" rel="noopener">
+          <div class="editorial-image">
+            <img src="assets/brand/wechat_cover_02.jpg" alt="OTSU RUBY-WS" loading="lazy">
+          </div>
+          <div class="editorial-content">
+            <h3 class="editorial-card-title">
+              <span data-lang="zh">OTSU欧津 RUBY-WS：羊毛织进蚕丝里的月光</span>
+              <span data-lang="en">OTSU RUBY-WS: Moonlight Woven with Wool & Silk</span>
+              <span data-lang="jp">OTSU RUBY-WS：羊毛に織り込まれた蚕糸の月光</span>
+            </h3>
+            <p class="editorial-text">
+              <span data-lang="zh">羊毛与桑蚕丝复合结构，在垂坠与四季适穿间取得平衡。如月光般的柔与光，在垂坠与弹性间找到平衡。</span>
+              <span data-lang="en">A composite structure of wool and mulberry silk—balancing drape and year-round wearability. Softness and luster like moonlight.</span>
+              <span data-lang="jp">羊毛と桑蚕糸の複合構造。ドレープ感と通年着用性のバランスを実現。月光のような柔らかさと光沢、垂れ感と弾性の調和。</span>
+            </p>
+            <div class="editorial-actions">
+              <span class="editorial-btn">
+                <span data-lang="zh">阅读全文</span>
+                <span data-lang="en">Read Article</span>
+                <span data-lang="jp">記事を読む</span>
+              </span>
+              <span class="editorial-btn editorial-btn-ghost">
+                <span data-lang="zh">公众号原文</span>
+                <span data-lang="en">WeChat Original</span>
+                <span data-lang="jp">公式記事</span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="narrow note" style="margin-top:24px; color:rgba(255,255,255,.5);">
+        <span data-lang="zh">提示：点击卡片即可跳转至微信公众号原文阅读。</span>
+        <span data-lang="en">Tip: Click cards to read the original WeChat articles.</span>
+        <span data-lang="jp">補足：カードをクリックするとWeChat公式記事へ移動します。</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section section-light" id="contact">
+    <div class="wrap narrow">
+      <p class="kicker"><span data-lang="zh">CONTACT</span><span data-lang="en">CONTACT</span><span data-lang="jp">CONTACT</span></p>
+      <h2 class="title">
+        <span data-lang="zh">联系方式</span>
+        <span data-lang="en">Contact</span>
+        <span data-lang="jp">お問い合わせ</span>
+      </h2>
+
+      <div class="contact-box">
+        <div class="kv">
+          <div class="k"><span data-lang="zh">业务咨询</span><span data-lang="en">Business</span><span data-lang="jp">ビジネス</span></div>
+          <div>—</div>
+
+          <div class="k">Email</div>
+          <div><a href="mailto:zyq@otsu1128.com">zyq@otsu1128.com</a></div>
+
+          <div class="k"><span data-lang="zh">微信</span><span data-lang="en">WeChat</span><span data-lang="jp">WeChat</span></div>
+          <div>15021256895</div>
+
+          <div class="k"><span data-lang="zh">说明</span><span data-lang="en">Note</span><span data-lang="jp">備考</span></div>
+          <div>
+            <span data-lang="zh">请简单说明来意，并留下联系方式，谢谢！</span>
+            <span data-lang="en">Please briefly state your inquiry and leave your contact info. Thank you.</span>
+            <span data-lang="jp">ご用件とご連絡先を簡潔にご記載ください。よろしくお願いいたします。</span>
+          </div>
         </div>
       </div>
-    </a>
-
-  </div>
-</section>
-
-
-<!-- WECHAT SECTION -->
-<section class="section section-dark">
-
-<div class="eyebrow">WECHAT</div>
-<div class="section-title">Editorial Journal</div>
-<div class="section-desc">
-本栏目以专题形式呈现产品研发与材料应用动态，展示纱线工艺、结构创新与色彩探索的多维表达。
-</div>
-
-<div class="grid-2">
-
-<a class="card" href="https://mp.weixin.qq.com/s/AGSnjUDycr25PSAm_pNs_w" target="_blank">
-  <div class="card-image">
-    <img src="assets/brand/wechat_preview_01.png" alt="Trend Yarn">
-  </div>
-  <div class="card-content">
-    <div class="card-title">
-      解码 26/27 春夏趋势｜欧津 OTSU 花式带子纱
     </div>
-    <div class="card-text">
-      从趋势洞察到工艺落地，一纱多用提升开发与库存效率。<br>
-      当趋势转化为组织与肌理，纱线成为定义风格的起点。
+  </section>
+
+  <!-- OFFICE / MAP -->
+  <section class="section section-white" id="office">
+    <div class="wrap">
+      <div class="office-card">
+        <div class="office-left">
+          <p class="office-label"><span data-lang="zh">LOCATION</span><span data-lang="en">LOCATION</span><span data-lang="jp">LOCATION</span></p>
+          <h3 class="office-name">
+            <span data-lang="zh">上海欧津纺织服装有限公司</span>
+            <span data-lang="en">OTSU Yan</span>
+            <span data-lang="jp">OTSU Yan</span>
+          </h3>
+          
+          <p class="office-hint">
+            <span data-lang="zh">下面为“嵌入式地图卡片”（若浏览器拦截嵌入，会显示备用打开按钮）。</span>
+            <span data-lang="en">Embedded map card (if blocked by the browser, use the open button).</span>
+            <span data-lang="jp">埋め込み地図（ブラウザでブロックされる場合は「開く」ボタンをご利用ください）。</span>
+          </p>
+
+          <div class="office-actions">
+            <a class="map-btn" href="https://map.baidu.com/?shareurl=1&poiShareUid=911c35b161b15dd87adbd238" target="_blank" rel="noopener">
+              <span data-lang="zh">在百度地图中打开</span><span data-lang="en">Open in Baidu Maps</span><span data-lang="jp">百度地図で開く</span>
+            </a>
+            <button class="map-btn map-btn-ghost" type="button" onclick="loadEmbedMap(true)">
+              <span data-lang="zh">加载 / 刷新嵌入地图</span><span data-lang="en">Load / Reload Embed</span><span data-lang="jp">再読み込み</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="office-right">
+          <div class="map-shell">
+            <div class="map-top"><strong>BAIDU MAP</strong></div>
+            <iframe id="mapFrame" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="map-fallback" id="mapFallback" style="display:none;">
+              <span data-lang="zh">当前浏览器阻止了百度地图嵌入显示。你仍可点击左侧按钮在新窗口打开。</span>
+              <span data-lang="en">Your browser blocked the embedded map. Please use “Open in Baidu Maps”.</span>
+              <span data-lang="jp">埋め込み地図がブロックされました。「百度地図で開く」をご利用ください。</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</a>
+  </section>
 
-<a class="card" href="https://mp.weixin.qq.com/s/ZjZ0J_OdUqlnePvj8vt35A" target="_blank">
-  <div class="card-image">
-    <img src="assets/brand/wechat_preview_02.png" alt="RUBY WS">
-  </div>
-  <div class="card-content">
-    <div class="card-title">
-      OTSU欧津 RUBY-WS：羊毛织进蚕丝里的月光
+  <footer>
+    <div class="wrap">
+      <div class="footer-copy">© 2026 上海欧津纺织服装有限公司 · OTSU Yan</div>
     </div>
-    <div class="card-text">
-      羊毛与桑蚕丝复合结构，在垂坠与四季适穿间取得平衡。<br>
-      如月光般的柔与光，在垂坠与弹性间找到平衡。
-    </div>
-  </div>
-</a>
+  </footer>
 
-</div>
+  <script>
+    function setLang(lang){
+      localStorage.setItem("siteLang", lang);
+      applyLang(lang);
+    }
+    function applyLang(lang){
+      document.querySelectorAll("[data-lang]").forEach(function(el){
+        el.style.display = (el.getAttribute("data-lang") === lang) ? "inline" : "none";
+      });
+      document.documentElement.setAttribute("lang", lang === "jp" ? "ja" : (lang === "en" ? "en" : "zh-CN"));
+    }
 
-</section>
+    function loadEmbedMap(force){
+      const frame = document.getElementById("mapFrame");
+      const fallback = document.getElementById("mapFallback");
+      // 未点击按钮时不自动加载，避免首屏抖动与被浏览器拦截带来的空白
+      if(!force && frame.getAttribute("src")){
+        frame.style.display = "block";
+        return;
+      }
 
+      fallback.style.display = "none";
+      frame.onload = function(){};
+      frame.onerror = function(){ fallback.style.display = "block"; };
+      // 直接用百度 POI share 入口（若被 X-Frame-Options 拦截，将显示 fallback 文案）
+      frame.src = "https://map.baidu.com/?shareurl=1&poiShareUid=911c35b161b15dd87adbd238";
+      // 兜底：若 2 秒后仍然空白，则提示（有些浏览器不触发 onerror）
+      setTimeout(function(){
+        try{
+          if(!frame.contentWindow || frame.contentWindow.location.href === "about:blank") {
+            fallback.style.display = "block";
+          }
+        }catch(e){
+          fallback.style.display = "block";
+        }
+      }, 2000);
+    }
+
+    // init
+    document.addEventListener("DOMContentLoaded", function(){
+      const lang = localStorage.getItem("siteLang") || "zh";
+      applyLang(lang);
+      // 地图不自动加载：请点击「加载 / 刷新嵌入地图」按钮
+    });
+  </script>
 </body>
 </html>
