@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -12,8 +13,6 @@
   --text:#ffffff;
   --muted:rgba(255,255,255,.65);
   --border:rgba(255,255,255,.08);
-  --light:#ffffff;
-  --accent:linear-gradient(135deg,#1a1a1a,#2a2a2a);
 }
 
 body{
@@ -23,45 +22,9 @@ body{
   color:#111;
 }
 
-/* HERO */
-.hero{
-  height:100vh;
-  background:radial-gradient(circle at center,#1a1a1a 0%,#0f0f0f 70%);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#fff;
-  text-align:center;
-}
-
-.hero-inner{
-  max-width:800px;
-  padding:0 8vw;
-}
-
-.hero-eyebrow{
-  font-size:12px;
-  letter-spacing:.35em;
-  opacity:.5;
-  margin-bottom:28px;
-}
-
-.hero-title{
-  font-size:64px;
-  font-weight:400;
-  letter-spacing:.18em;
-  margin-bottom:28px;
-}
-
-.hero-desc{
-  font-size:16px;
-  line-height:1.9;
-  opacity:.7;
-}
-
 /* SECTION COMMON */
 .section{
-  padding:140px 8vw;
+  padding:120px 8vw;
 }
 
 .section-dark{
@@ -78,25 +41,25 @@ body{
 }
 
 .section-title{
-  font-size:36px;
+  font-size:32px;
   font-weight:400;
-  letter-spacing:.08em;
-  margin-bottom:28px;
+  letter-spacing:.06em;
+  margin-bottom:24px;
 }
 
 .section-desc{
   max-width:620px;
-  font-size:16px;
-  line-height:1.9;
-  color:#666;
-  margin-bottom:100px;
+  font-size:15px;
+  line-height:1.8;
+  color:var(--muted);
+  margin-bottom:80px;
 }
 
 /* GRID */
 .grid-2{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:70px;
+  gap:60px;
 }
 
 /* CARD */
@@ -104,15 +67,15 @@ body{
   display:block;
   text-decoration:none;
   color:inherit;
-  background:linear-gradient(180deg,#1a1a1a 0%,#101010 100%);
-  border-radius:32px;
+  background:linear-gradient(180deg,#151515 0%,#101010 100%);
+  border-radius:28px;
   overflow:hidden;
   transition:.6s cubic-bezier(.19,1,.22,1);
   border:1px solid var(--border);
 }
 
 .card:hover{
-  transform:translateY(-8px);
+  transform:translateY(-6px);
 }
 
 .card-image{
@@ -133,30 +96,27 @@ body{
 }
 
 .card-content{
-  padding:48px 52px 60px 52px;
+  padding:40px 42px 48px 42px;
 }
 
 .card-title{
-  font-size:22px;
+  font-size:20px;
   font-weight:400;
   line-height:1.6;
-  margin-bottom:24px;
+  margin-bottom:20px;
 }
 
 .card-text{
-  font-size:16px;
+  font-size:15px;
   line-height:1.9;
   color:var(--muted);
 }
 
 /* Responsive */
 @media(max-width:900px){
-  .hero-title{
-    font-size:40px;
-  }
   .grid-2{
     grid-template-columns:1fr;
-    gap:50px;
+    gap:40px;
   }
 }
 </style>
@@ -164,24 +124,112 @@ body{
 
 <body>
 
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-eyebrow">EST. 2004 · SHANGHAI</div>
-    <div class="hero-title">欧津纱线</div>
-    <div class="hero-desc">
-      高端花式纱线研发与供应<br>
-      Material · Supply · Development
-    </div>
-  </div>
-</section>
-
-<!-- 原 LOOKBOOK 保留 -->
+<!-- LOOKBOOK SECTION -->
 <section class="section">
   <div class="eyebrow">LOOKBOOK</div>
   <div class="section-title">产品图鉴 / 系列专题</div>
-  <div class="section-desc">
+  <div class="section-desc" style="color:#555;">
     将产品开发逻辑与系列表达整合为长期更新模块，统一视觉比例，强化品牌呈现。
   </div>
 
   <div class="grid-2">
-    <!-- 你的四个卡片原样保留 -->
+
+    <a class="card" href="series01.html">
+      <div class="card-image">
+        <img src="assets/brand/series_tile_01.png" alt="Series 01">
+      </div>
+      <div class="card-content">
+        <div class="card-title">花式纱线创新研发</div>
+        <div class="card-text">
+          围绕结构、风格与视觉表达进行差异化开发，输出可量产的材料方案。
+        </div>
+      </div>
+    </a>
+
+    <a class="card" href="series02.html">
+      <div class="card-image">
+        <img src="assets/brand/series_tile_02.png" alt="Series 02">
+      </div>
+      <div class="card-content">
+        <div class="card-title">高端品牌供货与协同</div>
+        <div class="card-text">
+          稳定交付、透明沟通与可追溯管理，提升跨团队协作效率。
+        </div>
+      </div>
+    </a>
+
+    <a class="card" href="series03.html">
+      <div class="card-image">
+        <img src="assets/brand/series_tile_03.png" alt="Series 03">
+      </div>
+      <div class="card-content">
+        <div class="card-title">特殊规格定制</div>
+        <div class="card-text">
+          支数、成分、捻度与染色结构精细化支持，实现打样到量产协同。
+        </div>
+      </div>
+    </a>
+
+    <a class="card" href="series04.html">
+      <div class="card-image">
+        <img src="assets/brand/series_tile_04.png" alt="Series 04">
+      </div>
+      <div class="card-content">
+        <div class="card-title">创新研发与伙伴合作</div>
+        <div class="card-text">
+          联合设计师与院校推进创意落地，以稳定供应支持持续创新。
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+
+<!-- WECHAT SECTION -->
+<section class="section section-dark">
+
+<div class="eyebrow">WECHAT</div>
+<div class="section-title">Editorial Journal</div>
+<div class="section-desc">
+本栏目以专题形式呈现产品研发与材料应用动态，展示纱线工艺、结构创新与色彩探索的多维表达。
+</div>
+
+<div class="grid-2">
+
+<a class="card" href="https://mp.weixin.qq.com/s/AGSnjUDycr25PSAm_pNs_w" target="_blank">
+  <div class="card-image">
+    <img src="assets/brand/wechat_preview_01.png" alt="Trend Yarn">
+  </div>
+  <div class="card-content">
+    <div class="card-title">
+      解码 26/27 春夏趋势｜欧津 OTSU 花式带子纱
+    </div>
+    <div class="card-text">
+      从趋势洞察到工艺落地，一纱多用提升开发与库存效率。<br>
+      当趋势转化为组织与肌理，纱线成为定义风格的起点。
+    </div>
+  </div>
+</a>
+
+<a class="card" href="https://mp.weixin.qq.com/s/ZjZ0J_OdUqlnePvj8vt35A" target="_blank">
+  <div class="card-image">
+    <img src="assets/brand/wechat_preview_02.png" alt="RUBY WS">
+  </div>
+  <div class="card-content">
+    <div class="card-title">
+      OTSU欧津 RUBY-WS：羊毛织进蚕丝里的月光
+    </div>
+    <div class="card-text">
+      羊毛与桑蚕丝复合结构，在垂坠与四季适穿间取得平衡。<br>
+      如月光般的柔与光，在垂坠与弹性间找到平衡。
+    </div>
+  </div>
+</a>
+
+</div>
+
+</section>
+
+</body>
+</html>
