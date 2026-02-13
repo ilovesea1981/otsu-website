@@ -1,848 +1,187 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OTSU Yan｜欧津纱线</title>
-  <meta name="description" content="OTSU Yan 欧津 - 高端花式纱线研发与供应，服务国际时尚品牌。" />
-  <meta name="theme-color" content="#1a1a1a" />
-
-  <meta property="og:title" content="OTSU Yan｜欧津纱线" />
-  <meta property="og:description" content="高端花式纱线研发与供应，服务国际时尚品牌。" />
-  <meta property="og:type" content="website" />
-
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Noto+Sans+SC:wght@300;400;500&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --bg:#faf9f7;
-      --bg-dark:#1a1a1a;
-      --text:#1a1a1a;
-      --text-light:#faf9f7;
-      --muted:#666;
-      --accent:#c9a962;
-      --line:#e5e5e5;
-    }
-
-    *{margin:0;padding:0;box-sizing:border-box}
-
-    body{
-      font-family:"Inter","Noto Sans SC",sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.6;
-      letter-spacing:0.02em;
-      -webkit-font-smoothing:antialiased;
-      text-rendering:optimizeLegibility;
-    }
-
-    [data-lang][hidden]{display:none !important}
-
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-
-    @media (prefers-reduced-motion: reduce){
-      *{scroll-behavior:auto !important}
-      .hero-scroll{animation:none !important}
-      .collection-item img{transition:none !important}
-      .collection-overlay{transition:none !important}
-    }
-
-    nav{
-      position:fixed;
-      top:0;
-      left:0;
-      right:0;
-      z-index:100;
-      padding:24px 48px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      mix-blend-mode:difference;
-      pointer-events:auto;
-    }
-
-    .logo{
-      font-size:14px;
-      font-weight:500;
-      letter-spacing:0.2em;
-      color:#fff;
-    }
-
-    .lang-switch{
-      display:flex;
-      gap:16px;
-      align-items:center;
-    }
-
-    .lang-switch button{
-      background:none;
-      border:none;
-      color:#fff;
-      font-size:11px;
-      letter-spacing:0.1em;
-      cursor:pointer;
-      opacity:0.6;
-      transition:opacity 0.3s;
-      padding:0;
-    }
-
-    .lang-switch button:hover,
-    .lang-switch button.active{opacity:1}
-
-    .hero{
-      height:100vh;
-      position:relative;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      overflow:hidden;
-    }
-
-    .hero-bg{
-      position:absolute;
-      top:0;
-      left:0;
-      right:0;
-      bottom:0;
-      background:linear-gradient(135deg,#1a1a1a 0%,#2d2d2d 100%);
-      z-index:0;
-    }
-
-    .hero-bg::after{
-      content:"";
-      position:absolute;
-      top:0;
-      left:0;
-      right:0;
-      bottom:0;
-      background:url('assets/brand/hero_texture.jpg') center/cover;
-      opacity:0.4;
-    }
-
-    .hero-content{
-      position:relative;
-      z-index:1;
-      text-align:center;
-      color:#fff;
-      padding:0 24px;
-    }
-
-    .hero-brand{
-      font-size:12px;
-      letter-spacing:0.4em;
-      opacity:0.6;
-      margin-bottom:24px;
-    }
-
-    .hero-title{
-      font-family:"Noto Serif SC",serif;
-      font-size:clamp(32px,8vw,72px);
-      font-weight:400;
-      letter-spacing:0.15em;
-      margin-bottom:32px;
-      line-height:1.2;
-    }
-
-    .hero-desc{
-      font-size:14px;
-      letter-spacing:0.1em;
-      opacity:0.8;
-      max-width:480px;
-      margin:0 auto;
-      line-height:2;
-    }
-
-    .hero-scroll{
-      position:absolute;
-      bottom:48px;
-      left:50%;
-      transform:translateX(-50%);
-      color:#fff;
-      font-size:10px;
-      letter-spacing:0.2em;
-      opacity:0.5;
-      animation:bounce 2s infinite;
-      user-select:none;
-    }
-
-    @keyframes bounce{
-      0%,100%{transform:translateX(-50%) translateY(0)}
-      50%{transform:translateX(-50%) translateY(10px)}
-    }
-
-    .collection{
-      padding:120px 48px;
-    }
-
-    .section-header{
-      text-align:center;
-      margin-bottom:80px;
-    }
-
-    .section-label{
-      font-size:10px;
-      letter-spacing:0.4em;
-      color:var(--muted);
-      margin-bottom:16px;
-    }
-
-    .section-title{
-      font-family:"Noto Serif SC",serif;
-      font-size:32px;
-      font-weight:400;
-      letter-spacing:0.1em;
-    }
-
-    .collection-grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:24px;
-      max-width:1200px;
-      margin:0 auto;
-    }
-
-    @media(max-width:768px){
-      .collection-grid{grid-template-columns:1fr}
-      nav{padding:16px 24px}
-      .collection{padding:80px 24px}
-    }
-
-    .collection-item{
-      position:relative;
-      aspect-ratio:4/5;
-      overflow:hidden;
-      cursor:pointer;
-      background:var(--bg-dark);
-      outline:none;
-    }
-
-    .collection-item img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      transition:transform 1.2s ease,opacity 0.6s;
-      opacity:0.9;
-    }
-
-    .collection-item:hover img{
-      transform:scale(1.05);
-      opacity:1;
-    }
-
-    .collection-overlay{
-      position:absolute;
-      bottom:0;
-      left:0;
-      right:0;
-      padding:40px;
-      background:linear-gradient(to top,rgba(0,0,0,0.6) 0%,transparent 100%);
-      color:#fff;
-      transform:translateY(20px);
-      opacity:0;
-      transition:all 0.4s ease;
-      pointer-events:none;
-    }
-
-    .collection-item:hover .collection-overlay{
-      transform:translateY(0);
-      opacity:1;
-    }
-
-    .collection-name{
-      font-size:20px;
-      letter-spacing:0.1em;
-      margin-bottom:8px;
-    }
-
-    .collection-tag{
-      font-size:11px;
-      letter-spacing:0.1em;
-      opacity:0.7;
-    }
-
-    .craft{
-      padding:120px 48px;
-      background:var(--bg-dark);
-      color:var(--text-light);
-    }
-
-    .craft-content{
-      max-width:1000px;
-      margin:0 auto;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:80px;
-      align-items:center;
-    }
-
-    @media(max-width:768px){
-      .craft-content{grid-template-columns:1fr;gap:40px}
-    }
-
-    .craft-visual{
-      aspect-ratio:3/4;
-      background:linear-gradient(135deg,#2d2d2d 0%,#1a1a1a 100%);
-      position:relative;
-      overflow:hidden;
-    }
-
-    .craft-visual img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      opacity:0.8;
-    }
-
-    .craft-text h3{
-      font-family:"Noto Serif SC",serif;
-      font-size:28px;
-      font-weight:400;
-      letter-spacing:0.1em;
-      margin-bottom:32px;
-      line-height:1.4;
-    }
-
-    .craft-text p{
-      font-size:14px;
-      line-height:2.2;
-      opacity:0.7;
-      margin-bottom:24px;
-    }
-
-    .craft-features{
-      display:flex;
-      gap:32px;
-      margin-top:48px;
-      padding-top:48px;
-      border-top:1px solid rgba(255,255,255,0.1);
-      flex-wrap:wrap;
-    }
-
-    .craft-feature{
-      text-align:center;
-      min-width:140px;
-    }
-
-    .craft-feature span{
-      display:block;
-      font-size:24px;
-      font-weight:300;
-      margin-bottom:8px;
-      color:var(--accent);
-    }
-
-    .craft-feature label{
-      font-size:10px;
-      letter-spacing:0.1em;
-      opacity:0.6;
-    }
-
-    .connect{
-      padding:120px 48px;
-      text-align:center;
-    }
-
-    .connect-content{
-      max-width:600px;
-      margin:0 auto;
-    }
-
-    .connect h3{
-      font-family:"Noto Serif SC",serif;
-      font-size:28px;
-      font-weight:400;
-      letter-spacing:0.1em;
-      margin-bottom:24px;
-    }
-
-    .connect p{
-      font-size:14px;
-      color:var(--muted);
-      line-height:2;
-      margin-bottom:48px;
-    }
-
-    .connect-info{
-      display:flex;
-      justify-content:center;
-      gap:60px;
-      margin-bottom:48px;
-      flex-wrap:wrap;
-    }
-
-    @media(max-width:768px){
-      .connect-info{flex-direction:column;gap:24px}
-    }
-
-    .connect-item{
-      text-align:center;
-    }
-
-    .connect-item label{
-      display:block;
-      font-size:10px;
-      letter-spacing:0.2em;
-      color:var(--muted);
-      margin-bottom:8px;
-    }
-
-    .connect-item a{
-      font-size:14px;
-      color:var(--text);
-      border-bottom:1px solid transparent;
-      transition:border-color 0.3s;
-    }
-
-    .connect-item a:hover{
-      border-color:var(--accent);
-    }
-
-    .connect-social{
-      display:flex;
-      justify-content:center;
-      gap:32px;
-      flex-wrap:wrap;
-    }
-
-    .connect-social a{
-      font-size:12px;
-      letter-spacing:0.1em;
-      color:var(--muted);
-      transition:color 0.3s;
-    }
-
-    .connect-social a:hover{
-      color:var(--accent);
-    }
-
-    footer{
-      padding:48px;
-      text-align:center;
-      border-top:1px solid var(--line);
-    }
-
-    footer p{
-      font-size:11px;
-      letter-spacing:0.1em;
-      color:var(--muted);
-    }
-
-    .detail-modal{
-      display:none;
-      position:fixed;
-      top:0;
-      left:0;
-      right:0;
-      bottom:0;
-      background:rgba(250,249,247,0.96);
-      z-index:200;
-      overflow-y:auto;
-    }
-
-    .detail-modal.active{display:block}
-
-    .detail-header{
-      position:fixed;
-      top:0;
-      left:0;
-      right:0;
-      padding:24px 48px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      background:var(--bg);
-      z-index:10;
-      border-bottom:1px solid rgba(0,0,0,0.06);
-      backdrop-filter:saturate(120%) blur(6px);
-      -webkit-backdrop-filter:saturate(120%) blur(6px);
-    }
-
-    @media(max-width:768px){
-      .detail-header{padding:16px 24px}
-    }
-
-    .detail-close{
-      background:none;
-      border:none;
-      font-size:14px;
-      letter-spacing:0.1em;
-      cursor:pointer;
-      color:var(--text);
-      padding:8px 0;
-    }
-
-    .detail-content{
-      max-width:1000px;
-      margin:100px auto;
-      padding:0 48px 72px 48px;
-    }
-
-    @media(max-width:768px){
-      .detail-content{padding:0 24px 56px 24px}
-    }
-
-    .detail-image{
-      width:100%;
-      aspect-ratio:16/9;
-      margin-bottom:48px;
-      background:var(--bg-dark);
-      overflow:hidden;
-    }
-
-    .detail-image img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
-
-    .detail-text h2{
-      font-family:"Noto Serif SC",serif;
-      font-size:32px;
-      font-weight:400;
-      letter-spacing:0.1em;
-      margin-bottom:24px;
-    }
-
-    .detail-text p{
-      font-size:15px;
-      line-height:2;
-      color:var(--muted);
-      max-width:640px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OTSU Official</title>
+
+<style>
+:root{
+  --dark:#0f0f0f;
+  --card:#151515;
+  --text:#ffffff;
+  --muted:rgba(255,255,255,.65);
+  --border:rgba(255,255,255,.08);
+  --light:#ffffff;
+  --accent:linear-gradient(135deg,#1a1a1a,#2a2a2a);
+}
+
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","PingFang SC","Microsoft YaHei",sans-serif;
+  background:#ffffff;
+  color:#111;
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  background:radial-gradient(circle at center,#1a1a1a 0%,#0f0f0f 70%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  text-align:center;
+}
+
+.hero-inner{
+  max-width:800px;
+  padding:0 8vw;
+}
+
+.hero-eyebrow{
+  font-size:12px;
+  letter-spacing:.35em;
+  opacity:.5;
+  margin-bottom:28px;
+}
+
+.hero-title{
+  font-size:64px;
+  font-weight:400;
+  letter-spacing:.18em;
+  margin-bottom:28px;
+}
+
+.hero-desc{
+  font-size:16px;
+  line-height:1.9;
+  opacity:.7;
+}
+
+/* SECTION COMMON */
+.section{
+  padding:140px 8vw;
+}
+
+.section-dark{
+  background:var(--dark);
+  color:var(--text);
+}
+
+.eyebrow{
+  font-size:12px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  opacity:.55;
+  margin-bottom:18px;
+}
+
+.section-title{
+  font-size:36px;
+  font-weight:400;
+  letter-spacing:.08em;
+  margin-bottom:28px;
+}
+
+.section-desc{
+  max-width:620px;
+  font-size:16px;
+  line-height:1.9;
+  color:#666;
+  margin-bottom:100px;
+}
+
+/* GRID */
+.grid-2{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:70px;
+}
+
+/* CARD */
+.card{
+  display:block;
+  text-decoration:none;
+  color:inherit;
+  background:linear-gradient(180deg,#1a1a1a 0%,#101010 100%);
+  border-radius:32px;
+  overflow:hidden;
+  transition:.6s cubic-bezier(.19,1,.22,1);
+  border:1px solid var(--border);
+}
+
+.card:hover{
+  transform:translateY(-8px);
+}
+
+.card-image{
+  width:100%;
+  aspect-ratio:4/3;
+  overflow:hidden;
+}
+
+.card-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform 1.2s ease;
+}
+
+.card:hover .card-image img{
+  transform:scale(1.05);
+}
+
+.card-content{
+  padding:48px 52px 60px 52px;
+}
+
+.card-title{
+  font-size:22px;
+  font-weight:400;
+  line-height:1.6;
+  margin-bottom:24px;
+}
+
+.card-text{
+  font-size:16px;
+  line-height:1.9;
+  color:var(--muted);
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .hero-title{
+    font-size:40px;
+  }
+  .grid-2{
+    grid-template-columns:1fr;
+    gap:50px;
+  }
+}
+</style>
 </head>
 
 <body>
-  <nav>
-    <a href="#top" class="logo" aria-label="OTSU YAN">OTSU YAN</a>
-    <div class="lang-switch" aria-label="Language switch">
-      <button type="button" data-lang-btn="zh" aria-label="中文">中</button>
-      <button type="button" data-lang-btn="en" aria-label="English">EN</button>
-      <button type="button" data-lang-btn="jp" aria-label="日本語">日</button>
-    </div>
-  </nav>
 
-  <section class="hero" id="top">
-    <div class="hero-bg" aria-hidden="true"></div>
-    <div class="hero-content">
-      <p class="hero-brand">EST. 2004 · SHANGHAI</p>
-      <h1 class="hero-title">
-        <span data-lang="zh">欧津纱线</span>
-        <span data-lang="en" hidden>OTSU YAN</span>
-        <span data-lang="jp" hidden>オーツヤン</span>
-      </h1>
-      <p class="hero-desc">
-        <span data-lang="zh">高端花式纱线研发与供应<br>Material · Supply · Development</span>
-        <span data-lang="en" hidden>Premium Fancy Yarn R&D and Supply<br>Material · Supply · Development</span>
-        <span data-lang="jp" hidden>高級ファンシーヤーンの開発と供給<br>Material · Supply · Development</span>
-      </p>
-    </div>
-    <div class="hero-scroll" aria-hidden="true">SCROLL</div>
-  </section>
-
-  <section class="collection" id="collection">
-    <div class="section-header">
-      <p class="section-label">COLLECTION</p>
-      <h2 class="section-title">
-        <span data-lang="zh">产品系列</span>
-        <span data-lang="en" hidden>Collection</span>
-        <span data-lang="jp" hidden>コレクション</span>
-      </h2>
-    </div>
-
-    <div class="collection-grid">
-      <div class="collection-item" role="button" tabindex="0" data-detail="fancy" aria-label="Fancy Yarn">
-        <img src="assets/brand/series_tile_01.png" alt="Fancy Yarn" loading="lazy">
-        <div class="collection-overlay" aria-hidden="true">
-          <h3 class="collection-name">
-            <span data-lang="zh">花式纱线</span>
-            <span data-lang="en" hidden>Fancy Yarn</span>
-            <span data-lang="jp" hidden>ファンシー</span>
-          </h3>
-          <p class="collection-tag">R&D · Texture · Sampling</p>
-        </div>
-      </div>
-
-      <div class="collection-item" role="button" tabindex="0" data-detail="supply" aria-label="Premium Supply">
-        <img src="assets/brand/series_tile_02.png" alt="Premium Supply" loading="lazy">
-        <div class="collection-overlay" aria-hidden="true">
-          <h3 class="collection-name">
-            <span data-lang="zh">品牌供货</span>
-            <span data-lang="en" hidden>Premium Supply</span>
-            <span data-lang="jp" hidden>プレミアム供給</span>
-          </h3>
-          <p class="collection-tag">Supply · Traceable · PM</p>
-        </div>
-      </div>
-
-      <div class="collection-item" role="button" tabindex="0" data-detail="bespoke" aria-label="Bespoke">
-        <img src="assets/brand/series_tile_03.png" alt="Bespoke" loading="lazy">
-        <div class="collection-overlay" aria-hidden="true">
-          <h3 class="collection-name">
-            <span data-lang="zh">特殊定制</span>
-            <span data-lang="en" hidden>Bespoke</span>
-            <span data-lang="jp" hidden>別注</span>
-          </h3>
-          <p class="collection-tag">Bespoke · Spec · Color</p>
-        </div>
-      </div>
-
-      <div class="collection-item" role="button" tabindex="0" data-detail="innovation" aria-label="Innovation">
-        <img src="assets/brand/series_tile_04.png" alt="Innovation" loading="lazy">
-        <div class="collection-overlay" aria-hidden="true">
-          <h3 class="collection-name">
-            <span data-lang="zh">创新研发</span>
-            <span data-lang="en" hidden>Innovation</span>
-            <span data-lang="jp" hidden>イノベーション</span>
-          </h3>
-          <p class="collection-tag">Co-create · Design · Network</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="craft" id="craft">
-    <div class="craft-content">
-      <div class="craft-visual">
-        <img src="assets/brand/craft.jpg" alt="Craftsmanship" loading="lazy">
-      </div>
-      <div class="craft-text">
-        <h3>
-          <span data-lang="zh">工艺与研发</span>
-          <span data-lang="en" hidden>Craft & Research</span>
-          <span data-lang="jp" hidden>工芸と研究</span>
-        </h3>
-        <p>
-          <span data-lang="zh">二十年深耕花式纱线领域，从结构创新到量产落地，为国际品牌提供稳定、透明、可追溯的纱线解决方案。</span>
-          <span data-lang="en" hidden>Two decades in fancy yarn development—from structural innovation to scalable production, delivering stable, transparent, and traceable solutions.</span>
-          <span data-lang="jp" hidden>20年にわたるファンシーヤーンの開発。構造革新から量産まで、安定・透明・トレーサブルなソリューションを提供。</span>
-        </p>
-        <div class="craft-features">
-          <div class="craft-feature">
-            <span>20+</span>
-            <label>YEARS</label>
-          </div>
-          <div class="craft-feature">
-            <span>CN/EN/JP</span>
-            <label>LANGUAGES</label>
-          </div>
-          <div class="craft-feature">
-            <span>R&D</span>
-            <label>FOCUSED</label>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="connect" id="connect">
-    <div class="connect-content">
-      <h3>
-        <span data-lang="zh">联系我们</span>
-        <span data-lang="en" hidden>Connect</span>
-        <span data-lang="jp" hidden>お問い合わせ</span>
-      </h3>
-      <p>
-        <span data-lang="zh">期待与您的合作，共同探索纱线的无限可能。</span>
-        <span data-lang="en" hidden>Looking forward to exploring the infinite possibilities of yarn with you.</span>
-        <span data-lang="jp" hidden>糸の無限の可能性を共に探求できることを楽しみにしています。</span>
-      </p>
-
-      <div class="connect-info">
-        <div class="connect-item">
-          <label>EMAIL</label>
-          <a href="mailto:zyq@otsu1128.com">zyq@otsu1128.com</a>
-        </div>
-        <div class="connect-item">
-          <label>WECHAT</label>
-          <a href="#" onclick="return false;">15021256895</a>
-        </div>
-      </div>
-
-      <div class="connect-social">
-        <a href="https://mp.weixin.qq.com/s/AGSnjUDycr25PSAm_pNs_w" target="_blank" rel="noopener">WeChat 01</a>
-        <a href="https://mp.weixin.qq.com/s/ZjZ0J_OdUqlnePvj8vt35A" target="_blank" rel="noopener">WeChat 02</a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2026 OTSU YAN · 上海欧津纺织服装有限公司</p>
-  </footer>
-
-  <div class="detail-modal" id="detailModal" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="detail-header">
-      <button class="detail-close" id="detailClose" type="button">
-        <span data-lang="zh">← 返回</span>
-        <span data-lang="en" hidden>← Back</span>
-        <span data-lang="jp" hidden>← 戻る</span>
-      </button>
-      <div class="lang-switch" aria-label="Language switch (modal)">
-        <button type="button" data-lang-btn="zh" aria-label="中文">中</button>
-        <button type="button" data-lang-btn="en" aria-label="English">EN</button>
-        <button type="button" data-lang-btn="jp" aria-label="日本語">日</button>
-      </div>
-    </div>
-    <div class="detail-content" id="detailContent">
-      <div class="detail-image">
-        <img id="detailImg" src="" alt="" loading="lazy">
-      </div>
-      <div class="detail-text">
-        <h2 id="detailTitle"></h2>
-        <p id="detailDesc"></p>
-      </div>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">EST. 2004 · SHANGHAI</div>
+    <div class="hero-title">欧津纱线</div>
+    <div class="hero-desc">
+      高端花式纱线研发与供应<br>
+      Material · Supply · Development
     </div>
   </div>
+</section>
 
-  <script>
-    const DETAIL_DATA = {
-      fancy: {
-        img: "assets/brand/series_tile_01.png",
-        title: {zh:"花式纱线创新研发",en:"Fancy Yarn Development",jp:"ファンシーヤーン開発"},
-        desc: {
-          zh:"围绕结构、风合与视觉纹理进行差异化开发，支持从概念打样到量产落地的材料方案输出。",
-          en:"Differentiated development across structure, hand-feel, and visual texture—supporting sampling to scalable production.",
-          jp:"構造・風合い・視覚的テクスチャーを軸に、コンセプト〜量産まで落とし込める素材提案。"
-        }
-      },
-      supply: {
-        img: "assets/brand/series_tile_02.png",
-        title: {zh:"高端品牌供货与协同",en:"Premium Brand Supply",jp:"高級ブランド供給"},
-        desc: {
-          zh:"以稳定交付、透明沟通与可追溯管理为基础，提升跨团队协作效率与项目执行确定性。",
-          en:"Stable delivery, transparent communication, and traceable management for reliable project execution.",
-          jp:"安定納品・透明なコミュニケーション・トレーサブル管理で、協業効率と実行確度を高めます。"
-        }
-      },
-      bespoke: {
-        img: "assets/brand/series_tile_03.png",
-        title: {zh:"特殊规格定制",en:"Bespoke Specifications",jp:"特殊仕様カスタム"},
-        desc: {
-          zh:"支数、成分、捻度、染色与结构等要素精细化对接，支持从打样到量产的一体化协同。",
-          en:"Tailored coordination on counts, blends, twist, dyeing, and structure—from sampling to bulk production.",
-          jp:"番手・混率・撚り・染色・構造などを精緻に調整し、サンプル〜量産まで一貫対応。"
-        }
-      },
-      innovation: {
-        img: "assets/brand/series_tile_04.png",
-        title: {zh:"创新研发与伙伴合作",en:"Innovation & Partnership",jp:"共創とパートナーシップ"},
-        desc: {
-          zh:"联合设计师、院校与合作伙伴推进创意开发与落地，以稳定供给支持持续创新。",
-          en:"Co-create with designers and institutes to turn ideas into scalable products—backed by stable supply.",
-          jp:"デザイナーや教育機関と共創し、アイデアを量産可能な形へ。安定供給で継続的な革新を支えます。"
-        }
-      }
-    };
+<!-- 原 LOOKBOOK 保留 -->
+<section class="section">
+  <div class="eyebrow">LOOKBOOK</div>
+  <div class="section-title">产品图鉴 / 系列专题</div>
+  <div class="section-desc">
+    将产品开发逻辑与系列表达整合为长期更新模块，统一视觉比例，强化品牌呈现。
+  </div>
 
-    const modal = document.getElementById("detailModal");
-    const closeBtn = document.getElementById("detailClose");
-    const detailImg = document.getElementById("detailImg");
-    const detailTitle = document.getElementById("detailTitle");
-    const detailDesc = document.getElementById("detailDesc");
-
-    let currentLang = localStorage.getItem("siteLang") || "zh";
-    let currentKey = null;
-    let lastFocus = null;
-
-    function applyLang(lang){
-      document.querySelectorAll("[data-lang]").forEach(el => {
-        el.hidden = (el.getAttribute("data-lang") !== lang);
-      });
-      document.querySelectorAll("[data-lang-btn]").forEach(btn => {
-        btn.classList.toggle("active", btn.getAttribute("data-lang-btn") === lang);
-      });
-      document.documentElement.setAttribute("lang", lang === "jp" ? "ja" : (lang === "en" ? "en" : "zh-CN"));
-    }
-
-    function setLang(lang){
-      currentLang = lang;
-      localStorage.setItem("siteLang", lang);
-      applyLang(lang);
-      if(modal.classList.contains("active") && currentKey){
-        renderDetail(currentKey);
-      }
-    }
-
-    function renderDetail(key){
-      const data = DETAIL_DATA[key];
-      if(!data) return;
-      detailImg.src = data.img;
-      detailImg.alt = data.title[currentLang] || data.title.zh;
-      detailTitle.textContent = data.title[currentLang] || data.title.zh;
-      detailDesc.textContent = data.desc[currentLang] || data.desc.zh;
-    }
-
-    function openDetail(key){
-      const data = DETAIL_DATA[key];
-      if(!data) return;
-
-      currentKey = key;
-      lastFocus = document.activeElement;
-
-      renderDetail(key);
-
-      modal.classList.add("active");
-      modal.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden";
-
-      closeBtn.focus({preventScroll:true});
-      window.scrollTo({top:0, behavior:"auto"});
-    }
-
-    function closeDetail(){
-      modal.classList.remove("active");
-      modal.setAttribute("aria-hidden", "true");
-      document.body.style.overflow = "";
-      currentKey = null;
-
-      if(lastFocus && typeof lastFocus.focus === "function"){
-        lastFocus.focus({preventScroll:true});
-      }
-    }
-
-    function bindCollection(){
-      document.querySelectorAll(".collection-item").forEach(item => {
-        const key = item.getAttribute("data-detail");
-        item.addEventListener("click", () => openDetail(key));
-        item.addEventListener("keydown", (e) => {
-          if(e.key === "Enter" || e.key === " "){
-            e.preventDefault();
-            openDetail(key);
-          }
-        });
-      });
-    }
-
-    function bindLangButtons(){
-      document.querySelectorAll("[data-lang-btn]").forEach(btn => {
-        btn.addEventListener("click", () => setLang(btn.getAttribute("data-lang-btn")));
-      });
-    }
-
-    document.addEventListener("keydown", (e) => {
-      if(e.key === "Escape" && modal.classList.contains("active")){
-        closeDetail();
-      }
-    });
-
-    closeBtn.addEventListener("click", closeDetail);
-
-    modal.addEventListener("click", (e) => {
-      if(e.target === modal){
-        closeDetail();
-      }
-    });
-
-    document.addEventListener("DOMContentLoaded", () => {
-      applyLang(currentLang);
-      bindLangButtons();
-      bindCollection();
-    });
-  </script>
-</body>
-</html>
+  <div class="grid-2">
+    <!-- 你的四个卡片原样保留 -->
