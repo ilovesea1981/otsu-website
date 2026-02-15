@@ -814,6 +814,13 @@
       background:#f2f2f2;
       aspect-ratio: 16 / 10;
       overflow:hidden;
+      /* ✅ 按 index-5 行为：默认隐藏地图图像区域，hover / focus 才显示 */
+      display:none;
+    }
+
+    .map-shell:hover .map-media,
+    .map-shell:focus-within .map-media{
+      display:block;
     }
     .map-media img{
       width:100%;
