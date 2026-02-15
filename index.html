@@ -5,65 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>上海欧津纺织服装有限公司｜OTSU YARN</title>
 
-  <!-- 基础 SEO -->
-  <meta name="description" content="上海欧津纺织服装有限公司（OTSU YARN）专注高品质纱线开发与供应，支持特殊规格定制，中/英/日多语对接。" />
-  <meta name="theme-color" content="#f6f1e9" />
+  <!-- Canonical -->
   <link rel="canonical" href="https://www.otsu-yarn.com/" />
 
-  <!-- Open Graph / Twitter（分享封面） -->
+  <!-- SEO -->
+  <meta name="description" content="上海欧津纺织服装有限公司（OTSU YARN）专注高品质纱线开发与供应，支持特殊规格定制，中/英/日多语对接。" />
+  <meta name="theme-color" content="#f6f1e9" />
+
+  <!-- Open Graph / Social -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="上海欧津纺织服装有限公司｜OTSU YARN" />
-  <meta property="og:description" content="高品质纱线开发与供应｜现货/订单/特殊规格定制｜中/英/日多语对接" />
+  <meta property="og:description" content="专注高品质纱线开发与供应，支持特殊规格定制，中/英/日多语对接。" />
   <meta property="og:url" content="https://www.otsu-yarn.com/" />
   <meta property="og:image" content="https://www.otsu-yarn.com/assets/brand/og_cover.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="上海欧津纺织服装有限公司｜OTSU YARN" />
-  <meta name="twitter:description" content="高品质纱线开发与供应｜现货/订单/特殊规格定制｜中/英/日多语对接" />
-  <meta name="twitter:image" content="https://www.otsu-yarn.com/assets/brand/og_cover.jpg" />
 
-  <!-- 预加载关键资源 -->
+  <!-- Performance: preload -->
   <link rel="preload" as="image" href="assets/flower.jpeg" fetchpriority="high">
   <link rel="preload" as="image" href="LOGO.png" fetchpriority="high">
-  <link rel="preload" as="image" href="assets/brand/og_cover.jpg">
-  <link rel="preload" as="image" href="assets/brand/map_otsu_qibao.jpg">
+  <link rel="preload" as="image" href="assets/brand/map_otsu_qibao.jpg" fetchpriority="low">
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- 字体加载优化 -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      /* Natural Premium Palette */
-      --paper:#f6f1e9;      /* 主米色纸感 */
-      --paper2:#fbf8f3;     /* 更亮米白 */
-      --paper3:#efe7dc;     /* 两侧更深一点 */
-      --bg:var(--paper);
-      --bg2:rgba(255,255,255,.92);
-
+      /* 色彩系统 */
+      --bg:#f7f6f2;
+      --bg2:#fbfaf7;
       --text:#171717;
       --muted:#6b6b6b;
       --line:rgba(0,0,0,.10);
-      --ink:#0b1220;
+      --ink:#111;
       --sand:#b89f7a;
       --graphite:#1c1c1c;
       --card:#ffffff;
-
       --radius:18px;
       --radius2:22px;
-      --shadow:0 18px 60px rgba(17,17,17,.10);
-      --shadow2:0 12px 40px rgba(17,17,17,.06);
-
+      --shadow:0 18px 60px rgba(0,0,0,.08);
+      --shadow2:0 12px 40px rgba(0,0,0,.06);
       --wrap:1240px;
       --narrow:920px;
 
       --transition-fast:0.18s ease;
       --transition-base:0.22s ease;
-      --transition-slow:0.30s ease;
+      --transition-slow:0.3s ease;
+
+      /* Natural Premium (米色纸感) */
+      --paper:#f6f1e9;
+      --paper2:#fbf8f3;
+      --paper3:#efe7dc;
+      --ink2:#0b1220;
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
@@ -72,7 +68,17 @@
       -webkit-tap-highlight-color:transparent;
     }
 
-    /* 全局背景：画廊级留白 */
+    body{
+      font-family:"Inter","Noto Sans SC","Noto Sans JP",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      line-height:1.9;
+      letter-spacing:.01em;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+      overscroll-behavior-y:none;
+    }
+
+    /* A+D：画廊级背景（两侧微暗，中间更亮） */
     html, body{
       background:
         radial-gradient(1200px 900px at 18% 18%, rgba(255,255,255,.75) 0%, rgba(255,255,255,0) 55%),
@@ -84,22 +90,10 @@
           var(--paper2) 82%,
           var(--paper3) 100%
         );
-      color:var(--ink);
+      color:var(--ink2);
     }
 
-    body{
-      font-family:"Inter","Noto Sans SC","Noto Sans JP",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      line-height:1.9;
-      letter-spacing:.01em;
-      -webkit-font-smoothing:antialiased;
-      text-rendering:optimizeLegibility;
-      overscroll-behavior-y:none;
-    }
-
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;height:auto;display:block}
-
-    /* 细腻纹理层（极克制） */
+    /* 纸纹（极淡） */
     body::before{
       content:"";
       position:fixed;
@@ -115,32 +109,41 @@
       filter: blur(.2px);
     }
 
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;height:auto;display:block}
+
     .wrap{ max-width:var(--wrap); margin:0 auto; padding:0 22px; }
     .narrow{ max-width:var(--narrow); }
 
     /* =========================
-       i18n 渐进增强兜底（关键）
-       - 默认显示中文（无 JS 也不空白）
-       - JS 成功后再进入 active 控制
+       多语言：稳健 + 防空白
+       - 默认显示中文
+       - JS 初始化后再进入“严格隐藏非当前语言”
     ========================= */
-    [data-lang]{ display:none; }
-    [data-lang="zh"]{ display:inline; } /* 无 JS 默认中文可见 */
+    [data-lang]{ display:inline; }
+    html.lang-ready [data-lang]{ display:none; }
+    html.lang-ready [data-lang].active{ display:inline; }
 
-    .i18n-ready [data-lang]{ display:none; }
-    .i18n-ready [data-lang].active{ display:inline; }
+    /* 没有 lang-ready 时，强制英文/日文隐藏，避免初始乱闪 */
+    html:not(.lang-ready) [data-lang="en"],
+    html:not(.lang-ready) [data-lang="jp"]{ display:none; }
+    html:not(.lang-ready) [data-lang="zh"]{ display:inline; }
 
     /* ===== Header ===== */
     header{
       position:sticky;
       top:0;
       z-index:100;
-      background:rgba(246,241,233,.92);
+      background:rgba(247,246,242,.92);
       backdrop-filter:blur(12px);
       -webkit-backdrop-filter:blur(12px);
-      border-bottom:1px solid rgba(0,0,0,.08);
+      border-bottom:1px solid var(--line);
       transition:box-shadow var(--transition-base);
+      box-shadow: 0 10px 30px rgba(17,17,17,.16);
     }
-    header.scrolled{ box-shadow:0 8px 28px rgba(17,17,17,.14); }
+    header.scrolled{
+      box-shadow:0 4px 20px rgba(0,0,0,.08);
+    }
 
     .topbar{
       display:flex;
@@ -172,14 +175,14 @@
       font-size:14px;
       font-weight:600;
       letter-spacing:.08em;
-      color:var(--ink);
+      color:var(--ink2);
     }
     .brand-sub{
       font-size:12px;
       margin-top:3px;
-      color:rgba(0,0,0,.52);
+      color:rgba(0,0,0,.55);
       letter-spacing:.08em;
-      font-weight:500;
+      font-weight:400;
     }
 
     nav{
@@ -231,7 +234,7 @@
       letter-spacing:.06em;
       cursor:pointer;
       transition:all var(--transition-fast);
-      font-weight:600;
+      font-weight:500;
       min-width:44px;
     }
     .lang-switch button:hover,
@@ -242,9 +245,9 @@
       outline:none;
     }
     .lang-switch button.active{
-      background:var(--ink);
+      background:var(--ink2);
       color:#fff;
-      border-color:var(--ink);
+      border-color:var(--ink2);
     }
 
     /* ===== Sections ===== */
@@ -271,20 +274,20 @@
       text-transform:uppercase;
       color:rgba(0,0,0,.52);
       margin:0 0 14px 0;
-      font-weight:700;
+      font-weight:600;
     }
 
     .title{
       font-size:clamp(32px, 5vw, 40px);
-      font-weight:520;
+      font-weight:500;
       margin:0 0 18px 0;
       letter-spacing:.04em;
       line-height:1.18;
-      color:var(--ink);
+      color:var(--ink2);
     }
     .title-light{
       font-size:clamp(32px, 5vw, 40px);
-      font-weight:520;
+      font-weight:500;
       margin:0 0 18px 0;
       letter-spacing:.04em;
       line-height:1.18;
@@ -314,22 +317,15 @@
       }
     }
 
-    /* =========================
-       动画 渐进增强兜底（关键）
-       - 默认内容可见（无 JS 不空白）
-       - JS 成功且支持 IO 时，才启用“先隐藏后出现”
-    ========================= */
-    .fade-up{
-      opacity:1;
-      transform:none;
-      transition:opacity 0.8s ease, transform 0.8s ease;
-      will-change:opacity, transform;
-    }
-    .js-anim .fade-up{
+    /* ===== Fade-up：防“整页空白”兜底 ===== */
+    .fade-up{ opacity:1; transform:none; }
+
+    html.js .fade-up{
       opacity:0;
       transform:translateY(20px);
+      transition:opacity 0.8s ease, transform 0.8s ease;
     }
-    .js-anim .fade-up.visible{
+    html.js .fade-up.visible{
       opacity:1;
       transform:translateY(0);
     }
@@ -359,15 +355,15 @@
       letter-spacing:.44em;
       color:rgba(0,0,0,.56);
       margin:0 0 16px 0;
-      font-weight:800;
+      font-weight:700;
       text-transform:uppercase;
     }
     .hero-title{
       font-size:clamp(36px, 6vw, 56px);
-      font-weight:520;
+      font-weight:500;
       letter-spacing:.03em;
       margin:0 0 16px 0;
-      color:var(--ink);
+      color:var(--ink2);
       line-height:1.08;
     }
     .hero-desc{
@@ -393,7 +389,7 @@
       background:rgba(255,255,255,.62);
       box-shadow:0 10px 26px rgba(0,0,0,.05);
       letter-spacing:.04em;
-      font-weight:600;
+      font-weight:500;
       transition:transform var(--transition-fast), box-shadow var(--transition-fast);
     }
     .chip:hover{
@@ -408,8 +404,8 @@
       border-bottom:1px solid rgba(0,0,0,.06);
     }
     .philo-card{
-      background:rgba(255,255,255,.94);
-      border:1px solid rgba(17,17,17,.06);
+      background:#fff;
+      border:1px solid rgba(0,0,0,.06);
       border-radius:var(--radius2);
       padding:34px;
       box-shadow:var(--shadow2);
@@ -421,7 +417,7 @@
       letter-spacing:.02em;
     }
     .philo-quote strong{
-      font-weight:650;
+      font-weight:600;
       color:rgba(0,0,0,.88);
     }
     .philo-sub{
@@ -430,7 +426,6 @@
       color:rgba(0,0,0,.52);
       letter-spacing:.10em;
       text-transform:uppercase;
-      font-weight:650;
     }
 
     /* ===== Series / Lookbook ===== */
@@ -446,8 +441,8 @@
     .series-card{
       overflow:hidden;
       border-radius:20px;
-      background:rgba(255,255,255,.94);
-      border:1px solid rgba(17,17,17,.06);
+      background:#fff;
+      border:1px solid rgba(0,0,0,.08);
       box-shadow:var(--shadow2);
       transition:transform var(--transition-base), box-shadow var(--transition-base);
       will-change:transform;
@@ -469,14 +464,15 @@
       object-position:center;
       transition:transform 0.6s ease;
     }
-    .series-card:hover .series-media img{ transform:scale(1.05); }
+    .series-card:hover .series-media img{
+      transform:scale(1.05);
+    }
     .series-body{ padding:20px; }
-
     .series-title{
       margin:0 0 10px 0;
       font-size:16px;
       letter-spacing:.05em;
-      font-weight:700;
+      font-weight:650;
       color:rgba(0,0,0,.88);
     }
     .series-desc{
@@ -500,10 +496,14 @@
       background:rgba(184,159,122,.10);
       border:1px solid rgba(184,159,122,.20);
       color:rgba(0,0,0,.70);
-      font-weight:700;
+      font-weight:600;
       text-transform:uppercase;
     }
-    .series-actions{ display:flex; gap:10px; flex-wrap:wrap; }
+    .series-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
 
     .btn{
       display:inline-flex;
@@ -515,22 +515,25 @@
       letter-spacing:.06em;
       cursor:pointer;
       border:1px solid rgba(0,0,0,.16);
-      background:rgba(255,255,255,.92);
+      background:#fff;
       color:rgba(0,0,0,.78);
       transition:all var(--transition-fast);
-      font-weight:700;
+      font-weight:600;
       text-transform:uppercase;
+      text-decoration:none;
     }
     .btn:hover{
       transform:translateY(-2px);
       border-color:rgba(0,0,0,.28);
       background:rgba(0,0,0,.02);
     }
-    .btn:focus{ outline:2px solid var(--sand); outline-offset:2px; }
-
+    .btn:focus{
+      outline:2px solid var(--sand);
+      outline-offset:2px;
+    }
     .btn-solid{
-      border-color:var(--ink);
-      background:var(--ink);
+      border-color:var(--ink2);
+      background:var(--ink2);
       color:#fff;
     }
     .btn-solid:hover{
@@ -553,7 +556,7 @@
       border-radius:18px;
       background:rgba(255,255,255,.06);
       border:1px solid rgba(255,255,255,.10);
-      transition:transform var(--transition-base), background var(--transition-base);
+      transition:transform var(--transition-base);
     }
     .cap:hover{
       transform:translateY(-2px);
@@ -563,7 +566,7 @@
       margin:0 0 10px 0;
       font-size:11px;
       letter-spacing:.34em;
-      font-weight:800;
+      font-weight:700;
       text-transform:uppercase;
       color:rgba(255,255,255,.92);
     }
@@ -592,7 +595,7 @@
     .metric:hover{ background:rgba(255,255,255,.08); }
     .metric-num{
       font-size:28px;
-      font-weight:750;
+      font-weight:650;
       letter-spacing:.03em;
       margin:0;
       color:#fff;
@@ -602,7 +605,6 @@
       font-size:13px;
       color:rgba(255,255,255,.78);
       letter-spacing:.06em;
-      font-weight:600;
     }
 
     /* ===== WeChat Cards ===== */
@@ -616,10 +618,10 @@
       .wx-grid{ grid-template-columns:1fr; }
     }
     .wx-card{
-      background:rgba(255,255,255,.94);
+      background:#fff;
       border-radius:20px;
       overflow:hidden;
-      border:1px solid rgba(17,17,17,.06);
+      border:1px solid rgba(0,0,0,.08);
       box-shadow:var(--shadow2);
       transition:transform var(--transition-base), box-shadow var(--transition-base);
       will-change:transform;
@@ -646,7 +648,7 @@
       margin:0 0 10px 0;
       font-size:15px;
       letter-spacing:.02em;
-      font-weight:800;
+      font-weight:700;
       color:rgba(0,0,0,.86);
       line-height:1.4;
     }
@@ -656,7 +658,11 @@
       color:rgba(0,0,0,.62);
       line-height:1.95;
     }
-    .wx-actions{ display:flex; gap:10px; flex-wrap:wrap; }
+    .wx-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
     .wx-btn{
       display:inline-flex;
       align-items:center;
@@ -666,20 +672,21 @@
       font-size:13px;
       letter-spacing:.04em;
       border:1px solid rgba(0,0,0,.18);
-      background:rgba(255,255,255,.92);
+      background:#fff;
       color:rgba(0,0,0,.78);
       cursor:pointer;
-      font-weight:750;
+      font-weight:650;
       transition:all var(--transition-fast);
+      text-decoration:none;
     }
     .wx-btn:hover{
       transform:translateY(-2px);
       border-color:rgba(0,0,0,.30);
     }
     .wx-btn-solid{
-      background:var(--ink);
+      background:var(--ink2);
       color:#fff;
-      border-color:var(--ink);
+      border-color:var(--ink2);
     }
     .wx-btn-solid:hover{
       background:#000;
@@ -688,11 +695,11 @@
 
     /* ===== Contact ===== */
     .contact-box{
-      background:rgba(255,255,255,.94);
+      background:#fff;
       border-radius:22px;
       box-shadow:var(--shadow2);
       padding:30px;
-      border:1px solid rgba(17,17,17,.06);
+      border:1px solid rgba(0,0,0,.08);
     }
     .kv{
       display:grid;
@@ -700,29 +707,31 @@
       gap:10px 14px;
       margin-top:10px;
     }
-    .kv div{ font-size:14px; color:rgba(0,0,0,.78); }
+    .kv div{
+      font-size:14px;
+      color:rgba(0,0,0,.78);
+    }
     .kv .k{
       color:rgba(0,0,0,.52);
       letter-spacing:.10em;
       font-size:12px;
       text-transform:uppercase;
-      font-weight:800;
+      font-weight:650;
     }
     .kv a{
       color:var(--sand);
       text-decoration:underline;
       text-underline-offset:3px;
       transition:color var(--transition-fast);
-      font-weight:650;
     }
-    .kv a:hover{ color:var(--ink); }
+    .kv a:hover{ color:var(--ink2); }
     @media (max-width: 640px){
       .kv{ grid-template-columns:1fr; gap:4px 0; }
       .kv .k{ margin-top:12px; }
       .kv .k:first-child{ margin-top:0; }
     }
 
-    /* ===== Office / Static Map ===== */
+    /* ===== Office / Map (静态截图 + Hover 提示 + 点击打开) ===== */
     .office-card{
       display:flex;
       gap:40px;
@@ -730,7 +739,7 @@
       background:rgba(255,255,255,.94);
       border-radius:24px;
       padding:40px;
-      box-shadow:var(--shadow2);
+      box-shadow:0 18px 60px rgba(17,17,17,.10);
       border:1px solid rgba(17,17,17,.06);
     }
     @media (max-width: 980px){
@@ -749,13 +758,13 @@
       color:rgba(0,0,0,.50);
       margin:0 0 12px 0;
       text-transform:uppercase;
-      font-weight:800;
+      font-weight:650;
     }
     .office-name{
       margin:0 0 10px 0;
       font-size:22px;
       letter-spacing:.02em;
-      font-weight:850;
+      font-weight:750;
       color:rgba(0,0,0,.86);
     }
     .office-addr{
@@ -764,13 +773,13 @@
       color:rgba(0,0,0,.66);
       line-height:2.0;
     }
-    .office-hint{
-      margin:0 0 18px 0;
-      font-size:13px;
-      color:rgba(0,0,0,.58);
-      line-height:1.95;
+
+    .office-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:10px;
     }
-    .office-actions{ display:flex; gap:10px; flex-wrap:wrap; }
 
     .map-btn{
       display:inline-flex;
@@ -782,28 +791,29 @@
       font-size:13px;
       letter-spacing:.04em;
       cursor:pointer;
-      background:var(--ink);
+      background:var(--ink2);
       color:#fff;
-      font-weight:800;
+      font-weight:650;
       transition:all var(--transition-fast);
+      text-decoration:none;
     }
-    .map-btn:hover{
-      transform:translateY(-2px);
-      background:#000;
-    }
+    .map-btn:hover{ transform:translateY(-2px); background:#000; }
+
     .map-btn-ghost{
-      background:rgba(255,255,255,.92);
+      background:#fff;
       color:rgba(0,0,0,.78);
       border-color:rgba(0,0,0,.18);
     }
-    .map-btn-ghost:hover{ background:rgba(0,0,0,.02); }
+    .map-btn-ghost:hover{
+      background:rgba(0,0,0,.02);
+    }
 
     .map-shell{
-      background:rgba(255,255,255,.94);
-      border:1px solid rgba(17,17,17,.06);
+      background:#fff;
+      border:1px solid rgba(0,0,0,.08);
       border-radius:18px;
       overflow:hidden;
-      box-shadow:0 12px 34px rgba(17,17,17,.08);
+      box-shadow:0 12px 34px rgba(0,0,0,.06);
     }
     .map-top{
       display:flex;
@@ -811,75 +821,115 @@
       align-items:center;
       padding:14px 16px;
       border-bottom:1px solid rgba(0,0,0,.08);
-      background:rgba(250,249,246,.9);
+      background:#faf9f6;
+      position:relative;
+      cursor:pointer;
     }
     .map-top strong{
       font-size:12px;
       letter-spacing:.18em;
       color:#111;
-      font-weight:850;
+      font-weight:750;
     }
     .map-top span{
       font-size:12px;
       color:rgba(0,0,0,.52);
-      font-weight:650;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      max-width:62%;
     }
 
-    .map-static{
-      position:relative;
-      display:block;
-      aspect-ratio: 16 / 11;
-      background:#f2f2f2;
-      overflow:hidden;
+    /* Hover 提示（蓝框区域：map-top） */
+    .map-top .top-hover{
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(11,18,32,.78);
+      color:#fff;
+      opacity:0;
+      transition:opacity var(--transition-base);
+      pointer-events:none;
+      font-size:12px;
+      letter-spacing:.10em;
+      text-transform:uppercase;
     }
-    .map-static img{
+    .map-shell:hover .map-top .top-hover,
+    .map-shell:focus-within .map-top .top-hover{
+      opacity:1;
+    }
+
+    /* 红框内容：默认隐藏，hover 或 focus 才显示（选 1） */
+    .map-body{
+      position:relative;
+      display:none;
+    }
+    .map-shell:hover .map-body,
+    .map-shell:focus-within .map-body{
+      display:block;
+    }
+
+    .map-link{
+      display:block;
+      position:relative;
+      outline:none;
+    }
+    .map-link:focus{
+      outline:2px solid var(--sand);
+      outline-offset:3px;
+    }
+
+    .map-img{
       width:100%;
-      height:100%;
+      height:340px;
       object-fit:cover;
       object-position:center;
-      transform:scale(1.01);
+      display:block;
+      filter:saturate(1.02) contrast(1.02);
+      transform:scale(1.0001);
       transition:transform 0.6s ease;
     }
-    .map-static:hover img{ transform:scale(1.05); }
+    .map-shell:hover .map-img{ transform:scale(1.015); }
 
+    /* 附图 hover 提示（红框区域：图上） */
     .map-overlay{
       position:absolute;
       inset:0;
       display:flex;
-      align-items:flex-end;
-      justify-content:flex-start;
-      padding:16px;
+      align-items:center;
+      justify-content:center;
+      opacity:0;
+      transition:opacity var(--transition-base);
       background:
-        linear-gradient(to top, rgba(0,0,0,.35) 0%, rgba(0,0,0,0) 55%);
+        radial-gradient(520px 280px at 50% 55%, rgba(11,18,32,.55) 0%, rgba(11,18,32,0) 65%),
+        linear-gradient(to bottom, rgba(0,0,0,.18) 0%, rgba(0,0,0,.08) 40%, rgba(0,0,0,.22) 100%);
       pointer-events:none;
     }
-    .map-pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
+    .map-shell:hover .map-overlay,
+    .map-shell:focus-within .map-overlay{
+      opacity:1;
+    }
+
+    .map-overlay .tip{
       padding:10px 14px;
       border-radius:999px;
-      background:rgba(255,255,255,.88);
-      border:1px solid rgba(0,0,0,.12);
-      color:rgba(0,0,0,.80);
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(0,0,0,.10);
+      color:rgba(0,0,0,.82);
       font-size:12px;
       letter-spacing:.08em;
-      font-weight:850;
+      font-weight:700;
+      box-shadow:0 14px 36px rgba(0,0,0,.12);
       text-transform:uppercase;
-      box-shadow:0 10px 26px rgba(0,0,0,.12);
-    }
-    .map-sub{
-      display:block;
-      margin-top:8px;
-      font-size:12px;
-      color:rgba(255,255,255,.92);
-      letter-spacing:.06em;
-      font-weight:650;
+      text-align:center;
+      line-height:1.5;
     }
 
     /* ===== Footer ===== */
     footer{
-      background:rgba(242,241,237,.9);
+      background:#f2f1ed;
       padding:54px 0 52px 0;
       text-align:center;
       color:rgba(0,0,0,.55);
@@ -890,7 +940,6 @@
       font-size:12px;
       color:rgba(0,0,0,.50);
       letter-spacing:.08em;
-      font-weight:650;
     }
 
     /* ===== Responsive ===== */
@@ -905,9 +954,10 @@
       .hero{ padding:64px 0 54px 0; }
       .chips{ gap:8px; }
       .chip{ font-size:12px; padding:8px 12px; }
+      .map-img{ height:300px; }
     }
 
-    /* 打印优化 */
+    /* Print */
     @media print{
       header, .lang-switch, .office-actions, .series-actions, .wx-actions{ display:none !important; }
       .section{ padding:40px 0 !important; }
@@ -962,10 +1012,8 @@
 
       <p class="hero-desc fade-up">
         <span data-lang="zh">面向贸易商、成衣制造工厂及高端时尚品牌客户，提供稳定、透明、可追溯的纱线供应体系；支持现货供应、订单生产及特殊规格定制，并提供中、英、日多语对接服务，提升协作效率。</span>
-        <span data-lang="en">For traders, garment manufacturers and premium fashion brands, we deliver a stable, transparent and fully traceable yarn supply experience.
-Supporting in-stock availability, made-to-order production and custom specifications — with seamless coordination in Chinese, English and Japanese.</span>
-        <span data-lang="jp">商社・縫製工場・ハイエンドファッションブランド向けに、安定的かつ透明性の高い、トレーサビリティを備えた糸供給体制を提供しております。
-即納在庫・受注生産・特殊仕様への対応に加え、中・英・日の多言語で円滑なコミュニケーションを実現します。</span>
+        <span data-lang="en">For traders, garment manufacturers and premium fashion brands, we deliver a stable, transparent and fully traceable yarn supply experience. Supporting in-stock availability, made-to-order production and custom specifications — with seamless coordination in Chinese, English and Japanese.</span>
+        <span data-lang="jp">商社・縫製工場・ハイエンドファッションブランド向けに、安定的かつ透明性の高い、トレーサビリティを備えた糸供給体制を提供しております。即納在庫・受注生産・特殊仕様への対応に加え、中・英・日の多言語で円滑なコミュニケーションを実現します。</span>
       </p>
 
       <div class="chips fade-up">
@@ -989,7 +1037,7 @@ Supporting in-stock availability, made-to-order production and custom specificat
 
       <p class="lead fade-up">
         <span data-lang="zh">自 2004 年进入纱线行业以来，我们持续深耕花式纱线研发、高端品牌协同与供应链管理；以材料开发能力与稳定供给能力为核心，长期服务日本、欧洲及中国一线时尚品牌与制造合作伙伴。</span>
-        <span data-lang="en">Since entering the yarn industry in 2004, we have focused on fancy yarn R&amp;D, premium-brand collaboration, and supply chain management—combining material development with reliable delivery for global partners.</span>
+        <span data-lang="en">Since entering the yarn industry in 2004, we have focused on fancy yarn R&D, premium-brand collaboration, and supply chain management—combining material development with reliable delivery for global partners.</span>
         <span data-lang="jp">2004年の参入以来、ファンシーヤーンの開発、高級ブランドとの協業、サプライチェーン管理を継続的に強化。素材開発力と安定供給を軸に、日欧中の主要パートナーを長期的に支えています。</span>
       </p>
     </div>
@@ -1048,7 +1096,7 @@ Supporting in-stock availability, made-to-order production and custom specificat
               <span data-lang="en">Differentiated development across structure, hand-feel and texture—built for scale.</span>
               <span data-lang="jp">構造・風合い・テクスチャーを軸に差別化し、量産に落とし込める素材提案。</span>
             </p>
-            <ul class="series-tags"><li>R&amp;D</li><li>Texture</li><li>Sampling</li></ul>
+            <ul class="series-tags"><li>R&D</li><li>Texture</li><li>Sampling</li></ul>
             <div class="series-actions">
               <a class="btn btn-solid" href="series.html?topic=fancy"><span data-lang="zh">查看详情</span><span data-lang="en">View</span><span data-lang="jp">詳細</span></a>
               <a class="btn" href="#wx"><span data-lang="zh">公众号阅读</span><span data-lang="en">WeChat</span><span data-lang="jp">記事</span></a>
@@ -1107,7 +1155,7 @@ Supporting in-stock availability, made-to-order production and custom specificat
           <div class="series-body">
             <h3 class="series-title">
               <span data-lang="zh">创新研发与伙伴式合作</span>
-              <span data-lang="en">Innovation &amp; Partnership</span>
+              <span data-lang="en">Innovation & Partnership</span>
               <span data-lang="jp">共創とパートナーシップ</span>
             </h3>
             <p class="series-desc">
@@ -1135,15 +1183,15 @@ Supporting in-stock availability, made-to-order production and custom specificat
         <span data-lang="jp">主な強み</span>
       </h2>
       <p class="lead-light fade-up">
-        <span data-lang="zh">以"研发导向 + 稳定供应 + 跨语协同"为主轴，将材料方案、项目执行与交付确定性统一到同一套工作逻辑中。</span>
-        <span data-lang="en">R&amp;D-driven + reliable supply + multilingual collaboration—one workflow from material planning to delivery certainty.</span>
+        <span data-lang="zh">以“研发导向 + 稳定供应 + 跨语协同”为主轴，将材料方案、项目执行与交付确定性统一到同一套工作逻辑中。</span>
+        <span data-lang="en">R&D-driven + reliable supply + multilingual collaboration—one workflow from material planning to delivery certainty.</span>
         <span data-lang="jp">「開発主導 × 安定供給 × 多言語連携」を軸に、素材提案から納品確度まで一貫した運用で支えます。</span>
       </p>
 
       <div class="cap-grid">
         <div class="cap fade-up">
-          <h3>Material R&amp;D</h3>
-          <p><span data-lang="zh">花式纱线研发与技术导向；支持从概念到打样的材料路线设计。</span><span data-lang="en">Fancy yarn R&amp;D and technical direction—from concept to sampling route.</span><span data-lang="jp">ファンシーヤーン開発と技術設計。コンセプト〜サンプルまでの素材設計を支援。</span></p>
+          <h3>Material R&D</h3>
+          <p><span data-lang="zh">花式纱线研发与技术导向；支持从概念到打样的材料路线设计。</span><span data-lang="en">Fancy yarn R&D and technical direction—from concept to sampling route.</span><span data-lang="jp">ファンシーヤーン開発と技術設計。コンセプト〜サンプルまでの素材設計を支援。</span></p>
         </div>
         <div class="cap fade-up">
           <h3>Delivery System</h3>
@@ -1165,7 +1213,7 @@ Supporting in-stock availability, made-to-order production and custom specificat
           <div class="metric-label"><span data-lang="zh">多语协同</span><span data-lang="en">Multilingual</span><span data-lang="jp">多言語対応</span></div>
         </div>
         <div class="metric fade-up">
-          <p class="metric-num">R&amp;D × Supply</p>
+          <p class="metric-num">R&D × Supply</p>
           <div class="metric-label"><span data-lang="zh">开发与供应一体</span><span data-lang="en">Integrated workflow</span><span data-lang="jp">開発×供給</span></div>
         </div>
       </div>
@@ -1196,15 +1244,9 @@ Supporting in-stock availability, made-to-order production and custom specificat
               <span data-lang="jp">26/27年春夏トレンド解読｜オツ RUBY-WS ファンシーテープヤーン</span>
             </h3>
             <p class="wx-excerpt">
-              <span data-lang="zh">第一篇<br>
-              从趋势洞察到工艺实现，纱线的一物多用提升了开发与库存效率。<br>
-              当趋势转化为纺织组织和肌理，纱线成为风格定义的起点。</span>
-              <span data-lang="en">First Article<br>
-              From trend insights to the implementation of technology, yarns with multiple uses enhance development and inventory efficiency.<br>
-              When trends transform into textile structures and textures, yarns become the starting point for defining style.</span>
-              <span data-lang="jp">第一篇<br>
-              トレンド洞察から技術実現まで、糸の多用途は開発と在庫効率を向上させます。<br>
-              トレンドが織物構造と質感に変わると、糸はスタイルを定義する出発点となります。</span>
+              <span data-lang="zh">第一篇<br>从趋势洞察到工艺实现，纱线的一物多用提升了开发与库存效率。<br>当趋势转化为纺织组织和肌理，纱线成为风格定义的起点。</span>
+              <span data-lang="en">First Article<br>From trend insights to the implementation of technology, yarns with multiple uses enhance development and inventory efficiency.<br>When trends transform into textile structures and textures, yarns become the starting point for defining style.</span>
+              <span data-lang="jp">第一篇<br>トレンド洞察から技術実現まで、糸の多用途は開発と在庫効率を向上させます。<br>トレンドが織物構造と質感に変わると、糸はスタイルを定義する出発点となります。</span>
             </p>
             <div class="wx-actions">
               <a class="wx-btn wx-btn-solid" href="https://mp.weixin.qq.com/s/AGSnjUDycr25PSAm_pNs_w" target="_blank" rel="noopener noreferrer">
@@ -1227,20 +1269,14 @@ Supporting in-stock availability, made-to-order production and custom specificat
           </div>
           <div class="wx-body">
             <h3 class="wx-title">
-              <span data-lang="zh">OTSU欧津 RUBY-WS：当羊毛织进蚕丝里，便有了穿在身上的"月光"</span>
-              <span data-lang="en">OTSU RUBY-WS: When Wool is Woven into Silk, It Becomes the 'Moonlight' Worn on the Body</span>
+              <span data-lang="zh">OTSU欧津 RUBY-WS：当羊毛织进蚕丝里，便有了穿在身上的“月光”</span>
+              <span data-lang="en">OTSU RUBY-WS: When Wool is Woven into Silk, It Becomes the “Moonlight” Worn on the Body</span>
               <span data-lang="jp">OTSU RUBY-WS：羊毛が絹に織り込まれると、体に着る「月光」が生まれる</span>
             </h3>
             <p class="wx-excerpt">
-              <span data-lang="zh">第二篇<br>
-              羊毛与桑蚕丝复合结构，在垂坠感和四季适穿性之间取得平衡。<br>
-              如月光般柔和的光感，在垂坠性和弹性之间找到完美平衡。</span>
-              <span data-lang="en">Second Article<br>
-              The composite structure of wool and mulberry silk strikes a balance between drape and year-round wearability.<br>
-              Soft and light, like moonlight, it finds a perfect balance between drape and elasticity.</span>
-              <span data-lang="jp">第二篇<br>
-              羊毛と桑蚕シルクの複合構造は、ドレープ感と四季を通じて着やすさの間でバランスを取っています。<br>
-              月光のような柔らかさと光感が、ドレープ性と弾力性の間で完璧なバランスを見つけます。</span>
+              <span data-lang="zh">第二篇<br>羊毛与桑蚕丝复合结构，在垂坠感和四季适穿性之间取得平衡。<br>如月光般柔和的光感，在垂坠性和弹性之间找到完美平衡。</span>
+              <span data-lang="en">Second Article<br>The composite structure of wool and mulberry silk strikes a balance between drape and year-round wearability.<br>Soft and light, like moonlight, it finds a perfect balance between drape and elasticity.</span>
+              <span data-lang="jp">第二篇<br>羊毛と桑蚕シルクの複合構造は、ドレープ感と四季を通じて着やすさの間でバランスを取っています。<br>月光のような柔らかさと光感が、ドレープ性と弾力性の間で完璧なバランスを見つけます。</span>
             </p>
             <div class="wx-actions">
               <a class="wx-btn wx-btn-solid" href="https://mp.weixin.qq.com/s/AGSnjUDycr25PSAm_pNs_w" target="_blank" rel="noopener noreferrer">
@@ -1292,7 +1328,7 @@ Supporting in-stock availability, made-to-order production and custom specificat
     </div>
   </section>
 
-  <!-- OFFICE / STATIC MAP -->
+  <!-- OFFICE / MAP -->
   <section class="section section-white" id="office">
     <div class="wrap">
       <div class="office-card">
@@ -1308,11 +1344,10 @@ Supporting in-stock availability, made-to-order production and custom specificat
             <span data-lang="en">Room 618, Building 26, No. 41<br>Vanke Qibao International<br>No. 8633 Zhongchun Road, Minhang District, Shanghai</span>
             <span data-lang="jp">上海市閔行区中春路8633弄<br>万科七宝国際41号26棟618室</span>
           </p>
-    
 
           <div class="office-actions">
             <a class="map-btn" href="https://map.baidu.com/search/%E4%B8%8A%E6%B5%B7%E6%AC%A7%E6%B4%A5%E7%BA%BA%E7%BB%87%E6%9C%8D%E8%A3%85%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/@13508157.795,3630799.26,19z?querytype=s&da_src=shareurl&wd=%E4%B8%8A%E6%B5%B7%E6%AC%A7%E6%B4%A5%E7%BA%BA%E7%BB%87%E6%9C%8D%E8%A3%85%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&c=289&src=0&wd2=%E4%B8%8A%E6%B5%B7%E5%B8%82%E9%97%B5%E8%A1%8C%E5%8C%BA&pn=0&sug=1&l=19&b=(13508327.795,3631526.76;13509283.795,3631987.76)&from=webmap&biz_forward=%7B%22scaler%22:1,%22styles%22:%22pl%22%7D&sug_forward=911c35b161b15dd87adbd238&device_ratio=1"
-               target="_blank" rel="noopener">
+               target="_blank" rel="noopener noreferrer">
               <span data-lang="zh">在百度地图中打开</span>
               <span data-lang="en">Open in Baidu Maps</span>
               <span data-lang="jp">百度地図で開く</span>
@@ -1320,36 +1355,41 @@ Supporting in-stock availability, made-to-order production and custom specificat
             <a class="map-btn map-btn-ghost" href="#top">
               <span data-lang="zh">返回顶部</span>
               <span data-lang="en">Back to Top</span>
-              <span data-lang="jp">トップへ戻る</span>
+              <span data-lang="jp">トップへ</span>
             </a>
           </div>
         </div>
 
         <div class="office-right">
-          <div class="map-shell">
-            <div class="map-top">
-              <strong>BAIDU MAP</strong>
-              <span>上海欧津纺织服装有限公司</span>
-            </div>
+          <div class="map-shell" aria-label="Baidu map preview">
+            <!-- 蓝框区域：可点击 + hover 显示三语提示 -->
+            <a class="map-link" href="https://map.baidu.com/search/%E4%B8%8A%E6%B5%B7%E6%AC%A7%E6%B4%A5%E7%BA%BA%E7%BB%87%E6%9C%8D%E8%A3%85%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/@13508157.795,3630799.26,19z?querytype=s&da_src=shareurl&wd=%E4%B8%8A%E6%B5%B7%E6%AC%A7%E6%B4%A5%E7%BA%BA%E7%BB%87%E6%9C%8D%E8%A3%85%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&c=289&src=0&wd2=%E4%B8%8A%E6%B5%B7%E5%B8%82%E9%97%B5%E8%A1%8C%E5%8C%BA&pn=0&sug=1&l=19&b=(13508327.795,3631526.76;13509283.795,3631987.76)&from=webmap&biz_forward=%7B%22scaler%22:1,%22styles%22:%22pl%22%7D&sug_forward=911c35b161b15dd87adbd238&device_ratio=1"
+               target="_blank" rel="noopener noreferrer">
+              <div class="map-top">
+                <strong>BAIDU MAP</strong>
+                <span>上海欧津纺织服装有限公司</span>
+                <div class="top-hover">
+                  <span data-lang="zh">点击打开地图</span>
+                  <span data-lang="en">Click to open map</span>
+                  <span data-lang="jp">クリックして地図を開く</span>
+                </div>
+              </div>
 
-            <a class="map-static" href="https://map.baidu.com/search/%E4%B8%8A%E6%B5%B7%E6%AC%A7%E6%B4%A5%E7%BA%BA%E7%BB%87%E6%9C%8D%E8%A3%85%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/@13508157.795,3630799.26,19z?querytype=s&da_src=shareurl&wd=%E4%B8%8A%E6%B5%B7%E6%AC%A7%E6%B4%A5%E7%BA%BA%E7%BB%87%E6%9C%8D%E8%A3%85%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&c=289&src=0&wd2=%E4%B8%8A%E6%B5%B7%E5%B8%82%E9%97%B5%E8%A1%8C%E5%8C%BA&pn=0&sug=1&l=19&b=(13508327.795,3631526.76;13509283.795,3631987.76)&from=webmap&biz_forward=%7B%22scaler%22:1,%22styles%22:%22pl%22%7D&sug_forward=911c35b161b15dd87adbd238&device_ratio=1"
-               target="_blank" rel="noopener"
-               aria-label="Open location in Baidu Maps">
-              <img src="assets/brand/map_otsu_qibao.jpg" alt="OTSU YARN location map preview" loading="lazy" width="1200" height="825">
-              <div class="map-overlay">
-                <div>
-                  <div class="map-pill">
-                    <span data-lang="zh">点击打开百度地图</span>
-                    <span data-lang="en">Open Baidu Maps</span>
-                    <span data-lang="jp">百度地図で開く</span>
+              <!-- 红框内容：默认隐藏；hover / focus 才显示 -->
+              <div class="map-body">
+                <img class="map-img" src="assets/brand/map_otsu_qibao.jpg" alt="OTSU location preview map" loading="lazy" width="1200" height="800">
+                <div class="map-overlay" aria-hidden="true">
+                  <div class="tip">
+                    <span data-lang="zh">点击打开地图</span>
+                    <span data-lang="en">Click to open map</span>
+                    <span data-lang="jp">クリックして地図を開く</span>
                   </div>
-               
                 </div>
               </div>
             </a>
-
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -1361,21 +1401,36 @@ Supporting in-stock availability, made-to-order production and custom specificat
   </footer>
 
   <script>
-    // 语言管理（渐进增强：默认中文可见；JS 成功后进入 i18n-ready + active 控制）
+    // ========= Language Manager (稳健版：防 localStorage 报错 + 防空白) =========
     const LanguageManager = {
       currentLang: 'zh',
 
+      normalize(lang){
+        if (!lang) return null;
+        const v = String(lang).toLowerCase();
+        if (v === 'zh' || v === 'zh-cn' || v === 'cn') return 'zh';
+        if (v === 'en' || v === 'en-us') return 'en';
+        if (v === 'jp' || v === 'ja') return 'jp';
+        return null;
+      },
+
       init() {
-        document.documentElement.classList.add('i18n-ready'); // 启用 active 控制（关键兜底已在 CSS）
-        this.currentLang = localStorage.getItem("siteLang") || "zh";
+        let saved = null;
+        try { saved = localStorage.getItem("siteLang"); } catch(e) { saved = null; }
+
+        this.currentLang = this.normalize(saved) || "zh";
         this.apply(this.currentLang);
-        this.bindEvents();
+
+        // 关键：apply 之后再 lang-ready，避免“先全隐藏后显示”的空白风险
+        document.documentElement.classList.add('lang-ready');
+
         this.updateButtons(this.currentLang);
+        this.bindEvents();
       },
 
       set(lang) {
         this.currentLang = lang;
-        localStorage.setItem("siteLang", lang);
+        try { localStorage.setItem("siteLang", lang); } catch(e) {}
         this.apply(lang);
         this.updateButtons(lang);
       },
@@ -1391,7 +1446,7 @@ Supporting in-stock availability, made-to-order production and custom specificat
         document.querySelectorAll('.lang-switch button').forEach(btn => {
           const isActive = btn.dataset.setLang === activeLang;
           btn.classList.toggle('active', isActive);
-          btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+          btn.setAttribute('aria-pressed', isActive);
         });
       },
 
@@ -1404,22 +1459,14 @@ Supporting in-stock availability, made-to-order production and custom specificat
       }
     };
 
-    // 滚动动画（渐进增强：默认内容可见；仅在支持 IO 且非 reduce-motion 时启用）
+    // ========= Scroll Animator (IO + prefers-reduced-motion) =========
     const ScrollAnimator = {
       observer: null,
-
       init() {
-        const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const supportsIO = 'IntersectionObserver' in window;
-
-        // 不支持 / 用户偏好减少动效：直接显示
-        if (reduceMotion || !supportsIO) {
+        if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
           document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
           return;
         }
-
-        // 支持：进入“先隐藏后出现”的模式
-        document.documentElement.classList.add('js-anim');
 
         this.observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
@@ -1429,18 +1476,13 @@ Supporting in-stock availability, made-to-order production and custom specificat
               this.observer.unobserve(entry.target);
             }
           });
-        }, {
-          threshold: 0.12,
-          rootMargin: '0px 0px -50px 0px'
-        });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-        document.querySelectorAll('.fade-up').forEach(el => {
-          this.observer.observe(el);
-        });
+        document.querySelectorAll('.fade-up').forEach(el => this.observer.observe(el));
       }
     };
 
-    // Header 滚动效果
+    // ========= Header scroll =========
     const HeaderManager = {
       init() {
         const header = document.getElementById('mainHeader');
@@ -1458,7 +1500,7 @@ Supporting in-stock availability, made-to-order production and custom specificat
       }
     };
 
-    // 平滑滚动（处理固定 header 偏移）
+    // ========= Smooth scroll with header offset =========
     const SmoothScroll = {
       init() {
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1469,7 +1511,7 @@ Supporting in-stock availability, made-to-order production and custom specificat
             const target = document.querySelector(targetId);
             if (target) {
               e.preventDefault();
-              const headerOffset = 84;
+              const headerOffset = 80;
               const elementPosition = target.getBoundingClientRect().top;
               const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -1480,7 +1522,11 @@ Supporting in-stock availability, made-to-order production and custom specificat
       }
     };
 
+    // ========= Init =========
     document.addEventListener("DOMContentLoaded", () => {
+      // 关键：只有 JS 正常运行才启用“默认隐藏 + 动效”
+      document.documentElement.classList.add('js');
+
       LanguageManager.init();
       ScrollAnimator.init();
       HeaderManager.init();
