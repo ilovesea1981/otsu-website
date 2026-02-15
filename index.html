@@ -1,4 +1,8 @@
-<!DOCTYPE html> <html lang="zh-CN"> <head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <title>上海欧津纺织服装有限公司｜OTSU YARN</title> <!-- 预加载：首屏与Logo --> <link rel="preload" as="image" href="assets/flower.jpeg"> <link rel="preload" as="image" href="LOGO.png"> <meta name="description" content="上海欧津纺织服装有限公司（OTSU YARN）专注高品质纱线开发与供应，支持特殊规格定制，中/英/日多语对接。" /> <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;600&display=swap" rel="stylesheet"> <style> :root{ /* Natural-Luxury palette (更接近自然高级) */ --bg:#f7f6f2; --bg2:#fbfaf7; --text:#171717; --muted:#6b6b6b; --line:rgba(0,0,0,.10); --ink:#111; --sand:#b89f7a; --graphite:#1c1c1c; --card:#ffffff; --radius:18px; --radius2:22px; --shadow:0 18px 60px rgba(0,0,0,.08); --shadow2:0 12px 40px rgba(0,0,0,.06); --wrap:1120px; --narrow:860px; } *{box-sizing:border-box} html{scroll-behavior:smooth} body{ margin:0; font-family:"Inter","Noto Sans SC","Noto Sans JP",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.9; letter-spacing:.01em; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; } a{color:inherit;text-decoration:none} img{max-width:100%;height:auto;display:block} .wrap{ max-width:var(--wrap); margin:0 auto; padding:0 22px; } .narrow{ max-width:var(--narrow); } [data-lang]{ display:none; } /* ===== Header ===== */ header{ position:sticky; top:0; z-index:10; background:rgba(247,246,242,.82); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid var(--line); } .topbar{ display:flex; align-items:center; justify-content:space-between; gap:18px; padding:14px 0; flex-wrap:wrap; } .brand{ display:flex; align-items:center; gap:14px; min-width:280px; } .brand img{ height:60px; background:#fff; padding:10px 14px; border-radius:14px; border:1px solid rgba(0,0,0,.06); box-shadow:0 10px 28px rgba(0,0,0,.06); } .brand-title{ font-size:14px; font-weight:600; letter-spacing:.08em; margin:0; color:var(--ink); } .brand-sub{ font-size:12px; margin-top:3px; color:var(--muted); letter-spacing:.08em; font-weight:400; } nav{ display:flex; gap:18px; flex-wrap:wrap; align-items:center; } nav a{ font-size:12px; color:rgba(0,0,0,.76); letter-spacing:.14em; text-transform:uppercase; padding:6px 0; position:relative; white-space:nowrap; } nav a:hover{ color:rgba(0,0,0,.92); } nav a::after{ content:""; position:absolute; left:0; bottom:0; width:0%; height:2px; background:var(--sand); transition:.22s ease; } nav a:hover::after{ width:100%; } .lang-switch{ display:flex; gap:10px; align-items:center; } .lang-switch button{ background:transparent; border:1px solid rgba(0,0,0,.18); color:rgba(0,0,0,.72); padding:7px 12px; border-radius:999px; font-size:12px; letter-spacing:.08em; cursor:pointer; transition:.18s ease; font-weight:500; } .lang-switch button:hover{ border-color:rgba(0,0,0,.30); color:rgba(0,0,0,.88); transform:translateY(-1px); } /* ===== Sections ===== */ .section{ padding:120px 0; } .section-white{ background:var(--bg2); } .section-light{ background:#ffffff; } .section-dark{ background:linear-gradient(180deg,var(--graphite) 0%, #131313 100%); color:#fff; } .kicker{ font-size:11px; letter-spacing:.34em; text-transform:uppercase; color:rgba(0,0,0,.52); margin:0 0 14px 0; font-weight:600; } .title{ font-size:40px; font-weight:500; margin:0 0 18px 0; letter-spacing:.04em; line-height:1.18; color:var(--ink); } .title-light{ font-size:40px; font-weight:500; margin:0 0 18px 0; letter-spacing:.04em; line-height:1.18; color:#fff; } .lead{ font-size:15px; color:rgba(0,0,0,.70); margin:0 0 14px 0; line-height:2.0; } .lead-light{ font-size:15px; color:rgba(255,255,255,.86); margin:0 0 14px 0; line-height:2.0; } /* ===== Motion respect ===== */ @media (prefers-reduced-motion: reduce){ *{ scroll-behavior:auto !important; } .fade-up{ animation:none !important; opacity:1 !important; transform:none !important; } .card, .btn, .chip, .series-card, .wx-card { transition:none !important; transform:none !important; } } /* ===== Hero ===== */ .hero{ position:relative; overflow:hidden; padding:96px 0 86px 0; background: radial-gradient(1200px 520px at 10% 10%, rgba(184,159,122,.10) 0%, rgba(0,0,0,0) 60%), linear-gradient(to bottom, rgba(247,246,242,.70) 0%, rgba(247,246,242,.88) 56%, rgba(247,246,242,.98) 100%), url('assets/flower.jpeg'); background-size:cover; background-position:center; background-attachment:fixed; } @media (max-width: 900px){ .hero{ background-attachment:scroll; } } .fade-up{ opacity:0; transform:translateY(14px); animation:fadeUp .95s ease forwards; } .d1{animation-delay:.05s} .d2{animation-delay:.18s} .d3{animation-delay:.30s} .d4{animation-delay:.42s} @keyframes fadeUp{ to{opacity:1; transform:translateY(0);} } .hero-kicker{ font-size:11px; letter-spacing:.44em; color:rgba(0,0,0,.56); margin:0 0 16px 0; font-weight:700; text-transform:uppercase; } .hero-title{ font-size:56px; font-weight:500; letter-spacing:.03em; margin:0 0 16px 0; color:var(--ink); line-height:1.08; } .hero-desc{ font-size:15px; color:rgba(0,0,0,.68); margin:0 0 22px 0; line-height:2.05; max-width:860px; } .chips{ display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; } .chip{ padding:9px 14px; border-radius:999px; font-size:13px; color:rgba(0,0,0,.78); border:1px solid rgba(0,0,0,.12); background:rgba(255,255,255,.62); box-shadow:0 10px 26px rgba(0,0,0,.05); letter-spacing:.04em; font-weight:500; transition:transform .18s ease, box-shadow .18s ease; } .chip:hover{ transform:translateY(-1px); box-shadow:0 14px 36px rgba(0,0,0,.07); } /* ===== Philosophy ===== */ .philo{ background:linear-gradient(180deg, rgba(255,255,255,.70) 0%, rgba(255,255,255,1) 100%); border-top:1px solid rgba(0,0,0,.06); border-bottom:1px solid rgba(0,0,0,.06); } .philo-card{ background:#fff; border:1px solid rgba(0,0,0,.06); border-radius:var(--radius2); padding:34px 34px; box-shadow:var(--shadow2); } .philo-quote{ font-size:18px; line-height:2.05; color:rgba(0,0,0,.78); margin:0; letter-spacing:.02em; } .philo-quote strong{ font-weight:600; color:rgba(0,0,0,.88); } .philo-sub{ margin-top:14px; font-size:13px; color:rgba(0,0,0,.52); letter-spacing:.10em; text-transform:uppercase; } /* ===== Series / Lookbook ===== */ .series-grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:18px; margin-top:22px; } @media (max-width: 860px){ .series-grid{ grid-template-columns:1fr; } } .series-card{ overflow:hidden; border-radius:20px; background:#fff; border:1px solid rgba(0,0,0,.08); box-shadow:var(--shadow2); transition:transform .22s ease, box-shadow .22s ease; } .series-card:hover{ transform:translateY(-3px); box-shadow:var(--shadow); } .series-media{ position:relative; overflow:hidden; aspect-ratio: 16 / 11; background:#f2f2f2; } .series-media img{ width:100%; height:100%; object-fit:cover; object-position:center; transform:scale(1.02); } .series-body{ padding:20px 20px 18px 20px; } .series-title{ margin:0 0 10px 0; font-size:16px; letter-spacing:.05em; font-weight:650; color:rgba(0,0,0,.88); } .series-desc{ margin:0 0 14px 0; font-size:13px; line-height:1.95; color:rgba(0,0,0,.66); } .series-tags{ display:flex; gap:8px; flex-wrap:wrap; margin:0 0 16px 0; padding:0; list-style:none; } .series-tags li{ font-size:12px; letter-spacing:.08em; padding:6px 10px; border-radius:999px; background:rgba(184,159,122,.10); border:1px solid rgba(184,159,122,.20); color:rgba(0,0,0,.70); font-weight:600; text-transform:uppercase; } .series-actions{ display:flex; gap:10px; flex-wrap:wrap; } .btn{ display:inline-block; padding:10px 14px; border-radius:999px; font-size:13px; letter-spacing:.08em; cursor:pointer; border:1px solid rgba(0,0,0,.16); background:#fff; color:rgba(0,0,0,.78); transition:transform .18s ease, background .18s ease, border-color .18s ease; font-weight:600; text-transform:uppercase; } .btn:hover{ transform:translateY(-1px); border-color:rgba(0,0,0,.28); background:rgba(0,0,0,.02); } .btn-solid{ border-color:rgba(0,0,0,.20); background:#111; color:#fff; } .btn-solid:hover{ background:#000; border-color:#000; } .note{ margin-top:18px; font-size:13px; color:rgba(0,0,0,.55); line-height:1.95; } /* ===== Expertise ===== */ .cap-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:14px; margin-top:22px; } @media (max-width: 980px){ .cap-grid{ grid-template-columns:1fr; } } .cap{ padding:20px; border-radius:18px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.10); } .cap h3{ margin:0 0 10px 0; font-size:11px; letter-spacing:.34em; font-weight:700; text-transform:uppercase; color:rgba(255,255,255,.92); } .cap p{ margin:0; font-size:13px; line-height:1.95; color:rgba(255,255,255,.82); } .metrics{ display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap; margin-top:26px; } .metric{ flex:1; min-width:190px; padding:18px 18px 16px 18px; border-radius:16px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.10); } .metric-num{ font-size:28px; font-weight:650; letter-spacing:.03em; margin:0; color:#fff; } .metric-label{ margin-top:6px; font-size:13px; color:rgba(255,255,255,.78); letter-spacing:.06em; } /* ===== WeChat cards ===== */ .wx-grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:18px; margin-top:22px; } @media (max-width: 980px){ .wx-grid{ grid-template-columns:1fr; } } .wx-card{ background:#fff; border-radius:20px; overflow:hidden; border:1px solid rgba(0,0,0,.08); box-shadow:var(--shadow2); transition:transform .22s ease, box-shadow .22s ease; } .wx-card:hover{ transform:translateY(-2px); box-shadow:var(--shadow); } .wx-media{ aspect-ratio: 16 / 10; background:#f2f2f2; overflow:hidden; } .wx-media img{ width:100%; height:100%; object-fit:cover; object-position:center; } .wx-body{ padding:20px; } .wx-title{ margin:0 0 10px 0; font-size:15px; letter-spacing:.02em; font-weight:700; color:rgba(0,0,0,.86); } .wx-excerpt{ margin:0 0 14px 0; font-size:13px; color:rgba(0,0,0,.62); line-height:1.95; } .wx-actions{ display:flex; gap:10px; flex-wrap:wrap; } .wx-btn{ display:inline-block; padding:10px 14px; border-radius:999px; font-size:13px; letter-spacing:.06em; border:1px solid rgba(0,0,0,.18); background:#fff; color:rgba(0,0,0,.78); cursor:pointer; font-weight:650; transition:transform .18s ease, border-color .18s ease; } .wx-btn:hover{ transform:translateY(-1px); border-color:rgba(0,0,0,.30); } .wx-btn-solid{ background:#111; color:#fff; border-color:#111; } .wx-btn-solid:hover{ background:#000; border-color:#000; } /* ===== Contact ===== */ .contact-box{ background:#fff; border-radius:22px; box-shadow:var(--shadow2); padding:30px; border:1px solid rgba(0,0,0,.08); } .kv{ display:grid; grid-template-columns:120px 1fr; gap:10px 14px; margin-top:10px; } .kv div{ font-size:14px; color:rgba(0,0,0,.78); } .kv .k{ color:rgba(0,0,0,.52); letter-spacing:.10em; font-size:12px; text-transform:uppercase; font-weight:650; } @media (max-width: 640px){ .kv{ grid-template-columns:1fr; } } /* ===== Office / Map ===== */ .office-card{ display:flex; gap:40px; align-items:stretch; background:#fff; border-radius:24px; padding:40px; box-shadow:var(--shadow2); border:1px solid rgba(0,0,0,.08); } @media (max-width: 980px){ .office-card{ flex-direction:column; padding:28px; gap:18px; } } .office-left{ flex:1; min-width:280px; } .office-right{ flex:1; min-width:280px; } .office-label{ font-size:11px; letter-spacing:.35em; color:rgba(0,0,0,.50); margin:0 0 12px 0; text-transform:uppercase; font-weight:650; } .office-name{ margin:0 0 10px 0; font-size:22px; letter-spacing:.02em; font-weight:750; color:rgba(0,0,0,.86); } .office-addr{ margin:0 0 16px 0; font-size:14px; color:rgba(0,0,0,.66); line-height:2.0; } .office-hint{ margin:0 0 18px 0; font-size:13px; color:rgba(0,0,0,.58); line-height:1.95; } .office-actions{ display:flex; gap:10px; flex-wrap:wrap; } .map-btn{ display:inline-block; border:1px solid rgba(0,0,0,.18); padding:10px 18px; border-radius:999px; font-size:13px; letter-spacing:.06em; cursor:pointer; background:#111; color:#fff; font-weight:650; transition:transform .18s ease, background .18s ease; } .map-btn:hover{ transform:translateY(-1px); background:#000; } .map-btn-ghost{ background:#fff; color:rgba(0,0,0,.78); border-color:rgba(0,0,0,.18); } .map-btn-ghost:hover{ background:rgba(0,0,0,.02); } .map-shell{ background:#fff; border:1px solid rgba(0,0,0,.08); border-radius:18px; overflow:hidden; box-shadow:0 12px 34px rgba(0,0,0,.06); } .map-top{ display:flex; justify-content:space-between; align-items:center; padding:14px 16px; border-bottom:1px solid rgba(0,0,0,.08); background:#faf9f6; } .map-top strong{ font-size:12px; letter-spacing:.18em; color:#111; font-weight:750; } .map-top span{ font-size:12px; color:rgba(0,0,0,.52); } #mapFrame{ width:100%; height:360px; border:0; display:none; } .map-fallback{ padding:16px; font-size:13px; color:rgba(0,0,0,.58); line-height:1.85; } /* ===== Footer ===== */ footer{ background:#f2f1ed; padding:54px 0 52px 0; text-align:center; color:rgba(0,0,0,.55); font-size:13px; border-top:1px solid rgba(0,0,0,.06); } .footer-copy{ font-size:12px; color:rgba(0,0,0,.50); letter-spacing:.08em; } /* ===== Responsive ===== */ @media (max-width: 980px){ .title, .title-light{ font-size:34px; } .hero-title{ font-size:44px; } } /* ===== Natural Premium Layout Upgrade ===== */ :root{ --paper:#f6f1e9; --paper2:#fbf8f3; --paper3:#efe7dc; --ink:#0b1220; } html, body{ background: radial-gradient(1200px 900px at 18% 18%, rgba(255,255,255,.75) 0%, rgba(255,255,255,0) 55%), radial-gradient(900px 700px at 82% 22%, rgba(255,255,255,.55) 0%, rgba(255,255,255,0) 60%), linear-gradient(to right, var(--paper3) 0%, var(--paper2) 18%, #ffffff 50%, var(--paper2) 82%, var(--paper3) 100% ); color:var(--ink); } .wrap{ max-width:1240px; } .narrow{ max-width:920px; } .section{ position:relative; } .section-white{ background: rgba(255,255,255,.92); } .section-light{ background: linear-gradient(to right, rgba(239,231,220,.85) 0%, rgba(251,248,243,.88) 18%, rgba(255,255,255,.92) 50%, rgba(251,248,243,.88) 82%, rgba(239,231,220,.85) 100% ); } body::before{ content:""; position:fixed; inset:0; pointer-events:none; z-index:-1; opacity:.08; background-image: radial-gradient(circle at 20% 30%, rgba(10,15,20,.12) 0 1px, transparent 1px), radial-gradient(circle at 70% 60%, rgba(10,15,20,.10) 0 1px, transparent 1px), radial-gradient(circle at 40% 80%, rgba(10,15,20,.08) 0 1px, transparent 1px); background-size:220px 220px, 260px 260px, 300px 300px; filter: blur(.2px); } .series-card, .wx-card, .contact-box, .office-card{ border-color: rgba(17,17,17,.06) !important; box-shadow: 0 18px 60px rgba(17,17,17,.10) !important; } .wx-card, .contact-box, .office-card{ background: rgba(255,255,255,.94) !important; } .section{ padding:104px 0; } @media (max-width: 860px){ .section{ padding:84px 0; } } .hero{ background: linear-gradient(to bottom, rgba(251,248,243,.70) 0%, rgba(255,255,255,.78) 58%, rgba(255,255,255,.92) 100% ), url('assets/flower.jpeg'); background-size:cover; background-position:center; } header{ box-shadow: 0 10px 30px rgba(17,17,17,.16) !important; } </style> </head> <body> <header> <div class="wrap topbar"> <div class="brand"> <img src="LOGO.png" alt="OTSU YARN"> <div> <div class="brand-title"> <span data-lang="zh">上海欧津纺织服装有限公司</span> <span data-lang="en">Shanghai Otsu Textile & Apparel Co., Ltd.</span> <span data-lang="jp">上海欧津紡織服装有限公司</span> </div> <div class="brand-sub">OTSU YARN｜Material Supply & Development</div> </div> </div>
+<!DOCTYPE html> <html lang="zh-CN"> <head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <title>上海欧津纺织服装有限公司｜OTSU YARN</title> <!-- 预加载：首屏与Logo --> <link rel="preload" as="image" href="assets/flower.jpeg" /> <link rel="preload" as="image" href="LOGO.png" />
+
+<meta name="description" content="上海欧津纺织服装有限公司（OTSU YARN）专注高品质纱线开发与供应，支持特殊规格定制，中/英/日多语对接。" />
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;600&display=swap" rel="stylesheet" /> <style> :root{ /* Natural-Luxury palette */ --paper:#f6f1e9; --paper2:#fbf8f3; --paper3:#efe7dc; --bg:#f7f6f2; --bg2:#fbfaf7; --text:#171717; --muted:#6b6b6b; --line:rgba(0,0,0,.10); --ink:#0b1220; --sand:#b89f7a; --graphite:#1c1c1c; --card:#ffffff; --radius:18px; --radius2:22px; --shadow:0 18px 60px rgba(0,0,0,.08); --shadow2:0 12px 40px rgba(0,0,0,.06); --wrap:1240px; --narrow:920px; } *{ box-sizing:border-box; } html{ scroll-behavior:smooth; } body{ margin:0; font-family:"Inter","Noto Sans SC","Noto Sans JP",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; line-height:1.9; letter-spacing:.01em; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; background: radial-gradient(1200px 900px at 18% 18%, rgba(255,255,255,.75) 0%, rgba(255,255,255,0) 55%), radial-gradient(900px 700px at 82% 22%, rgba(255,255,255,.55) 0%, rgba(255,255,255,0) 60%), linear-gradient(to right, var(--paper3) 0%, var(--paper2) 18%, #ffffff 50%, var(--paper2) 82%, var(--paper3) 100% ); color:var(--ink); } a{ color:inherit; text-decoration:none; } img{ max-width:100%; height:auto; display:block; } .wrap{ max-width:var(--wrap); margin:0 auto; padding:0 22px; } .narrow{ max-width:var(--narrow); } /* 语言切换：默认隐藏，JS 决定显示哪个 */ [data-lang]{ display:none; } /* 纸感纹理（极克制） */ body::before{ content:""; position:fixed; inset:0; pointer-events:none; z-index:-1; opacity:.08; background-image: radial-gradient(circle at 20% 30%, rgba(10,15,20,.12) 0 1px, transparent 1px), radial-gradient(circle at 70% 60%, rgba(10,15,20,.10) 0 1px, transparent 1px), radial-gradient(circle at 40% 80%, rgba(10,15,20,.08) 0 1px, transparent 1px); background-size:220px 220px, 260px 260px, 300px 300px; filter:blur(.2px); } /* ===== Header ===== */ header{ position:sticky; top:0; z-index:10; background:rgba(247,246,242,.82); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid var(--line); box-shadow:0 10px 30px rgba(17,17,17,.16); } .topbar{ display:flex; align-items:center; justify-content:space-between; gap:18px; padding:14px 0; flex-wrap:wrap; } .brand{ display:flex; align-items:center; gap:14px; min-width:280px; } .brand img{ height:60px; background:#fff; padding:10px 14px; border-radius:14px; border:1px solid rgba(0,0,0,.06); box-shadow:0 10px 28px rgba(0,0,0,.06); } .brand-title{ font-size:14px; font-weight:600; letter-spacing:.08em; margin:0; color:#111; } .brand-sub{ font-size:12px; margin-top:3px; color:rgba(0,0,0,.55); letter-spacing:.08em; font-weight:400; } nav{ display:flex; gap:18px; flex-wrap:wrap; align-items:center; } nav a{ font-size:12px; color:rgba(0,0,0,.76); letter-spacing:.14em; text-transform:uppercase; padding:6px 0; position:relative; white-space:nowrap; } nav a:hover{ color:rgba(0,0,0,.92); } nav a::after{ content:""; position:absolute; left:0; bottom:0; width:0%; height:2px; background:var(--sand); transition:.22s ease; } nav a:hover::after{ width:100%; } .lang-switch{ display:flex; gap:10px; align-items:center; } .lang-switch button{ background:transparent; border:1px solid rgba(0,0,0,.18); color:rgba(0,0,0,.72); padding:7px 12px; border-radius:999px; font-size:12px; letter-spacing:.08em; cursor:pointer; transition:.18s ease; font-weight:500; } .lang-switch button:hover{ border-color:rgba(0,0,0,.30); color:rgba(0,0,0,.88); transform:translateY(-1px); } /* ===== Sections ===== */ .section{ padding:104px 0; position:relative; } @media (max-width: 860px){ .section{ padding:84px 0; } } .section-white{ background:rgba(255,255,255,.92); } .section-light{ background: linear-gradient(to right, rgba(239,231,220,.85) 0%, rgba(251,248,243,.88) 18%, rgba(255,255,255,.92) 50%, rgba(251,248,243,.88) 82%, rgba(239,231,220,.85) 100% ); } .section-dark{ background:linear-gradient(180deg,var(--graphite) 0%, #131313 100%); color:#fff; } .kicker{ font-size:11px; letter-spacing:.34em; text-transform:uppercase; color:rgba(0,0,0,.52); margin:0 0 14px 0; font-weight:600; } .title{ font-size:40px; font-weight:500; margin:0 0 18px 0; letter-spacing:.04em; line-height:1.18; color:#111; } .title-light{ font-size:40px; font-weight:500; margin:0 0 18px 0; letter-spacing:.04em; line-height:1.18; color:#fff; } .lead{ font-size:15px; color:rgba(0,0,0,.70); margin:0 0 14px 0; line-height:2.0; } .lead-light{ font-size:15px; color:rgba(255,255,255,.86); margin:0 0 14px 0; line-height:2.0; } /* ===== Motion respect ===== */ @media (prefers-reduced-motion: reduce){ *{ scroll-behavior:auto !important; } .fade-up{ animation:none !important; opacity:1 !important; transform:none !important; } .series-card, .wx-card, .btn, .chip { transition:none !important; transform:none !important; } } /* ===== Hero ===== */ .hero{ position:relative; overflow:hidden; padding:96px 0 86px 0; background: linear-gradient(to bottom, rgba(251,248,243,.70) 0%, rgba(255,255,255,.78) 58%, rgba(255,255,255,.92) 100% ), url("assets/flower.jpeg"); background-size:cover; background-position:center; background-attachment:fixed; } @media (max-width: 900px){ .hero{ background-attachment:scroll; } } .fade-up{ opacity:0; transform:translateY(14px); animation:fadeUp .95s ease forwards; } .d1{ animation-delay:.05s; } .d2{ animation-delay:.18s; } .d3{ animation-delay:.30s; } .d4{ animation-delay:.42s; } @keyframes fadeUp{ to{ opacity:1; transform:translateY(0); } } .hero-kicker{ font-size:11px; letter-spacing:.44em; color:rgba(0,0,0,.56); margin:0 0 16px 0; font-weight:700; text-transform:uppercase; } .hero-title{ font-size:56px; font-weight:500; letter-spacing:.03em; margin:0 0 16px 0; color:#111; line-height:1.08; } .hero-desc{ font-size:15px; color:rgba(0,0,0,.68); margin:0 0 22px 0; line-height:2.05; max-width:860px; } .chips{ display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; } .chip{ padding:9px 14px; border-radius:999px; font-size:13px; color:rgba(0,0,0,.78); border:1px solid rgba(0,0,0,.12); background:rgba(255,255,255,.62); box-shadow:0 10px 26px rgba(0,0,0,.05); letter-spacing:.04em; font-weight:500; transition:transform .18s ease, box-shadow .18s ease; } .chip:hover{ transform:translateY(-1px); box-shadow:0 14px 36px rgba(0,0,0,.07); } /* ===== Philosophy ===== */ .philo{ background:linear-gradient(180deg, rgba(255,255,255,.70) 0%, rgba(255,255,255,1) 100%); border-top:1px solid rgba(0,0,0,.06); border-bottom:1px solid rgba(0,0,0,.06); } .philo-card{ background:#fff; border:1px solid rgba(0,0,0,.06); border-radius:var(--radius2); padding:34px 34px; box-shadow:var(--shadow2); } .philo-quote{ font-size:18px; line-height:2.05; color:rgba(0,0,0,.78); margin:0; letter-spacing:.02em; } .philo-quote strong{ font-weight:600; color:rgba(0,0,0,.88); } .philo-sub{ margin-top:14px; font-size:13px; color:rgba(0,0,0,.52); letter-spacing:.10em; text-transform:uppercase; } /* ===== Series / Lookbook ===== */ .series-grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:18px; margin-top:22px; } @media (max-width: 860px){ .series-grid{ grid-template-columns:1fr; } } .series-card{ overflow:hidden; border-radius:20px; background:rgba(255,255,255,.94); border:1px solid rgba(17,17,17,.06); box-shadow:0 18px 60px rgba(17,17,17,.10); transition:transform .22s ease, box-shadow .22s ease; } .series-card:hover{ transform:translateY(-3px); box-shadow:var(--shadow); } .series-media{ position:relative; overflow:hidden; aspect-ratio:16 / 11; background:#f2f2f2; } .series-media img{ width:100%; height:100%; object-fit:cover; object-position:center; transform:scale(1.02); } .series-body{ padding:20px 20px 18px 20px; } .series-title{ margin:0 0 10px 0; font-size:16px; letter-spacing:.05em; font-weight:650; color:rgba(0,0,0,.88); } .series-desc{ margin:0 0 14px 0; font-size:13px; line-height:1.95; color:rgba(0,0,0,.66); } .series-tags{ display:flex; gap:8px; flex-wrap:wrap; margin:0 0 16px 0; padding:0; list-style:none; } .series-tags li{ font-size:12px; letter-spacing:.08em; padding:6px 10px; border-radius:999px; background:rgba(184,159,122,.10); border:1px solid rgba(184,159,122,.20); color:rgba(0,0,0,.70); font-weight:600; text-transform:uppercase; } .series-actions{ display:flex; gap:10px; flex-wrap:wrap; } .btn{ display:inline-block; padding:10px 14px; border-radius:999px; font-size:13px; letter-spacing:.08em; cursor:pointer; border:1px solid rgba(0,0,0,.16); background:#fff; color:rgba(0,0,0,.78); transition:transform .18s ease, background .18s ease, border-color .18s ease; font-weight:600; text-transform:uppercase; } .btn:hover{ transform:translateY(-1px); border-color:rgba(0,0,0,.28); background:rgba(0,0,0,.02); } .btn-solid{ border-color:rgba(0,0,0,.20); background:#111; color:#fff; } .btn-solid:hover{ background:#000; border-color:#000; } .note{ margin-top:18px; font-size:13px; color:rgba(0,0,0,.55); line-height:1.95; } /* ===== Expertise ===== */ .cap-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:14px; margin-top:22px; } @media (max-width: 980px){ .cap-grid{ grid-template-columns:1fr; } } .cap{ padding:20px; border-radius:18px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.10); } .cap h3{ margin:0 0 10px 0; font-size:11px; letter-spacing:.34em; font-weight:700; text-transform:uppercase; color:rgba(255,255,255,.92); } .cap p{ margin:0; font-size:13px; line-height:1.95; color:rgba(255,255,255,.82); } .metrics{ display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap; margin-top:26px; } .metric{ flex:1; min-width:190px; padding:18px 18px 16px 18px; border-radius:16px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.10); } .metric-num{ font-size:28px; font-weight:650; letter-spacing:.03em; margin:0; color:#fff; } .metric-label{ margin-top:6px; font-size:13px; color:rgba(255,255,255,.78); letter-spacing:.06em; } /* ===== WeChat cards ===== */ .wx-grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:18px; margin-top:22px; } @media (max-width: 980px){ .wx-grid{ grid-template-columns:1fr; } } .wx-card{ background:rgba(255,255,255,.94); border-radius:20px; overflow:hidden; border:1px solid rgba(17,17,17,.06); box-shadow:0 18px 60px rgba(17,17,17,.10); transition:transform .22s ease, box-shadow .22s ease; } .wx-card:hover{ transform:translateY(-2px); box-shadow:var(--shadow); } .wx-media{ aspect-ratio:16 / 10; background:#f2f2f2; overflow:hidden; } .wx-media img{ width:100%; height:100%; object-fit:cover; object-position:center; } .wx-body{ padding:20px; } .wx-title{ margin:0 0 10px 0; font-size:15px; letter-spacing:.02em; font-weight:700; color:rgba(0,0,0,.86); } .wx-excerpt{ margin:0 0 14px 0; font-size:13px; color:rgba(0,0,0,.62); line-height:1.95; } .wx-actions{ display:flex; gap:10px; flex-wrap:wrap; } .wx-btn{ display:inline-block; padding:10px 14px; border-radius:999px; font-size:13px; letter-spacing:.06em; border:1px solid rgba(0,0,0,.18); background:#fff; color:rgba(0,0,0,.78); cursor:pointer; font-weight:650; transition:transform .18s ease, border-color .18s ease; } .wx-btn:hover{ transform:translateY(-1px); border-color:rgba(0,0,0,.30); } .wx-btn-solid{ background:#111; color:#fff; border-color:#111; } .wx-btn-solid:hover{ background:#000; border-color:#000; } /* ===== Contact ===== */ .contact-box{ background:rgba(255,255,255,.94); border-radius:22px; box-shadow:0 18px 60px rgba(17,17,17,.10); padding:30px; border:1px solid rgba(17,17,17,.06); } .kv{ display:grid; grid-template-columns:120px 1fr; gap:10px 14px; margin-top:10px; } .kv div{ font-size:14px; color:rgba(0,0,0,.78); } .kv .k{ color:rgba(0,0,0,.52); letter-spacing:.10em; font-size:12px; text-transform:uppercase; font-weight:650; } @media (max-width: 640px){ .kv{ grid-template-columns:1fr; } } /* ===== Office / Map ===== */ .office-card{ display:flex; gap:40px; align-items:stretch; background:rgba(255,255,255,.94); border-radius:24px; padding:40px; box-shadow:0 18px 60px rgba(17,17,17,.10); border:1px solid rgba(17,17,17,.06); } @media (max-width: 980px){ .office-card{ flex-direction:column; padding:28px; gap:18px; } } .office-left{ flex:1; min-width:280px; } .office-right{ flex:1; min-width:280px; } .office-label{ font-size:11px; letter-spacing:.35em; color:rgba(0,0,0,.50); margin:0 0 12px 0; text-transform:uppercase; font-weight:650; } .office-name{ margin:0 0 10px 0; font-size:22px; letter-spacing:.02em; font-weight:750; color:rgba(0,0,0,.86); } .office-addr{ margin:0 0 16px 0; font-size:14px; color:rgba(0,0,0,.66); line-height:2.0; } .office-hint{ margin:0 0 18px 0; font-size:13px; color:rgba(0,0,0,.58); line-height:1.95; } .office-actions{ display:flex; gap:10px; flex-wrap:wrap; } .map-btn{ display:inline-block; border:1px solid rgba(0,0,0,.18); padding:10px 18px; border-radius:999px; font-size:13px; letter-spacing:.06em; cursor:pointer; background:#111; color:#fff; font-weight:650; transition:transform .18s ease, background .18s ease; } .map-btn:hover{ transform:translateY(-1px); background:#000; } .map-btn-ghost{ background:#fff; color:rgba(0,0,0,.78); border-color:rgba(0,0,0,.18); } .map-btn-ghost:hover{ background:rgba(0,0,0,.02); } .map-shell{ background:#fff; border:1px solid rgba(0,0,0,.08); border-radius:18px; overflow:hidden; box-shadow:0 12px 34px rgba(0,0,0,.06); } .map-top{ display:flex; justify-content:space-between; align-items:center; padding:14px 16px; border-bottom:1px solid rgba(0,0,0,.08); background:#faf9f6; } .map-top strong{ font-size:12px; letter-spacing:.18em; color:#111; font-weight:750; } .map-top span{ font-size:12px; color:rgba(0,0,0,.52); } #mapFrame{ width:100%; height:360px; border:0; display:none; } .map-fallback{ padding:16px; font-size:13px; color:rgba(0,0,0,.58); line-height:1.85; } /* ===== Footer ===== */ footer{ background:#f2f1ed; padding:54px 0 52px 0; text-align:center; color:rgba(0,0,0,.55); font-size:13px; border-top:1px solid rgba(0,0,0,.06); } .footer-copy{ font-size:12px; color:rgba(0,0,0,.50); letter-spacing:.08em; } /* ===== Responsive ===== */ @media (max-width: 980px){ .title, .title-light{ font-size:34px; } .hero-title{ font-size:44px; } } </style> </head> <body> <header> <div class="wrap topbar"> <div class="brand"> <img src="LOGO.png" alt="OTSU YARN" /> <div> <div class="brand-title"> <span data-lang="zh">上海欧津纺织服装有限公司</span> <span data-lang="en">Shanghai Otsu Textile &amp; Apparel Co., Ltd.</span> <span data-lang="jp">上海欧津紡織服装有限公司</span> </div> <div class="brand-sub">OTSU YARN｜Material Supply &amp; Development</div> </div> </div>
   <nav>
     <a href="#about">
       <span data-lang="zh">关于我们</span>
@@ -45,19 +49,25 @@
 </div>
 </header> <!-- HERO --> <section class="hero" id="top"> <div class="wrap narrow"> <p class="hero-kicker fade-up d1">OTSU YARN</p>
   <h1 class="hero-title fade-up d2">
-    <span data-lang="zh">花式纱线<br>定义持久之美</span>
-    <span data-lang="en">Engineered Yarns <br>that Define Enduring Beauty</span>
-    <span data-lang="jp">持続する美しさを定義する<br>ファンシーヤーン</span>
+    <span data-lang="zh">花式纱线<br />定义持久之美</span>
+    <span data-lang="en">Engineered Yarns<br />that Define Enduring Beauty</span>
+    <span data-lang="jp">持続する美しさを定義する<br />ファンシーヤーン</span>
   </h1>
 
   <p class="hero-desc fade-up d3">
-    <span data-lang="zh">面向贸易商、成衣制造工厂及高端时尚品牌客户，提供稳定、透明、可追溯的纱线供应体系；支持现货供应、订单生产及特殊规格定制，并提供中、英、日多语对接服务，提升协作效率。</span>
-    <span data-lang="en">For traders, garment manufacturers and premium fashion brands, we deliver a stable, transparent and fully traceable yarn supply experience.
-
-Supporting in-stock availability, made-to-order production and custom specifications — with seamless coordination in Chinese, English and Japanese.</span>
-<span data-lang="jp">商社・縫製工場・ハイエンドファッションブランド向けに、安定的かつ透明性の高い、トレーサビリティを備えた糸供給体制を提供しております。
-即納在庫・受注生産・特殊仕様への対応に加え、中・英・日の多言語で円滑なコミュニケーションを実現します。</span>
-</p>
+    <span data-lang="zh">
+      面向贸易商、成衣制造工厂及高端时尚品牌客户，提供稳定、透明、可追溯的纱线供应体系；
+      支持现货供应、订单生产及特殊规格定制，并提供中、英、日多语对接服务，提升协作效率。
+    </span>
+    <span data-lang="en">
+      For traders, garment manufacturers and premium fashion brands, we deliver a stable, transparent and fully traceable yarn supply experience.
+      Supporting in-stock availability, made-to-order production and custom specifications — with seamless coordination in Chinese, English and Japanese.
+    </span>
+    <span data-lang="jp">
+      商社・縫製工場・ハイエンドファッションブランド向けに、安定的かつ透明性の高い、トレーサビリティを備えた糸供給体制を提供しております。
+      即納在庫・受注生産・特殊仕様への対応に加え、中・英・日の多言語で円滑なコミュニケーションを実現します。
+    </span>
+  </p>
 
   <div class="chips fade-up d4">
     <span class="chip">
@@ -90,9 +100,18 @@ Supporting in-stock availability, made-to-order production and custom specificat
   </h2>
 
   <p class="lead">
-    <span data-lang="zh">自 2004 年进入纱线行业以来，我们持续深耕花式纱线研发、高端品牌协同与供应链管理；以材料开发能力与稳定供给能力为核心，长期服务日本、欧洲及中国一线时尚品牌与制造合作伙伴。</span>
-    <span data-lang="en">Since entering the yarn industry in 2004, we have focused on fancy yarn R&D, premium-brand collaboration, and supply chain management—combining material development with reliable delivery for global partners.</span>
-    <span data-lang="jp">2004年の参入以来、ファンシーヤーンの開発、高級ブランドとの協業、サプライチェーン管理を継続的に強化。素材開発力と安定供給を軸に、日欧中の主要パートナーを長期的に支えています。</span>
+    <span data-lang="zh">
+      自 2004 年进入纱线行业以来，我们持续深耕花式纱线研发、高端品牌协同与供应链管理；
+      以材料开发能力与稳定供给能力为核心，长期服务日本、欧洲及中国一线时尚品牌与制造合作伙伴。
+    </span>
+    <span data-lang="en">
+      Since entering the yarn industry in 2004, we have focused on fancy yarn R&amp;D, premium-brand collaboration, and supply chain management—
+      combining material development with reliable delivery for global partners.
+    </span>
+    <span data-lang="jp">
+      2004年の参入以来、ファンシーヤーンの開発、高級ブランドとの協業、サプライチェーン管理を継続的に強化。
+      素材開発力と安定供給を軸に、日欧中の主要パートナーを長期的に支えています。
+    </span>
   </p>
 </div>
 </section> <!-- PHILOSOPHY --> <section class="section philo" id="philo"> <div class="wrap narrow"> <p class="kicker"> <span data-lang="zh">PHILOSOPHY</span> <span data-lang="en">PHILOSOPHY</span> <span data-lang="jp">PHILOSOPHY</span> </p>
@@ -104,11 +123,10 @@ Supporting in-stock availability, made-to-order production and custom specificat
 
   <div class="philo-card">
     <p class="philo-quote">
-      <span data-lang="zh"><strong>结构定义质感。</strong> 质感定义风格。<br>我们用更安静、更确定的方式，把材料从概念带到量产。</span>
-      <span data-lang="en"><strong>Structure defines hand-feel.</strong> Hand-feel defines style.<br>Quietly engineered—reliably delivered from concept to scale.</span>
-      <span data-lang="jp"><strong>構造が風合いを決める。</strong> 風合いがスタイルを決める。<br>静かに設計し、確実に量産へ落とし込む。</span>
+      <span data-lang="zh"><strong>结构定义质感。</strong> 质感定义风格。<br />我们用更安静、更确定的方式，把材料从概念带到量产。</span>
+      <span data-lang="en"><strong>Structure defines hand-feel.</strong> Hand-feel defines style.<br />Quietly engineered—reliably delivered from concept to scale.</span>
+      <span data-lang="jp"><strong>構造が風合いを決める。</strong> 風合いがスタイルを決める。<br />静かに設計し、確実に量産へ落とし込む。</span>
     </p>
-
     <div class="philo-sub">
       <span data-lang="zh">ENGINEERED QUIETLY · DELIVERED RELIABLY</span>
       <span data-lang="en">ENGINEERED QUIETLY · DELIVERED RELIABLY</span>
@@ -133,9 +151,8 @@ Supporting in-stock availability, made-to-order production and custom specificat
   <div class="series-grid">
     <article class="series-card">
       <div class="series-media">
-        <img src="assets/brand/series_tile_01.png" alt="Series 01" loading="lazy">
+        <img src="assets/brand/series_tile_01.png" alt="Series 01" loading="lazy" />
       </div>
-
       <div class="series-body">
         <h3 class="series-title">
           <span data-lang="zh">花式纱线创新研发</span>
@@ -172,9 +189,8 @@ Supporting in-stock availability, made-to-order production and custom specificat
 
     <article class="series-card">
       <div class="series-media">
-        <img src="assets/brand/series_tile_02.png" alt="Series 02" loading="lazy">
+        <img src="assets/brand/series_tile_02.png" alt="Series 02" loading="lazy" />
       </div>
-
       <div class="series-body">
         <h3 class="series-title">
           <span data-lang="zh">高端品牌供货与协同</span>
@@ -206,9 +222,8 @@ Supporting in-stock availability, made-to-order production and custom specificat
 
     <article class="series-card">
       <div class="series-media">
-        <img src="assets/brand/series_tile_03.png" alt="Series 03" loading="lazy">
+        <img src="assets/brand/series_tile_03.png" alt="Series 03" loading="lazy" />
       </div>
-
       <div class="series-body">
         <h3 class="series-title">
           <span data-lang="zh">特殊规格定制</span>
@@ -240,13 +255,12 @@ Supporting in-stock availability, made-to-order production and custom specificat
 
     <article class="series-card">
       <div class="series-media">
-        <img src="assets/brand/series_tile_04.png" alt="Series 04" loading="lazy">
+        <img src="assets/brand/series_tile_04.png" alt="Series 04" loading="lazy" />
       </div>
-
       <div class="series-body">
         <h3 class="series-title">
           <span data-lang="zh">创新研发与伙伴式合作</span>
-          <span data-lang="en">Innovation & Partnership</span>
+          <span data-lang="en">Innovation &amp; Partnership</span>
           <span data-lang="jp">共創とパートナーシップ</span>
         </h3>
 
@@ -288,7 +302,7 @@ Supporting in-stock availability, made-to-order production and custom specificat
 
   <p class="lead-light">
     <span data-lang="zh">以“研发导向 + 稳定供应 + 跨语协同”为主轴，将材料方案、项目执行与交付确定性统一到同一套工作逻辑中。</span>
-    <span data-lang="en">R&D-driven + reliable supply + multilingual collaboration—one workflow from material planning to delivery certainty.</span>
+    <span data-lang="en">R&amp;D-driven + reliable supply + multilingual collaboration—one workflow from material planning to delivery certainty.</span>
     <span data-lang="jp">「開発主導 × 安定供給 × 多言語連携」を軸に、素材提案から納品確度まで一貫した運用で支えます。</span>
   </p>
 
@@ -297,7 +311,7 @@ Supporting in-stock availability, made-to-order production and custom specificat
       <h3>Material R&amp;D</h3>
       <p>
         <span data-lang="zh">花式纱线研发与技术导向；支持从概念到打样的材料路线设计。</span>
-        <span data-lang="en">Fancy yarn R&D and technical direction—from concept to sampling route.</span>
+        <span data-lang="en">Fancy yarn R&amp;D and technical direction—from concept to sampling route.</span>
         <span data-lang="jp">ファンシーヤーン開発と技術設計。コンセプト〜サンプルまでの素材設計を支援。</span>
       </p>
     </div>
@@ -368,34 +382,41 @@ Supporting in-stock availability, made-to-order production and custom specificat
     <!-- Card 1 -->
     <div class="wx-card">
       <div class="wx-media">
-        <img src="assets/brand/wechat_preview_01.jpg" alt="WeChat preview 1" loading="lazy">
+        <img src="assets/brand/wechat_preview_01.jpg" alt="WeChat preview 1" loading="lazy" />
       </div>
 
       <div class="wx-body">
         <h3 class="wx-title">
           <span data-lang="zh">解码 26/27 春夏趋势｜欧津 OTSU 花式带子纱</span>
           <span data-lang="en">Decoding the 26/27 Spring/Summer Trends | OTSU Fancy Tape Yarn</span>
-          <span data-lang="jp">26/27年春夏トレンド解読｜オツ RUBY-WS ファンシーテープヤーン</span>
+          <span data-lang="jp">26/27年春夏トレンド解読｜OTSU ファンシーテープヤーン</span>
         </h3>
 
         <p class="wx-excerpt">
-          <span data-lang="zh">第一篇<br>
-          从趋势洞察到工艺实现，纱线的一物多用提升了开发与库存效率。<br>
-          当趋势转化为纺织组织和肌理，纱线成为风格定义的起点。</span>
-
-          <span data-lang="en">First Article<br>
-          From trend insights to the implementation of technology, yarns with multiple uses enhance development and inventory efficiency.<br>
-          When trends transform into textile structures and textures, yarns become the starting point for defining style.</span>
-
-          <span data-lang="jp">第一篇<br>
-          トレンド洞察から技術実現まで、糸の多用途は開発と在庫効率を向上させます。<br>
-          トレンドが織物構造と質感に変わると、糸はスタイルを定義する出発点となります。</span>
+          <span data-lang="zh">
+            第一篇<br />
+            从趋势洞察到工艺实现，纱线的一物多用提升了开发与库存效率。<br />
+            当趋势转化为纺织组织和肌理，纱线成为风格定义的起点。
+          </span>
+          <span data-lang="en">
+            First Article<br />
+            From trend insights to the implementation of technology, yarns with multiple uses enhance development and inventory efficiency.<br />
+            When trends transform into textile structures and textures, yarns become the starting point for defining style.
+          </span>
+          <span data-lang="jp">
+            第一篇<br />
+            トレンド洞察から技術実現まで、糸の多用途は開発と在庫効率を向上させます。<br />
+            トレンドが織物構造と質感に変わると、糸はスタイルを定義する出発点となります。
+          </span>
         </p>
 
         <div class="wx-actions">
-          <a class="wx-btn wx-btn-solid"
-             href="https://mp.weixin.qq.com/s/AGSnjUDycr25PSAm_pNs_w"
-             target="_blank" rel="noopener">
+          <a
+            class="wx-btn wx-btn-solid"
+            href="https://mp.weixin.qq.com/s/AGSnjUDycr25PSAm_pNs_w"
+            target="_blank"
+            rel="noopener"
+          >
             <span data-lang="zh">阅读公众号原文</span>
             <span data-lang="en">Read on WeChat</span>
             <span data-lang="jp">WeChatで記事を読む</span>
@@ -404,7 +425,7 @@ Supporting in-stock availability, made-to-order production and custom specificat
           <a class="wx-btn" href="#series">
             <span data-lang="zh">返回产品图鉴</span>
             <span data-lang="en">Back to Lookbook</span>
-            <span data-lang="jp">製品カタログへ戻る</span>
+            <span data-lang="jp">ルックブックへ戻る</span>
           </a>
         </div>
       </div>
@@ -413,34 +434,41 @@ Supporting in-stock availability, made-to-order production and custom specificat
     <!-- Card 2 -->
     <div class="wx-card">
       <div class="wx-media">
-        <img src="assets/brand/wechat_preview_02.jpg" alt="WeChat preview 2" loading="lazy">
+        <img src="assets/brand/wechat_preview_02.jpg" alt="WeChat preview 2" loading="lazy" />
       </div>
 
       <div class="wx-body">
         <h3 class="wx-title">
           <span data-lang="zh">OTSU欧津 RUBY-WS：当羊毛织进蚕丝里，便有了穿在身上的“月光”</span>
-          <span data-lang="en">OTSU RUBY-WS: When Wool is Woven into Silk, It Becomes the 'Moonlight' Worn on the Body</span>
+          <span data-lang="en">OTSU RUBY-WS: When Wool is Woven into Silk, It Becomes the “Moonlight” Worn on the Body</span>
           <span data-lang="jp">OTSU RUBY-WS：羊毛が絹に織り込まれると、体に着る「月光」が生まれる</span>
         </h3>
 
         <p class="wx-excerpt">
-          <span data-lang="zh">第二篇<br>
-          羊毛与桑蚕丝复合结构，在垂坠感和四季适穿性之间取得平衡。<br>
-          如月光般柔和的光感，在垂坠性和弹性之间找到完美平衡。</span>
-
-          <span data-lang="en">Second Article<br>
-          The composite structure of wool and mulberry silk strikes a balance between drape and year-round wearability.<br>
-          Soft and light, like moonlight, it finds a perfect balance between drape and elasticity.</span>
-
-          <span data-lang="jp">第二篇<br>
-          羊毛と桑蚕シルクの複合構造は、ドレープ感と四季を通じて着やすさの間でバランスを取っています。<br>
-          月光のような柔らかさと光感が、ドレープ性と弾力性の間で完璧なバランスを見つけます。</span>
+          <span data-lang="zh">
+            第二篇<br />
+            羊毛与桑蚕丝复合结构，在垂坠感和四季适穿性之间取得平衡。<br />
+            如月光般柔和的光感，在垂坠性和弹性之间找到完美平衡。
+          </span>
+          <span data-lang="en">
+            Second Article<br />
+            The composite structure of wool and mulberry silk strikes a balance between drape and year-round wearability.<br />
+            Soft and light, like moonlight, it finds a perfect balance between drape and elasticity.
+          </span>
+          <span data-lang="jp">
+            第二篇<br />
+            羊毛と桑蚕シルクの複合構造は、ドレープ感と四季を通じて着やすさの間でバランスを取っています。<br />
+            月光のような柔らかさと光感が、ドレープ性と弾力性の間で完璧なバランスを見つけます。
+          </span>
         </p>
 
         <div class="wx-actions">
-          <a class="wx-btn wx-btn-solid"
-             href="https://mp.weixin.qq.com/s/ZjZ0J_OdUqlnePvj8vt35A"
-             target="_blank" rel="noopener">
+          <a
+            class="wx-btn wx-btn-solid"
+            href="https://mp.weixin.qq.com/s/ZjZ0J_OdUqlnePvj8vt35A"
+            target="_blank"
+            rel="noopener"
+          >
             <span data-lang="zh">阅读公众号原文</span>
             <span data-lang="en">Read on WeChat</span>
             <span data-lang="jp">WeChatで記事を読む</span>
@@ -449,7 +477,7 @@ Supporting in-stock availability, made-to-order production and custom specificat
           <a class="wx-btn" href="#series">
             <span data-lang="zh">返回产品图鉴</span>
             <span data-lang="en">Back to Lookbook</span>
-            <span data-lang="jp">製品カタログへ戻る</span>
+            <span data-lang="jp">ルックブックへ戻る</span>
           </a>
         </div>
       </div>
@@ -521,9 +549,12 @@ Supporting in-stock availability, made-to-order production and custom specificat
       </p>
 
       <div class="office-actions">
-        <a class="map-btn"
-           href="https://map.baidu.com/?shareurl=1&poiShareUid=911c35b161b15dd87adbd238"
-           target="_blank" rel="noopener">
+        <a
+          class="map-btn"
+          href="https://map.baidu.com/?shareurl=1&poiShareUid=911c35b161b15dd87adbd238"
+          target="_blank"
+          rel="noopener"
+        >
           <span data-lang="zh">在百度地图中打开</span>
           <span data-lang="en">Open in Baidu Maps</span>
           <span data-lang="jp">百度地図で開く</span>
@@ -544,7 +575,11 @@ Supporting in-stock availability, made-to-order production and custom specificat
           <span></span>
         </div>
 
-        <iframe id="mapFrame" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe
+          id="mapFrame"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
 
         <div class="map-fallback" id="mapFallback" style="display:none;">
           <span data-lang="zh"></span>
@@ -555,4 +590,4 @@ Supporting in-stock availability, made-to-order production and custom specificat
     </div>
   </div>
 </div>
-</section> <footer> <div class="wrap"> <div class="footer-copy">© 2026 上海欧津纺织服装有限公司 · OTSU YARN</div> </div> </footer> <script> function setLang(lang){ localStorage.setItem("siteLang", lang); applyLang(lang); } function applyLang(lang){ document.querySelectorAll("[data-lang]").forEach(function(el){ el.style.display = (el.getAttribute("data-lang") === lang) ? "" : "none"; }); document.documentElement.setAttribute("lang", lang === "jp" ? "ja" : (lang === "en" ? "en" : "zh-CN")); } function loadEmbedMap(force){ const frame = document.getElementById("mapFrame"); const fallback = document.getElementById("mapFallback"); if(!force && frame.getAttribute("src")){ frame.style.display = "block"; return; } fallback.style.display = "none"; frame.onload = function(){}; frame.onerror = function(){ fallback.style.display = "block"; }; frame.src = "https://map.baidu.com/?shareurl=1&poiShareUid=911c35b161b15dd87adbd238"; frame.style.display = "block"; setTimeout(function(){ try{ if(!frame.contentWindow || frame.contentWindow.location.href === "about:blank") { fallback.style.display = "block"; } }catch(e){ fallback.style.display = "block"; } }, 2000); } document.addEventListener("DOMContentLoaded", function(){ const lang = localStorage.getItem("siteLang") || "zh"; applyLang(lang); // 地图不自动加载：请点击按钮 }); </script> </body> </html>
+</section> <footer> <div class="wrap"> <div class="footer-copy">© 2026 上海欧津纺织服装有限公司 · OTSU YARN</div> </div> </footer> <script> function setLang(lang){ localStorage.setItem("siteLang", lang); applyLang(lang); } /* 改进：不强制 inline，避免布局异常 */ function applyLang(lang){ document.querySelectorAll("[data-lang]").forEach(function(el){ el.style.display = (el.getAttribute("data-lang") === lang) ? "" : "none"; }); document.documentElement.setAttribute( "lang", lang === "jp" ? "ja" : (lang === "en" ? "en" : "zh-CN") ); } function loadEmbedMap(force){ const frame = document.getElementById("mapFrame"); const fallback = document.getElementById("mapFallback"); if(!force && frame.getAttribute("src")){ frame.style.display = "block"; return; } fallback.style.display = "none"; frame.onload = function(){}; frame.onerror = function(){ fallback.style.display = "block"; }; frame.src = "https://map.baidu.com/?shareurl=1&poiShareUid=911c35b161b15dd87adbd238"; frame.style.display = "block"; setTimeout(function(){ try{ if(!frame.contentWindow || frame.contentWindow.location.href === "about:blank"){ fallback.style.display = "block"; } }catch(e){ fallback.style.display = "block"; } }, 2000); } document.addEventListener("DOMContentLoaded", function(){ const lang = localStorage.getItem("siteLang") || "zh"; applyLang(lang); // 地图不自动加载：请点击按钮 }); </script> </body> </html>
