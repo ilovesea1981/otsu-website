@@ -1333,59 +1333,63 @@ Supporting in-stock availability, made-to-order production and custom specificat
     </div>
   </section>
 
-  <!-- OFFICE / MAP -->
-  <section class="section section-light" id="office">
-    <div class="wrap">
-      <div class="office-card fade-up">
-        <div class="office-left">
-          <p class="office-label">LOCATION</p>
-          <h3 class="office-name">
-            <span data-lang="zh">上海欧津纺织服装有限公司</span>
-            <span data-lang="en">OTSU YARN</span>
-            <span data-lang="jp">OTSU YARN</span>
-          </h3>
-          <p class="office-addr">
-            <span data-lang="zh">上海市长宁区...</span>
-            <span data-lang="en">Changning District, Shanghai...</span>
-            <span data-lang="jp">上海市長寧区...</span>
-          </p>
-          <p class="office-hint">
-            <span data-lang="zh">来访前请提前预约</span>
-            <span data-lang="en">Please make an appointment before visiting</span>
-            <span data-lang="jp">ご来訪前に事前予約をお願いします</span>
-          </p>
+<!-- OFFICE / MAP -->
+<section class="section section-white" id="office">
+  <div class="wrap">
+    <div class="office-card">
+      <div class="office-left">
+        <p class="office-label"><span data-lang="zh">LOCATION</span><span data-lang="en">LOCATION</span><span data-lang="jp">LOCATION</span></p>
+        <h3 class="office-name">
+          <span data-lang="zh">上海欧津纺织服装有限公司</span>
+          <span data-lang="en">OTSU Yan</span>
+          <span data-lang="jp">OTSU Yan</span>
+        </h3>
+        <p class="office-addr">
+          <span data-lang="zh">上海市闵行区中春路8633弄<br>万科七宝国际41号26幢618室</span>
+          <span data-lang="en">Room 618, Building 26, No. 41<br>Vanke Qibao International<br>No. 8633 Zhongchun Road, Minhang District, Shanghai</span>
+          <span data-lang="jp">上海市閔行区中春路8633弄<br>万科七宝国際41号26棟618室</span>
+        </p>
+        <p class="office-hint">
+          <span data-lang="zh">点击右侧按钮查看详细位置地图。</span>
+          <span data-lang="en">Click the button to view the detailed location map.</span>
+          <span data-lang="jp">詳細な地図は右側のボタンをクリックしてください。</span>
+        </p>
 
-          <div class="office-actions">
-            <a class="map-btn" href="https://map.baidu.com/?shareurl=1&poiShareUid=911c35b161b15dd87adbd238" target="_blank" rel="noopener noreferrer">
-              <span data-lang="zh">在百度地图中打开</span>
-              <span data-lang="en">Open in Baidu Maps</span>
-              <span data-lang="jp">百度地図で開く</span>
-            </a>
-            <button class="map-btn map-btn-ghost" type="button" id="loadMapBtn">
-              <span data-lang="zh">加载嵌入地图</span>
-              <span data-lang="en">Load Embed Map</span>
-              <span data-lang="jp">地図を読み込む</span>
-            </button>
-          </div>
+        <div class="office-actions">
+          <a class="map-btn" href="https://map.baidu.com/search/%E4%B8%8A%E6%B5%B7%E6%AC%A7%E6%B4%A5%E7%BA%BA%E7%BB%87%E6%9C%8D%E8%A3%85%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/@13508157.795,3630799.26,19z?querytype=s&da_src=shareurl&wd=%E4%B8%8A%E6%B5%B7%E6%AC%A7%E6%B4%A5%E7%BA%BA%E7%BB%87%E6%9C%8D%E8%A3%85%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&c=289&src=0&wd2=%E4%B8%8A%E6%B5%B7%E5%B8%82%E9%97%B5%E8%A1%8C%E5%8C%BA&pn=0&sug=1&l=19&b=(13508327.795,3631526.76;13509283.795,3631987.76)&from=webmap&biz_forward=%7B%22scaler%22:1,%22styles%22:%22pl%22%7D&sug_forward=911c35b161b15dd87adbd238&device_ratio=1" target="_blank" rel="noopener">
+            <span data-lang="zh">在百度地图中打开</span>
+            <span data-lang="en">Open in Baidu Maps</span>
+            <span data-lang="jp">百度地図で開く</span>
+          </a>
         </div>
+      </div>
 
-        <div class="office-right">
-          <div class="map-shell">
-            <div class="map-top">
-              <strong>BAIDU MAP</strong>
-              <span id="mapStatus"></span>
-            </div>
-            <iframe id="mapFrame" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Company Location Map"></iframe>
-            <div class="map-fallback" id="mapFallback" style="display:none;">
-              <span data-lang="zh">地图加载失败，请使用上方按钮在外部地图应用中查看。</span>
-              <span data-lang="en">Map failed to load. Please use the button above to view in external map app.</span>
-              <span data-lang="jp">地図の読み込みに失敗しました。上のボタンで外部アプリをご利用ください。</span>
-            </div>
+      <div class="office-right">
+        <div class="map-shell">
+          <div class="map-top">
+            <strong>BAIDU MAP</strong>
+            <span>上海欧津纺织服装有限公司</span>
+          </div>
+          <!-- 使用搜索链接的 iframe 嵌入（可能受限） -->
+          <iframe 
+            id="mapFrame" 
+            src="https://map.baidu.com/search/%E4%B8%8A%E6%B5%B7%E6%AC%A7%E6%B4%A5%E7%BA%BA%E7%BB%87%E6%9C%8D%E8%A3%85%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/@13508157.795,3630799.26,19z?querytype=s&da_src=shareurl&wd=%E4%B8%8A%E6%B5%B7%E6%AC%A7%E6%B4%A5%E7%BA%BA%E7%BB%87%E6%9C%8D%E8%A3%85%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&c=289&src=0&wd2=%E4%B8%8A%E6%B5%B7%E5%B8%82%E9%97%B5%E8%A1%8C%E5%8C%BA&pn=0&sug=1&l=19&b=(13508327.795,3631526.76;13509283.795,3631987.76)&from=webmap&biz_forward=%7B%22scaler%22:1,%22styles%22:%22pl%22%7D&sug_forward=911c35b161b15dd87adbd238&device_ratio=1" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            style="width:100%; height:340px; border:0;">
+          </iframe>
+          <div class="map-fallback" id="mapFallback" style="display:none; padding:16px; text-align:center;">
+            <p style="margin:0 0 12px 0; color:#667085;">
+              <span data-lang="zh">地图加载失败，请点击上方按钮在新窗口打开</span>
+              <span data-lang="en">Map failed to load, please click button above</span>
+              <span data-lang="jp">地図の読み込みに失敗しました。上のボタンをクリックしてください</span>
+            </p>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <footer>
     <div class="wrap">
