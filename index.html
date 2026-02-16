@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>上海欧津纺织服装有限公司｜OTSU YARN</title>
 
+
+  <link rel="icon" type="image/png" href="LOGO.png">
+  <link rel="apple-touch-icon" href="LOGO.png">
   <!-- 关键资源预加载 -->
   <link rel="preload" as="image" href="assets/flower.jpeg" fetchpriority="high">
   <link rel="preload" as="image" href="LOGO.png" fetchpriority="high">
@@ -888,6 +891,44 @@
       .section{ padding:40px 0 !important; }
       body{ background:#fff !important; color:#000 !important; }
     }
+
+    /* ===== Mobile Header Wrap (Option A: horizontal scroll nav) ===== */
+    @media (max-width: 768px){
+      .topbar{
+        flex-wrap:wrap;
+        align-items:flex-start;
+        gap:10px;
+        padding:12px 0;
+      }
+      .brand{
+        flex:1 1 100%;
+        min-width:0;
+      }
+      .brand-title{
+        white-space:normal;
+        line-height:1.25;
+      }
+      .lang-switch{
+        order:2;
+        margin-left:auto;
+        flex-wrap:wrap;
+        justify-content:flex-end;
+        gap:8px;
+      }
+      .lang-switch button{
+        padding:6px 10px;
+        min-width:auto;
+      }
+      nav{
+        order:3;
+        flex:1 1 100%;
+        padding-right:0;
+        overflow-x:auto;
+        -webkit-overflow-scrolling:touch;
+      }
+      nav a{ white-space:nowrap; }
+    }
+
   </style>
 </head>
 
