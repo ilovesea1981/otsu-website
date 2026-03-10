@@ -3,8 +3,96 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OTSU Yan｜产品图鉴专题</title>
-  <meta name="description" content="OTSU Yan 产品图鉴专题页：展示系列主题与材料开发方向，支持中/英/日切换。" />
+
+  <title>OTSU YARN | Fancy Yarn Development & Textile Yarn Series</title>
+
+  <meta name="description" content="Explore OTSU YARN yarn series including fancy yarn development, bespoke specifications, premium yarn supply and textile innovation for fashion brands, textile traders and garment manufacturers." />
+
+  <meta name="keywords" content="OTSU YARN, fancy yarn supplier, custom yarn development, textile yarn series, fashion yarn materials, specialty yarn manufacturer" />
+
+  <meta name="robots" content="index,follow" />
+
+  <link rel="canonical" href="https://www.otsu-yarn.com/series.html" />
+
+  <meta name="theme-color" content="#eef2f6" />
+
+  <meta property="og:title" content="OTSU YARN | Yarn Series" />
+  <meta property="og:description" content="Explore OTSU YARN's yarn series including fancy yarn development, bespoke yarn specifications and textile innovation." />
+  <meta property="og:image" content="https://www.otsu-yarn.com/assets/brand/og_cover.jpg" />
+  <meta property="og:url" content="https://www.otsu-yarn.com/series.html" />
+  <meta property="og:type" content="website" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "OTSU YARN",
+        "url": "https://www.otsu-yarn.com/",
+        "logo": "https://www.otsu-yarn.com/LOGO.png"
+      },
+      {
+        "@type": "WebPage",
+        "name": "OTSU YARN | Yarn Series",
+        "url": "https://www.otsu-yarn.com/series.html",
+        "description": "OTSU YARN yarn series page featuring fancy yarn development, bespoke specifications, premium supply and innovation topics.",
+        "inLanguage": ["zh-CN","en","ja"]
+      },
+      {
+        "@type": "Article",
+        "headline": "OTSU YARN Yarn Series",
+        "description": "Explore OTSU YARN's yarn series including fancy yarn development, bespoke specifications, premium supply and innovation.",
+        "author": {
+          "@type": "Organization",
+          "name": "OTSU YARN"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "OTSU YARN",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.otsu-yarn.com/LOGO.png"
+          }
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://www.otsu-yarn.com/series.html"
+        }
+      },
+      {
+        "@type": "ItemList",
+        "name": "OTSU YARN Series Topics",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "url": "https://www.otsu-yarn.com/series.html?topic=fancy",
+            "name": "Fancy Yarn Development"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "url": "https://www.otsu-yarn.com/series.html?topic=supply",
+            "name": "Premium Brand Supply"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "url": "https://www.otsu-yarn.com/series.html?topic=bespoke",
+            "name": "Bespoke Yarn Specifications"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "url": "https://www.otsu-yarn.com/series.html?topic=innovation",
+            "name": "Textile Innovation & Partnership"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
 
@@ -18,8 +106,10 @@
       --nav3:#1a3c57;
       --card:#fff;
       --shadow:0 18px 60px rgba(0,0,0,.10);
+      --line:#e8edf3;
     }
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family:"Inter","Noto Sans SC","Noto Sans JP",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
@@ -29,6 +119,7 @@
       line-height:1.85;
     }
     .wrap{ max-width:980px; margin:0 auto; padding:0 20px; }
+
     header{
       background:linear-gradient(135deg,var(--nav1) 0%,var(--nav2) 60%,var(--nav3) 100%);
       color:#fff;
@@ -42,8 +133,16 @@
       flex-wrap:wrap;
       gap:14px;
     }
-    .top a{ color:#fff; text-decoration:none; opacity:.9; letter-spacing:.06em; }
+    .top a{
+      color:#fff;
+      text-decoration:none;
+      opacity:.9;
+      letter-spacing:.06em;
+      font-size:13px;
+      font-weight:500;
+    }
     .top a:hover{ opacity:1; }
+
     .lang-switch{ display:flex; gap:10px; }
     .lang-switch button{
       background:transparent;
@@ -57,18 +156,67 @@
       transition:.2s ease;
       font-weight:500;
     }
-    .lang-switch button:hover{ background:rgba(255,255,255,.18); transform:translateY(-1px); }
+    .lang-switch button:hover{
+      background:rgba(255,255,255,.18);
+      transform:translateY(-1px);
+    }
 
     .hero{ padding:46px 0 14px 0; }
-    .kicker{ font-size:11px; letter-spacing:.35em; font-weight:500; opacity:.65; margin:0 0 12px 0; }
-    h1{ font-size:34px; font-weight:500; letter-spacing:.06em; margin:0 0 12px 0; line-height:1.25; }
-    .desc{ color:#4b5565; font-size:15px; line-height:1.95; margin:0; }
+    .kicker{
+      font-size:11px;
+      letter-spacing:.35em;
+      font-weight:500;
+      opacity:.65;
+      margin:0 0 12px 0;
+      text-transform:uppercase;
+    }
+    h1{
+      font-size:34px;
+      font-weight:500;
+      letter-spacing:.06em;
+      margin:0 0 12px 0;
+      line-height:1.25;
+    }
+    .desc{
+      color:#4b5565;
+      font-size:15px;
+      line-height:1.95;
+      margin:0;
+    }
 
-    .card{ background:var(--card); border-radius:20px; box-shadow:var(--shadow); overflow:hidden; margin:22px 0 46px 0; }
-    .card img{ display:block; width:100%; height:auto; }
+    .card{
+      background:var(--card);
+      border-radius:20px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      margin:22px 0 28px 0;
+    }
+    .card img{
+      display:block;
+      width:100%;
+      height:auto;
+      background:#dbe3ea;
+    }
     .content{ padding:26px; }
-    .meta{ display:flex; gap:10px; flex-wrap:wrap; margin:10px 0 0 0; padding:0; list-style:none; }
-    .meta li{ font-size:12px; letter-spacing:.06em; padding:6px 10px; border-radius:999px; background:#f2f4f7; color:#475467; border:1px solid #eef0f3; font-weight:500; }
+
+    .meta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin:10px 0 0 0;
+      padding:0;
+      list-style:none;
+    }
+    .meta li{
+      font-size:12px;
+      letter-spacing:.06em;
+      padding:6px 10px;
+      border-radius:999px;
+      background:#f2f4f7;
+      color:#475467;
+      border:1px solid #eef0f3;
+      font-weight:500;
+    }
 
     .back{
       display:inline-block;
@@ -81,16 +229,61 @@
       font-size:13px;
       letter-spacing:.06em;
       font-weight:500;
+      text-decoration:none;
       transform:translateY(0);
       transition:.2s ease;
     }
-    .back:hover{ opacity:.92; transform:translateY(-1px); }
+    .back:hover{
+      opacity:.92;
+      transform:translateY(-1px);
+    }
+
+    .topic-body h2{
+      font-size:24px;
+      font-weight:500;
+      margin:0 0 14px 0;
+      letter-spacing:.04em;
+      line-height:1.4;
+    }
+    .topic-body h3{
+      font-size:18px;
+      font-weight:500;
+      margin:28px 0 10px 0;
+      letter-spacing:.03em;
+      line-height:1.5;
+      padding-top:6px;
+    }
+    .topic-body p{
+      margin:0 0 16px 0;
+      color:#344054;
+      font-size:15px;
+      line-height:1.95;
+    }
+    .topic-body .lead{
+      font-size:16px;
+      color:#1f2937;
+    }
+    .topic-body .section-divider{
+      height:1px;
+      background:var(--line);
+      margin:22px 0 4px 0;
+    }
 
     [data-lang]{ display:none; }
-  
+
+    @media (max-width: 768px){
+      .wrap{ padding:0 16px; }
+      .hero{ padding:34px 0 8px 0; }
+      h1{ font-size:28px; }
+      .content{ padding:20px; }
+      .topic-body h2{ font-size:22px; }
+      .topic-body h3{ font-size:17px; }
+      .desc,.topic-body p{ font-size:14px; }
+    }
+
     @media (prefers-reduced-motion: reduce){
       *{ scroll-behavior:auto !important; }
-      .card{ transition:none !important; }
+      .card,.lang-switch button,.back{ transition:none !important; }
     }
   </style>
 </head>
@@ -115,7 +308,7 @@
     </section>
 
     <section class="card">
-      <img id="topicImage" alt="topic image" loading="lazy">
+      <img id="topicImage" alt="OTSU YARN topic image" loading="lazy">
       <div class="content">
         <ul class="meta" id="topicTags"></ul>
         <a class="back" href="index.html#series">
@@ -124,6 +317,10 @@
           <span data-lang="jp">ルックブックへ戻る</span>
         </a>
       </div>
+    </section>
+
+    <section class="card">
+      <div class="content" id="topicBody"></div>
     </section>
   </main>
 
@@ -141,8 +338,89 @@
           zh: "围绕结构、风合与视觉纹理进行差异化开发；支持从概念打样到量产落地的材料方案输出。",
           en: "Differentiated development across structure, hand-feel, and visual texture—supporting sampling to scalable production.",
           jp: "構造・風合い・視覚的テクスチャーを軸に、コンセプト〜量産まで落とし込める素材提案。"
+        },
+        body: {
+          zh: `
+            <div class="topic-body">
+              <h2>花式纱线系列</h2>
+              <p class="lead">OTSU YARN 致力于为时尚品牌、贸易商及成衣制造商提供多样化的花式纱线开发方案。我们的系列开发围绕结构表现、触感平衡与视觉纹理展开，兼顾设计表达与量产可行性。</p>
+              <p>凭借对纱线结构与材料组合的持续研究，我们能够根据不同项目需求，提供兼具创新性、稳定性与可落地性的纱线方案，以支持针织面料、时装开发及差异化产品企划。</p>
+
+              <div class="section-divider"></div>
+              <h3>Fancy Tape Yarn</h3>
+              <p>扁带状结构能够在针织面料中形成利落而现代的表面效果，适用于时装针织、毛衫及装饰性织物开发。我们可根据不同项目需求，对材料、宽度与结构感进行调整。</p>
+
+              <h3>Bouclé Yarn</h3>
+              <p>圈圈纱以柔和且富有层次的表面纹理见长，常用于高端针织、时尚配饰及强调肌理感的服装产品。该系列注重圈结构的稳定性与视觉一致性，兼顾创意开发与商业量产。</p>
+
+              <h3>Slub Yarn</h3>
+              <p>竹节纱通过有意控制粗细变化，在面料中形成自然且富有节奏感的视觉效果，适用于追求表面变化与个性化表达的时装面料开发。我们在视觉效果与加工稳定性之间进行平衡设计。</p>
+
+              <h3>Feather Yarn</h3>
+              <p>羽毛纱具有轻盈、柔和且装饰性强的特征，常用于针织服装、围巾及创意纺织品开发。该系列强调轻量结构与舒适触感，适合对表面软糯感与视觉蓬松度有要求的设计方向。</p>
+
+              <div class="section-divider"></div>
+              <h3>定制开发</h3>
+              <p>除标准系列外，我们也支持针对品牌概念与产品方向进行定制化纱线开发，包括原料、支数、混率、撚度、染色及结构效果等多维度协调，以实现从概念打样到量产推进的一体化配合。</p>
+
+              <p>如您正在寻找稳定可靠的花式纱线供应商，或希望开展定制化纱线开发，OTSU YARN 可基于项目需求提供专业支持。</p>
+            </div>
+          `,
+          en: `
+            <div class="topic-body">
+              <h2>Fancy Yarn Series</h2>
+              <p class="lead">OTSU YARN develops a wide range of fancy yarns for fashion brands, textile traders and garment manufacturers. Our yarn series combines innovative textures, stable quality and flexible customization to support knitwear and fashion textile development.</p>
+              <p>With continuous research on yarn structure and material combinations, we provide reliable yarn solutions that balance creativity, consistency and scalability for apparel and textile projects.</p>
+
+              <div class="section-divider"></div>
+              <h3>Fancy Tape Yarn</h3>
+              <p>Fancy tape yarn features a flat ribbon-like structure that creates a clean and modern texture in knitted fabrics. It is widely used in fashion knitwear, sweaters and decorative textile designs.</p>
+
+              <h3>Bouclé Yarn</h3>
+              <p>Bouclé yarn is characterized by looped textures that provide a soft and dimensional surface in fabrics. It is frequently used in luxury knitwear, fashion accessories and textured garments.</p>
+
+              <h3>Slub Yarn</h3>
+              <p>Slub yarn contains intentional variations in thickness, creating irregular visual effects and natural texture in fabrics. It is often used in fashion textiles to produce distinctive and dynamic surface patterns.</p>
+
+              <h3>Feather Yarn</h3>
+              <p>Feather yarn is a decorative yarn that creates soft and fluffy textures. It is widely used in fashion knitwear, scarves and creative textile designs.</p>
+
+              <div class="section-divider"></div>
+              <h3>Custom Yarn Development</h3>
+              <p>In addition to our standard yarn series, OTSU YARN provides custom yarn development services for fashion brands and textile companies. We collaborate on materials, blends, counts, twist, dyeing and structure to support both sampling and bulk production.</p>
+
+              <p>If you are looking for a reliable fancy yarn supplier or require customized yarn development for fashion textile projects, OTSU YARN is ready to support your ideas with professional experience and stable supply capability.</p>
+            </div>
+          `,
+          jp: `
+            <div class="topic-body">
+              <h2>ファンシーヤーンシリーズ</h2>
+              <p class="lead">OTSU YARNは、ファッションブランド、繊維商社、アパレルメーカー向けに、多様なファンシーヤーン開発を行っている。構造表現、風合い、視覚的テクスチャーを重視し、デザイン性と量産適性の両立を図った素材提案を行う。</p>
+              <p>糸構造と素材組み合わせに関する継続的な研究を通じ、創造性、安定性、量産対応力のバランスを備えたヤーンソリューションを提供している。</p>
+
+              <div class="section-divider"></div>
+              <h3>Fancy Tape Yarn</h3>
+              <p>フラットなテープ状構造により、編地にすっきりとした現代的な表情を与える。ファッションニット、セーター、装飾性テキスタイルなどに幅広く用いられる。</p>
+
+              <h3>Bouclé Yarn</h3>
+              <p>ループ状の表面感が特徴で、柔らかく立体的なテクスチャーを生み出す。高級ニット、ファッション雑貨、表面感を重視した衣料用途に適している。</p>
+
+              <h3>Slub Yarn</h3>
+              <p>意図的な太さの変化により、自然でリズムのある視覚効果を生み出すヤーンである。表情豊かなファッションテキスタイル開発に適している。</p>
+
+              <h3>Feather Yarn</h3>
+              <p>軽やかで柔らかく、装飾性の高い表面感を持つヤーンであり、ニット製品、マフラー、クリエイティブなテキスタイル用途に広く使用される。</p>
+
+              <div class="section-divider"></div>
+              <h3>カスタム開発</h3>
+              <p>標準シリーズに加え、ブランドコンセプトや製品企画に応じたカスタムヤーン開発にも対応している。素材、混率、番手、撚り、染色、構造表現などを総合的に調整し、サンプルから量産まで一貫して支援する。</p>
+
+              <p>安定したファンシーヤーンサプライヤーをお探しの場合、またはカスタムヤーン開発をご希望の場合は、OTSU YARNが専門的にサポートする。</p>
+            </div>
+          `
         }
       },
+
       supply: {
         image: "assets/brand/series_tile_02.png",
         tags: ["Supply","Traceable","PM"],
@@ -155,8 +433,35 @@
           zh: "以稳定交付、透明沟通与可追溯管理为基础，提升跨团队协作效率与项目执行确定性。",
           en: "Stable delivery, transparent communication, and traceable management for reliable project execution.",
           jp: "安定納品・透明なコミュニケーション・トレーサブル管理で、協業効率と実行確度を高めます。"
+        },
+        body: {
+          zh: `
+            <div class="topic-body">
+              <h2>高端品牌供货与协同</h2>
+              <p class="lead">OTSU YARN 注重稳定交付、信息透明与项目协同，支持品牌、贸易商与生产端之间的高效衔接。</p>
+              <p>我们围绕样品推进、规格确认、生产节奏与交付管理建立清晰流程，以提升跨团队协作效率，并降低项目执行中的不确定性。</p>
+              <p>在多方协同项目中，我们重视可追溯性、沟通节奏与问题反馈机制，力求在开发与量产阶段都保持稳定推进。</p>
+            </div>
+          `,
+          en: `
+            <div class="topic-body">
+              <h2>Premium Brand Supply</h2>
+              <p class="lead">OTSU YARN emphasizes stable delivery, transparent communication and practical coordination across brands, traders and production teams.</p>
+              <p>We support project execution through structured follow-up on sampling, specifications, production rhythm and delivery management, helping improve reliability in multi-party collaboration.</p>
+              <p>Our supply approach values traceability, timely communication and process visibility throughout both development and bulk production stages.</p>
+            </div>
+          `,
+          jp: `
+            <div class="topic-body">
+              <h2>高級ブランド供給と協業</h2>
+              <p class="lead">OTSU YARNは、安定納品、透明性のあるコミュニケーション、実務的な協業体制を重視している。</p>
+              <p>サンプル進行、仕様確認、生産スケジュール、納品管理を体系的にフォローし、多者間プロジェクトにおける実行安定性を高める。</p>
+              <p>開発段階から量産段階まで、トレーサビリティ、連絡の適時性、工程の見える化を重視した対応を行っている。</p>
+            </div>
+          `
         }
       },
+
       bespoke: {
         image: "assets/brand/series_tile_03.png",
         tags: ["Bespoke","Spec","Color"],
@@ -169,8 +474,35 @@
           zh: "支数、成分、捻度、染色与结构等要素精细化对接，支持从打样到量产的一体化协同。",
           en: "Tailored coordination on counts, blends, twist, dyeing, and structure—from sampling to bulk production.",
           jp: "番手・混率・撚り・染色・構造などを精緻に調整し、サンプル〜量産まで一貫対応。"
+        },
+        body: {
+          zh: `
+            <div class="topic-body">
+              <h2>特殊规格定制</h2>
+              <p class="lead">针对不同品牌与产品需求，OTSU YARN 可就支数、混率、撚度、颜色、结构效果等维度进行定制化协调。</p>
+              <p>我们支持从概念打样到批量推进的一体化开发，帮助客户在材料表达、工艺可行性与成本控制之间取得平衡。</p>
+              <p>在定制项目中，我们强调前期沟通的准确性与后续执行的一致性，以提高开发效率并缩短反复调整周期。</p>
+            </div>
+          `,
+          en: `
+            <div class="topic-body">
+              <h2>Bespoke Specifications</h2>
+              <p class="lead">OTSU YARN supports tailored coordination across counts, blends, twist, color, dyeing and yarn structure based on different brand and project needs.</p>
+              <p>Our development process connects concept sampling with bulk production planning, helping clients balance material expression, manufacturability and cost control.</p>
+              <p>We value precision in early-stage communication and consistency in follow-through to improve development efficiency and reduce unnecessary revisions.</p>
+            </div>
+          `,
+          jp: `
+            <div class="topic-body">
+              <h2>特殊仕様カスタム</h2>
+              <p class="lead">OTSU YARNは、ブランドや案件ごとの要件に応じ、番手、混率、撚り、色、染色、糸構造などを個別に調整する対応を行っている。</p>
+              <p>コンセプトサンプルから量産計画までをつなぐ開発体制により、素材表現、加工適性、コストバランスの最適化を支援する。</p>
+              <p>初期段階の要件整理の正確性と、その後の実行一貫性を重視し、開発効率の向上を図っている。</p>
+            </div>
+          `
         }
       },
+
       innovation: {
         image: "assets/brand/series_tile_04.png",
         tags: ["Co-create","Design","Network"],
@@ -183,6 +515,32 @@
           zh: "联合设计师、院校与合作伙伴推进创意开发与落地，以稳定供给支持持续创新。",
           en: "Co-create with designers and institutes to turn ideas into scalable products—backed by stable supply.",
           jp: "デザイナーや教育機関と共創し、アイデアを量産可能な形へ。安定供給で継続的な革新を支えます。"
+        },
+        body: {
+          zh: `
+            <div class="topic-body">
+              <h2>创新研发与伙伴合作</h2>
+              <p class="lead">OTSU YARN 重视与设计师、院校及合作伙伴的协同开发，通过跨领域交流推动创意转化与产品落地。</p>
+              <p>我们相信，材料创新不仅来自技术本身，也来自对市场、设计语言与应用场景的综合理解。</p>
+              <p>在创意开发项目中，我们致力于以稳定供给与务实执行支持持续创新，使概念能够更顺畅地转化为可量产成果。</p>
+            </div>
+          `,
+          en: `
+            <div class="topic-body">
+              <h2>Innovation & Partnership</h2>
+              <p class="lead">OTSU YARN values collaboration with designers, institutes and partners to transform ideas into practical textile developments.</p>
+              <p>We believe material innovation grows from both technical exploration and a broader understanding of design language, market needs and real-world application.</p>
+              <p>By combining creative collaboration with stable supply capability, we support projects that move from concept to scalable execution more effectively.</p>
+            </div>
+          `,
+          jp: `
+            <div class="topic-body">
+              <h2>共創とパートナーシップ</h2>
+              <p class="lead">OTSU YARNは、デザイナー、教育機関、各種パートナーとの協業を通じて、アイデアを実務的な素材開発へとつなげていくことを重視している。</p>
+              <p>素材の革新は技術面だけでなく、デザイン言語、市場理解、用途想定を含めた総合的な視点から生まれると考えている。</p>
+              <p>創造的な協業と安定供給体制を組み合わせることで、コンセプトから量産可能な形への移行を支援している。</p>
+            </div>
+          `
         }
       }
     };
@@ -211,11 +569,12 @@
 
       const img = document.getElementById("topicImage");
       img.onerror = function(){
-        // 图片缺失时的兜底占位
         img.onerror = null;
         img.src = "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='900'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%230b1220' offset='0'/%3E%3Cstop stop-color='%231a3c57' offset='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23ffffff' font-size='38' font-family='Arial'%3EImage Not Found%3C/text%3E%3C/svg%3E";
       };
       img.src = t.image;
+      img.alt = (t.title[lang] || t.title.zh || "OTSU YARN topic image");
+
       document.getElementById("topicTitle").textContent = t.title[lang] || t.title.zh;
       document.getElementById("topicDesc").textContent = t.desc[lang] || t.desc.zh;
 
@@ -226,6 +585,9 @@
         li.textContent = s;
         tags.appendChild(li);
       });
+
+      const body = document.getElementById("topicBody");
+      body.innerHTML = (t.body && (t.body[lang] || t.body.zh)) ? (t.body[lang] || t.body.zh) : "";
     }
 
     document.addEventListener("DOMContentLoaded", function(){
